@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#" xml:lang="ru" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="Keywords" content="работа в киеве, работа, работа в украине, вакансии, резюме, поиск работы, ищу работу, работодатели, подбор персонала, work ua, ворк юа">
+<meta name="Description" content="На Work.ua сейчас 2 млн резюме в 600 городах Украины. Найти сотрудников и подобрать персонал теперь просто.">
+<meta http-equiv="content-language" content="ru">
+
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="no-cache">
+<meta http-equiv="Expires" content="-1">
+<meta http-equiv="Cache-Control" content="no-cache">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta property="og:url" content="https://www.work.ua/resumes/by-region/">
+<meta property="og:title" content="Резюме по городам">
+<meta property="og:description" content="На Work.ua сейчас 2 млн резюме в 600 городах Украины.">
+<meta property="og:image" content="https://i.work.ua/i/og/workua-logo.png">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:locale:alternate" content="uk_UA">
+<meta name="msapplication-config" content="//st.work.ua/browser/ie/browserconfig.xml?v2=1">
+
+<title>Резюме по городам Украины. Поиск сотрудников и подбор персонала в вашем городе — Work.ua</title>
+
+<script>
+dataLayer=[{userType:'employer'}];
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;
+f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-W6CVFN');
+</script>
+
+<link rel="shortcut icon" href="//st.work.ua/browser/favicon.ico?v2=1">
+<link rel="apple-touch-icon" sizes="60x60" href="//st.work.ua/browser/safari/apple-touch-icon-60x60.png?v=1">
+<link rel="apple-touch-icon" sizes="76x76" href="//st.work.ua/browser/safari/apple-touch-icon-76x76.png?v=1">
+<link rel="apple-touch-icon" sizes="120x120" href="//st.work.ua/browser/safari/apple-touch-icon-120x120.png?v=1">
+<link rel="apple-touch-icon" sizes="152x152" href="//st.work.ua/browser/safari/apple-touch-icon-152x152.png?v=1">
+<link rel="apple-touch-icon" sizes="167x167" href="//st.work.ua/browser/safari/apple-touch-icon-167x167.png?v=1">
+<link rel="apple-touch-icon" sizes="180x180" href="//st.work.ua/browser/safari/apple-touch-icon-180x180.png?v=1">
+<link rel="mask-icon" href="//st.work.ua/browser/safari/website_icon.svg?v2=1" color="#00a1f1">
+<link rel="yandex-tableau-widget" href="//st.work.ua/browser/yandex-tableau/manifest.json?v2=11">
+
+<link href="//st.work.ua/css/bootstrap/main-min_1505218880.css" rel="stylesheet">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="//st.work.ua/js/jquery-1.10.2.min.js"><\/script>')</script>
+<script src="//i.work.ua/ru/js/lp_1504768389.js"></script>
+<!--[if lt IE 9]> 
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <link href="//st.work.ua/css/bootstrap/ie8-min_1471496855.css" media="screen, projection" rel="stylesheet">
+  <link href="//st.work.ua/js/bootstrap/respond-proxy.html" id="respond-proxy" rel="respond-proxy">
+  <link href="/static/js/bootstrap/i/respond.proxy.gif" id="respond-redirect" rel="respond-redirect"> 
+  <script src="//st.work.ua/js/bootstrap/respond.proxy.js"></script>
+  <style>.hidden-print-ie8 {display: none}</style>
+<![endif]-->
+
+
+
+
+
+<link rel="canonical" href="https://www.work.ua/resumes/by-region/" />
+<link rel="alternate" hreflang="ru" href="https://www.work.ua/resumes/by-region/" />
+<link rel="alternate" hreflang="uk" href="https://www.work.ua/ua/resumes/by-region/" />
+</head>
+ 
+<body data-target="#sidenav-spy" data-spy="scroll">
+
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-W6CVFN" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+
+
+
+<header class="header-inverse">
+    <div class="container hidden-print">
+
+<div class="pull-right link-section hidden-xs">
+<a href="/" class="text-magenta-light">Соискателю<span class="glyphicon glyphicon-chevron-right"></span></a>
+
+</div>
+</div>
+
+<nav class="navbar navbar-inverse">
+<div class="container hidden-print">
+<div class="navbar-header">
+<a href="/employer/" id="logo-emp"></a>
+</div>
+<ul class="nav navbar-nav">
+<li  class="active"><a href="/resumes/"><span class="glyphicon glyphicon-search"></span><span class="hidden-xs">Найти резюме</span><span class="visible-xs-block">Резюме</span></a>
+</li>
+<li><a href="/employer/register/"><span class="glyphicon glyphicon-add"></span><span class="hidden-xs">Создать вакансию</span><span class="visible-xs-block">Вакансия</span></a></li>
+<li><a class="visible-xs-block" href="/employer/login/"><span class="glyphicon glyphicon-lock"></span><span class="visible-xs-block">Войти</span></a><a href="/employer/login/" class="btn btn-default hidden-xs">Войти</a></li>
+</ul>
+</div>
+</nav>
+
+
+
+</header>
+
+<div class="gradient-slim"></div>
+
+
+<section id="center" class="main-center bg-gray">
+<div class="container">
+<script src="//st.work.ua/js/work-min_1507030189.js"></script>
+<p class="add-top hidden-print link-back link-back-indent"><a href="/resumes/"><span class="glyphicon glyphicon-chevron-left"></span><span>Найти резюме</span></a></p>
+<h1 class="cut-top">Поиск резюме по городам</h1>
+<ul class="nav nav-tabs nav-white add-top">
+<li ><a href="/resumes/by-region/">Алфавит</a></li>
+<li class="active"><a href="/resumes/by-region/?grouped=1">Области</a></li>
+</ul>
+<div class="card card-indent">
+<h2>Винницкая обл.</h2>
+<div class="row">
+<div class="col-sm-4 col-md-4">
+<ul class="list-dot-gray text-gray-light">
+<li><a href="/resumes-bar/">Бар</a>&nbsp;122</li>
+<li><a href="/resumes-bershad/">Бершадь</a>&nbsp;132</li>
+<li><a href="/resumes-vinnytsya/">Винница</a>&nbsp;50689</li>
+<li><a href="/resumes-haisyn/">Гайсин</a>&nbsp;280</li>
+<li><a href="/resumes-gnivan/">Гнивань</a>&nbsp;35</li>
+<li><a href="/resumes-zhmerynka/">Жмеринка</a>&nbsp;461</li>
+<li><a href="/resumes-illintsi/">Ильинцы</a>&nbsp;56</li>
+<li><a href="/resumes-kozyatyn/">Казатин</a>&nbsp;286</li>
+<li><a href="/resumes-kalynivka/">Калиновка</a>&nbsp;248</li>
+<li><a href="/resumes-kryzhopil/">Крыжополь</a>&nbsp;56</li>
+</ul>
+</div>
+<div class="col-sm-4 col-md-4">
+<ul class="list-dot-gray text-gray-light margin-top-xs">
+<li><a href="/resumes-ladyzhin/">Ладыжин</a>&nbsp;325</li>
+<li><a href="/resumes-lypovets/">Липовец</a>&nbsp;34</li>
+<li><a href="/resumes-lityn/">Литин</a>&nbsp;46</li>
+<li><a href="/resumes-mohyliv-podilskyi/">Могилев-Подольский</a>&nbsp;368</li>
+<li><a href="/resumes-murovani_kurylivtsi/">Мурованые Куриловцы</a>&nbsp;25</li>
+<li><a href="/resumes-nemyriv/">Немиров</a>&nbsp;176</li>
+<li><a href="/resumes-orativ/">Оратов</a>&nbsp;15</li>
+<li><a href="/resumes-pishchanka/">Песчанка</a>&nbsp;14</li>
+<li><a href="/resumes-pohrebyshche/">Погребище</a>&nbsp;15</li>
+<li><a href="/resumes-teplyk/">Теплик</a>&nbsp;20</li>
+</ul>
+</div>
+<div class="col-sm-4 col-md-4">
+<ul class="list-dot-gray text-gray-light margin-top-xs">
+<li><a href="/resumes-tomashpil/">Томашполь</a>&nbsp;27</li>
+<li><a href="/resumes-trostyanets_vn/">Тростянец (Винницкая обл.)</a>&nbsp;65</li>
+<li><a href="/resumes-tulchyn/">Тульчин</a>&nbsp;212</li>
+<li><a href="/resumes-tyvriv/">Тывров</a>&nbsp;39</li>
+<li><a href="/resumes-khmilnyk/">Хмельник</a>&nbsp;201</li>
+<li><a href="/resumes-chernivtsi_vn/">Черневцы</a>&nbsp;30</li>
+<li><a href="/resumes-chechelnyk/">Чечельник</a>&nbsp;13</li>
+<li><a href="/resumes-sharhorod/">Шаргород</a>&nbsp;42</li>
+<li><a href="/resumes-yampil_vn/">Ямполь (Винницкая обл.)</a>&nbsp;44</li>
+</ul>
+</div>
+</div>
+<hr class="wide">
+<h2 class="cut-top">Волынская обл.</h2>
+<div class="row">
+<div class="col-sm-4 col-md-4">
+<ul class="list-dot-gray text-gray-light">
+<li><a href="/resumes-volodymyr-volynskyi/">Владимир-Волынский</a>&nbsp;610</li>
+<li><a href="/resumes-horokhiv/">Горохов</a>&nbsp;65</li>
+<li><a href="/resumes-ivanychi/">Иваничи</a>&nbsp;23</li>
+<li><a href="/resumes-kamin-kashyrskyi/">Камень-Каширский</a>&nbsp;28</li>
+<li><a href="/resumes-kivertsi/">Киверцы</a>&nbsp;120</li>
+<li><a href="/resumes-kovel/">Ковель</a>&nbsp;1228</li>
+</ul>
+</div>
+<div class="col-sm-4 col-md-4">
+<ul class="list-dot-gray text-gray-light margin-top-xs">
+<li><a href="/resumes-lokachi/">Локачи</a>&nbsp;18</li>
+<li><a href="/resumes-lutsk/">Луцк</a>&nbsp;23606</li>
+<li><a href="/resumes-lyubeshiv/">Любешов</a>&nbsp;21</li>
+<li><a href="/resumes-lyuboml/">Любомль</a>&nbsp;75</li>
+<li><a href="/resumes-manevychi/">Маневичи</a>&nbsp;25</li>
+<li><a href="/resumes-novovolynsk/">Нововолынск</a>&nbsp;660</li>
+</ul>
+</div>
+<div class="col-sm-4 col-md-4">
+<ul class="list-dot-gray text-gray-light margin-top-xs">
+<li><a href="/resumes-ratne/">Ратно</a>&nbsp;32</li>
+<li><a href="/resumes-rozhyshche/">Рожище</a>&nbsp;102</li>
+<li><a href="/resumes-stara_vyzhivka/">Старая Выжевка</a>&nbsp;16</li>
+<li><a href="/resumes-turiisk/">Турийск</a>&nbsp;24</li>
+<li><a href="/resumes-shatsk/">Шацк</a>&nbsp;35</li>
+</ul>
+</div>
+</div>
+<hr class="wide">
+<h2 class="cut-top">Днепропетровская обл.</h2>
+<div class="row">
+<div class="col-sm-4 col-md-4">
+<ul class="list-dot-gray text-gray-light">
+<li><a href="/resumes-apostolove/">Апостолово</a>&nbsp;96</li>
+<li><a href="/resumes-vasylkivka/">Васильковка</a>&nbsp;34</li>
+<li><a href="/resumes-verkhnodniprovsk/">Верхнеднепровск</a>&nbsp;178</li>
+<li><a href="/resumes-verhovtsevo/">Верховцево</a>&nbsp;31</li>
+<li><a href="/resumes-vilnohirsk/">Вольногорск</a>&nbsp;141</li>
+<li><a href="/resumes-dnipro/">Днепр (Днепропетровск)</a>&nbsp;196045</li>
+<li><a href="/resumes-zhovti_vody/">Желтые Воды</a>&nbsp;595</li>
+<li><a href="/resumes-zelenodolsk/">Зеленодольск</a>&nbsp;57</li>
+<li><a href="/resumes-kamianske/">Каменское (Днепродзержинск)</a>&nbsp;10586</li>
+<li><a href="/resumes-kryvyi_rih/">Кривой Рог</a>&nbsp;20308</li>
+<li><a href="/resumes-krynychky/">Кринички</a>&nbsp;18</li>
+</ul>
+</div>
+<div class="col-sm-4 col-md-4">
+<ul class="list-dot-gray text-gray-light margin-top-xs">
+<li><a href="/resumes-mahdalynivka/">Магдалиновка</a>&nbsp;17</li>
+<li><a href="/resumes-marhanets/">Марганец</a>&nbsp;361</li>
+<li><a href="/resumes-mezhova/">Межевая</a>&nbsp;14</li>
+<li><a href="/resumes-nikopol/">Никополь</a>&nbsp;3377</li>
+<li><a href="/resumes-novomoskovsk/">Новомосковск</a>&nbsp;2397</li>
+<li><a href="/resumes-pavlohrad/">Павлоград</a>&nbsp;3672</li>
+<li><a href="/resumes-pershotravensk/">Першотравенск</a>&nbsp;149</li>
+<li><a href="/resumes-petrykivka/">Петриковка</a>&nbsp;21</li>
+<li><a href="/resumes-petropavlivka/">Петропавловка</a>&nbsp;29</li>
+<li><a href="/resumes-podgorodnoe/">Подгородное</a>&nbsp;13</li>
+<li><a href="/resumes-pokrov/">Покров (Орджоникидзе)</a>&nbsp;320</li>
+</ul>
+</div>
+<div class="col-sm-4 col-md-4">
+<ul class="list-dot-gray text-gray-light margin-top-xs">
+<li><a href="/resumes-pokrovske/">Покровское</a>&nbsp;38</li>
+<li><a href="/resumes-pyatykhatky/">Пятихатки</a>&nbsp;87</li>
+<li><a href="/resumes-synelnykove/">Синельниково</a>&nbsp;427</li>
+<li><a href="/resumes-solone/">Соленое</a>&nbsp;25</li>
+<li><a href="/resumes-sofiivka/">Софиевка</a>&nbsp;20</li>
+<li><a href="/resumes-ternivka/">Терновка</a>&nbsp;162</li>
+<li><a href="/resumes-tomakivka/">Томаковка</a>&nbsp;19</li>
+<li><a href="/resumes-tsarychanka/">Царичанка</a>&nbsp;31</li>
+<li><a href="/resumes-shyroke/">Широкое</a>&nbsp;15</li>
+<li><a href="/resumes-yurivka/">Юрьевка</a>&nbsp;6</li>
+</ul>
+</div>
+</div>
+<hr class="wide">
+<h2 class="cut-top">Донецкая обл.</h2>
+<div class="row">
+<div class="col-sm-4 col-md-4">
+<ul class="list-dot-gray text-gray-light">
+<li><a href="/resumes-avdiivka/">Авдеевка</a>&nbsp;168</li>
+<li><a href="/resumes-oleksandrivka_dn/">Александровка (Донецкая обл.)</a>&nbsp;16</li>
+<li><a href="/resumes-amvrosiivka/">Амвросиевка</a>&nbsp;45</li>
+<li><a href="/resumes-bakhmut/">Бахмут (Артемовск)</a>&nbsp;1263</li>
+<li><a href="/resumes-belozerskoe/">Белозёрское</a>&nbsp;9</li>
+<li><a href="/resumes-boikivske/">Бойковское (Тельманово)</a>&nbsp;7</li>
+<li><a href="/resumes-velyka_novosilka/">Великая Новоселка</a>&nbsp;26</li>
+<li><a href="/resumes-volnovakha/">Волноваха</a>&nbsp;321</li>
+<li><a href="/resumes-horlivka/">Горловка</a>&nbsp;1843</li>
+<li><a href="/resumes-debaltseve/">Дебальцево</a>&nbsp;46</li>
+<li><a href="/resumes-dobropillya/">Доброполье</a>&nbsp;360</li>
+<li><a href="/resumes-dokuchajevsk/">Докучаевск</a>&nbsp;89</li>
+<li><a href="/resumes-donetsk/">Донецк</a>&nbsp;85686</li>
+<li><a href="/resumes-druzhkivka/">Дружковка</a>&nbsp;1006</li>
+<li><a href="/resumes-yenakijeve/">Енакиево</a>&nbsp;661</li>
+<li><a href="/resumes-zhdanovka/">Ждановка</a>&nbsp;14</li>
+</ul>
+</div>
+<div class="col-sm-4 col-md-4">
+<ul class="list-dot-gray text-gray-light margin-top-xs">
+<li><a href="/resumes-zuhres/">Зугрэс</a>&nbsp;108</li>
+<li><a href="/resumes-kostyantynivka/">Константиновка</a>&nbsp;1129</li>
+<li><a href="/resumes-kramatorsk/">Краматорск</a>&nbsp;5540</li>
+<li><a href="/resumes-kurahovo/">Курахово</a>&nbsp;190</li>
+<li><a href="/resumes-lyman/">Лиман (Красный Лиман)</a>&nbsp;194</li>
+<li><a href="/resumes-makiivka/">Макеевка</a>&nbsp;6073</li>
+<li><a href="/resumes-manhush/">Мангуш</a>&nbsp;12</li>
+<li><a href="/resumes-mariupol/">Мариуполь</a>&nbsp;10193</li>
+<li><a href="/resumes-marinka/">Марьинка</a>&nbsp;42</li>
+<li><a href="/resumes-myrnohrad/">Мирноград (Димитров)</a>&nbsp;395</li>
+<li><a href="/resumes-mykolaivka_dn/">Николаевка (Донецкая обл.)</a>&nbsp;17</li>
+<li><a href="/resumes-nikolske/">Никольское (Володарское)</a>&nbsp;11</li>
+<li><a href="/resumes-novoazovsk/">Новоазовск</a>&nbsp;19</li>
+<li><a href="/resumes-novohrodivka/">Новогродовка</a>&nbsp;45</li>
+<li><a href="/resumes-pokrovsk/">Покровск (Красноармейск)</a>&nbsp;1615</li>
+<li><a href="/resumes-rodynske/">Родинское</a>&nbsp;35</li>
+</ul>
+</div>
+<div class="col-sm-4 col-md-4">
+<ul class="list-dot-gray text-gray-light margin-top-xs">
+<li><a href="/resumes-svetlodarsk/">Светлодарск</a>&nbsp;11</li>
+<li><a href="/resumes-svyatogorsk/">Святогорск</a>&nbsp;90</li>
+<li><a href="/resumes-seversk/">Северск</a>&nbsp;7</li>
+<li><a href="/resumes-selydove/">Селидово</a>&nbsp;256</li>
+<li><a href="/resumes-slovyansk/">Славянск</a>&nbsp;2173</li>
+<li><a href="/resumes-snizhne/">Снежное</a>&nbsp;106</li>
+<li><a href="/resumes-soledar/">Соледар</a>&nbsp;29</li>
+<li><a href="/resumes-starobesheve/">Старобешево</a>&nbsp;30</li>
+<li><a href="/resumes-toretsk/">Торецк (Дзержинск)</a>&nbsp;177</li>
+<li><a href="/resumes-vuhledar/">Угледар</a>&nbsp;84</li>
+<li><a href="/resumes-khartsyzk/">Харцызск</a>&nbsp;865</li>
+<li><a href="/resumes-khrestivka/">Хрестовка (Кировское)</a>&nbsp;49</li>
+<li><a href="/resumes-chystiakove/">Чистяково (Торез)</a>&nbsp;171</li>
+<li><a href="/resumes-shakhtarsk/">Шахтерск</a>&nbsp;246</li>
+<li><a href="/resumes-yasynuvata/">Ясиноватая</a>&nbsp;288</li>
+</ul>
+</div>
+</div>
+<hr class="wide">
+<h2 class="cut-top">Житомирская обл.</h2>
+<div class="row">
+<div class="col-sm-4 col-md-4">
+<ul class="list-dot-gray text-gray-light">
+<li><a href="/resumes-andrushivka/">Андрушевка</a>&nbsp;24</li>
+<li><a href="/resumes-baranivka/">Барановка</a>&nbsp;30</li>
+<li><a href="/resumes-berdychiv/">Бердичев</a>&nbsp;1855</li>
+<li><a href="/resumes-brusyliv/">Брусилов</a>&nbsp;17</li>
+<li><a href="/resumes-yemilchyne/">Емильчино</a>&nbsp;20</li>
+<li><a href="/resumes-zhytomyr/">Житомир</a>&nbsp;27429</li>
+<li><a href="/resumes-korosten/">Коростень</a>&nbsp;1418</li>
+<li><a href="/resumes-korostyshiv/">Коростышев</a>&nbsp;209</li>
+</ul>
+</div>
+<div class="col-sm-4 col-md-4">
+<ul class="list-dot-gray text-gray-light margin-top-xs">
+<li><a href="/resumes-lisove/">Лесовое (Дзержинск)</a>&nbsp;5</li>
+<li><a href="/resumes-luhyny/">Лугины</a>&nbsp;10</li>
+<li><a href="/resumes-lyubar/">Любар</a>&nbsp;31</li>
+<li><a href="/resumes-malyn/">Малин</a>&nbsp;282</li>
+<li><a href="/resumes-narodychi/">Народичи</a>&nbsp;4</li>
+<li><a href="/resumes-novohrad-volynskyi/">Новоград-Волынский</a>&nbsp;910</li>
+<li><a href="/resumes-ovruch/">Овруч</a>&nbsp;135</li>
+<li><a href="/resumes-olevsk/">Олевск</a>&nbsp;29</li>
+</ul>
+</div>
+<div class="col-sm-4 col-md-4">
+<ul class="list-dot-gray text-gray-light margin-top-xs">
+<li><a href="/resumes-popilnya/">Попельня</a>&nbsp;36</li>
+<li><a href="/resumes-pulyny/">Пулины (Червоноармейск)</a>&nbsp;8</li>
+<li><a href="/resumes-radomyshl/">Радомышль</a>&nbsp;50</li>
+<li><a href="/resumes-romaniv/">Романов</a>&nbsp;10</li>
+<li><a href="/resumes-ruzhyn/">Ружин</a>&nbsp;21</li>
+<li><a href="/resumes-khoroshiv/">Хорошев (Володарск-Волынский)</a>&nbsp;35</li>
+<li><a href="/resumes-chernyakhiv/">Черняхов</a>&nbsp;47</li>
+<li><a href="/resumes-chudniv/">Чуднов</a>&nbsp;37</li>
+</ul>
+</div>
+</div>
+<hr class="wide">
+<h2 class="cut-top">Закарпатская обл.</h2>
+<div class="row">
+<div class="col-sm-4 col-md-4">
+<ul class="list-dot-gray text-gray-light">
+<li><a href="/resumes-berehove/">Берегово</a>&nbsp;212</li>
+<li><a href="/resumes-velykyi_bereznyi/">Великий Березный</a>&nbsp;12</li>
+<li><a href="/resumes-vynohradiv/">Виноградов</a>&nbsp;574</li>
+<li><a href="/resumes-volovets/">Воловец</a>&nbsp;27</li>
+<li><a href="/resumes-irshava/">Иршава</a>&nbsp;200</li>
+</ul>
+</div>
+<div class="col-sm-4 col-md-4">
+<ul class="list-dot-gray text-gray-light margin-top-xs">
+<li><a href="/resumes-mizhhirya/">Межгорье</a>&nbsp;75</li>
+<li><a href="/resumes-mukacheve/">Мукачево</a>&nbsp;3363</li>
+<li><a href="/resumes-perechyn/">Перечин</a>&nbsp;63</li>
+<li><a href="/resumes-rakhiv/">Рахов</a>&nbsp;114</li>
+<li><a href="/resumes-svalyava/">Свалява</a>&nbsp;247</li>
+</ul>
+</div>
+<div class="col-sm-4 col-md-4">
+<ul class="list-dot-gray text-gray-light margin-top-xs">
+<li><a href="/resumes-tyachiv/">Тячев</a>&nbsp;295</li>
+<li><a href="/resumes-uzhhorod/">Ужгород</a>&nbsp;10384</li>
+<li><a href="/resumes-khust/">Хуст</a>&nbsp;791</li>
+<li><a href="/resumes-chop/">Чоп</a>&nbsp;68</li>
+</ul>
+</div>
+</div>
+<hr class="wide">
+<h2 class="cut-top">Запорожская обл.</h2>
+<div class="row">
+<div class="col-sm-4 col-md-4">
+<ul class="list-dot-gray text-gray-light">
+<li><a href="/resumes-yakymivka/">Акимовка</a>&nbsp;38</li>
+<li><a href="/resumes-berdyansk/">Бердянск</a>&nbsp;2885</li>
+<li><a href="/resumes-bilmak/">Бильмак (Куйбышево)</a>&nbsp;15</li>
+<li><a href="/resumes-velyka_bilozerka/">Большая Белозерка</a>&nbsp;1</li>
+<li><a href="/resumes-vasylivka/">Васильевка</a>&nbsp;134</li>
+<li><a href="/resumes-vesele/">Веселое</a>&nbsp;14</li>
+<li><a href="/resumes-vilnyansk/">Вольнянск</a>&nbsp;122</li>
+<li><a href="/resumes-hulyaipole/">Гуляйполе</a>&nbsp;59</li>
+</ul>
+</div>
+<div class="col-sm-4 col-md-4">
+<ul class="list-dot-gray text-gray-light margin-top-xs">
+<li><a href="/resumes-dneprorudnoe/">Днепрорудное</a>&nbsp;140</li>
+<li><a href="/resumes-zaporizhzhya/">Запорожье</a>&nbsp;70824</li>
+<li><a href="/resumes-kamyanka-dniprovska/">Каменка-Днепровская</a>&nbsp;77</li>
+<li><a href="/resumes-melitopol/">Мелитополь</a>&nbsp;5243</li>
+<li><a href="/resumes-mykhailivka/">Михайловка</a>&nbsp;30</li>
+<li><a href="/resumes-novomykolaivka/">Новониколаевка</a>&nbsp;21</li>
+<li><a href="/resumes-orikhiv/">Орехов</a>&nbsp;106</li>
+<li><a href="/resumes-polohy/">Пологи</a>&nbsp;167</li>
+</ul>
+</div>
+<div class="col-sm-4 col-md-4">
+<ul class="list-dot-gray text-gray-light margin-top-xs">
+<li><a href="/resumes-pryazovske/">Приазовское</a>&nbsp;32</li>
+<li><a href="/resumes-prymorsk/">Приморск</a>&nbsp;86</li>
+<li><a href="/resumes-rozivka/">Розовка</a>&nbsp;3</li>
+<li><a href="/resumes-tokmak/">Токмак</a>&nbsp;245</li>
+<li><a href="/resumes-chernihivka/">Черниговка</a>&nbsp;8</li>
+<li><a href="/resumes-enerhodar/">Энергодар</a>&nbsp;1052</li>
+</ul>
+</div>
+</div>
+<hr class="wide">
+<h2 class="cut-top">Ивано-Франковская обл.</h2>
+<div class="row">
+<div class="col-sm-4 col-md-4">
+<ul class="list-dot-gray text-gray-light">
+<li><a href="/resumes-bohorodchany/">Богородчаны</a>&nbsp;110</li>
+<li><a href="/resumes-bolekhiv/">Болехов</a>&nbsp;61</li>
+<li><a href="/resumes-burshtyn/">Бурштын</a>&nbsp;63</li>
+<li><a href="/resumes-verkhovyna/">Верховина</a>&nbsp;21</li>
+<li><a href="/resumes-halych/">Галич</a>&nbsp;68</li>
+<li><a href="/resumes-horodenka/">Городенка</a>&nbsp;58</li>
+</ul>
+</div>
+<div class="col-sm-4 col-md-4">
+<ul class="list-dot-gray text-gray-light margin-top-xs">
+<li><a href="/resumes-dolyna/">Долина</a>&nbsp;419</li>
+<li><a href="/resumes-ivano-frankivsk/">Ивано-Франковск</a>&nbsp;26331</li>
+<li><a href="/resumes-kalush/">Калуш</a>&nbsp;1491</li>
+<li><a href="/resumes-kolomyya/">Коломыя</a>&nbsp;1589</li>
+<li><a href="/resumes-kosiv/">Косов</a>&nbsp;139</li>
+<li><a href="/resumes-nadvirna/">Надворная</a>&nbsp;365</li>
+</ul>
+</div>
+<div class="col-sm-4 col-md-4">
+<ul class="list-dot-gray text-gray-light margin-top-xs">
+<li><a href="/resumes-rohatyn/">Рогатин</a>&nbsp;66</li>
+<li><a href="/resumes-rozhnyativ/">Рожнятов</a>&nbsp;60</li>
+<li><a href="/resumes-snyatyn/">Снятын</a>&nbsp;154</li>
+<li><a href="/resumes-tlumach/">Тлумач</a>&nbsp;33</li>
+<li><a href="/resumes-tysmenytsya/">Тысменица</a>&nbsp;49</li>
+<li><a href="/resumes-yaremche/">Яремче</a>&nbsp;628</li>
+</ul>
+</div>
+</div>
+<hr class="wide">
+<h2 class="cut-top">Киевская обл.</h2>
+<div class="row">
+<div class="col-sm-4 col-md-4">
+<ul class="list-dot-gray text-gray-light">
+<li><a href="/resumes-baryshivka/">Барышевка</a>&nbsp;249</li>
+<li><a href="/resumes-bila_tserkva/">Белая Церковь</a>&nbsp;8807</li>
+<li><a href="/resumes-berezan/">Березань</a>&nbsp;247</li>
+<li><a href="/resumes-bohuslav/">Богуслав</a>&nbsp;160</li>
+<li><a href="/resumes-boryspil/">Борисполь</a>&nbsp;5022</li>
+<li><a href="/resumes-borodyanka/">Бородянка</a>&nbsp;362</li>
+<li><a href="/resumes-boyarka/">Боярка</a>&nbsp;1413</li>
+<li><a href="/resumes-brovary/">Бровары</a>&nbsp;7566</li>
+<li><a href="/resumes-bucha/">Буча</a>&nbsp;2935</li>
+<li><a href="/resumes-vasylkiv/">Васильков</a>&nbsp;1772</li>
+<li><a href="/resumes-vyshneve/">Вишневое</a>&nbsp;2418</li>
+<li><a href="/resumes-volodarka/">Володарка</a>&nbsp;32</li>
+</ul>
+</div>
+<div class="col-sm-4 col-md-4">
+<ul class="list-dot-gray text-gray-light margin-top-xs">
+<li><a href="/resumes-vorzel/">Ворзель</a>&nbsp;304</li>
+<li><a href="/resumes-vyshhorod/">Вышгород</a>&nbsp;1184</li>
+<li><a href="/resumes-zhurivka/">Згуровка</a>&nbsp;44</li>
+<li><a href="/resumes-ivankiv/">Иванков</a>&nbsp;62</li>
+<li><a href="/resumes-irpin/">Ирпень</a>&nbsp;4474</li>
+<li><a href="/resumes-kaharlyk/">Кагарлык</a>&nbsp;153</li>
+<li><a href="/resumes-kyiv/">Киев</a>&nbsp;777564</li>
+<li><a href="/resumes-makariv/">Макаров</a>&nbsp;192</li>
+<li><a href="/resumes-myronivka/">Мироновка</a>&nbsp;226</li>
+<li><a href="/resumes-obukhiv/">Обухов</a>&nbsp;1769</li>
+<li><a href="/resumes-pereyaslav-khmelnytskyi/">Переяслав-Хмельницкий</a>&nbsp;631</li>
+<li><a href="/resumes-rokytne_kv/">Ракитное</a>&nbsp;58</li>
+</ul>
+</div>
+<div class="col-sm-4 col-md-4">
+<ul class="list-dot-gray text-gray-light margin-top-xs">
+<li><a href="/resumes-rzhyshev/">Ржищев</a>&nbsp;19</li>
+<li><a href="/resumes-svyatopetrovskoe/">Святопетровское</a>&nbsp;27</li>
+<li><a href="/resumes-skvyra/">Сквира</a>&nbsp;63</li>
+<li><a href="/resumes-slavutych/">Славутич</a>&nbsp;281</li>
+<li><a href="/resumes-stavyshche/">Ставище</a>&nbsp;34</li>
+<li><a href="/resumes-tarashcha/">Тараща</a>&nbsp;62</li>
+<li><a href="/resumes-tetiiv/">Тетиев</a>&nbsp;55</li>
+<li><a href="/resumes-uzin/">Узин</a>&nbsp;47</li>
+<li><a href="/resumes-ukrainka/">Украинка</a>&nbsp;527</li>
+<li><a href="/resumes-fastiv/">Фастов</a>&nbsp;1216</li>
+<li><a href="/resumes-yahotyn/">Яготин</a>&nbsp;266</li>
+</ul>
+</div>
+</div>
+<hr class="wide">
+<h2 class="cut-top">Кировоградская обл.</h2>
+<div class="row">
+<div class="col-sm-4 col-md-4">
+<ul class="list-dot-gray text-gray-light">
+<li><a href="/resumes-oleksandriya/">Александрия</a>&nbsp;1142</li>
+<li><a href="/resumes-oleksandrivka_kr/">Александровка (Кировоградская обл.)</a>&nbsp;31</li>
+<li><a href="/resumes-blahovishchenske/">Благовещенское (Ульяновка)</a>&nbsp;22</li>
+<li><a href="/resumes-bobrynets/">Бобринец</a>&nbsp;31</li>
+<li><a href="/resumes-haivoron/">Гайворон</a>&nbsp;50</li>
+<li><a href="/resumes-holovanivsk/">Голованевск</a>&nbsp;29</li>
+<li><a href="/resumes-dobrovelychkivka/">Добровеличковка</a>&nbsp;19</li>
+</ul>
+</div>
+<div class="col-sm-4 col-md-4">
+<ul class="list-dot-gray text-gray-light margin-top-xs">
+<li><a href="/resumes-dolynska/">Долинская</a>&nbsp;60</li>
+<li><a href="/resumes-znamyanka/">Знаменка</a>&nbsp;283</li>
+<li><a href="/resumes-kompaniivka/">Компанеевка</a>&nbsp;5</li>
+<li><a href="/resumes-kropyvnytskyi/">Кропивницкий (Кировоград)</a>&nbsp;17326</li>
+<li><a href="/resumes-mala_vyska/">Малая Виска</a>&nbsp;19</li>
+<li><a href="/resumes-novhorodka/">Новгородка</a>&nbsp;6</li>
+<li><a href="/resumes-novoarkhanhelsk/">Новоархангельск</a>&nbsp;25</li>
+</ul>
+</div>
+<div class="col-sm-4 col-md-4">
+<ul class="list-dot-gray text-gray-light margin-top-xs">
+<li><a href="/resumes-novomyrhorod/">Новомиргород</a>&nbsp;24</li>
+<li><a href="/resumes-novoukrainka/">Новоукраинка</a>&nbsp;46</li>
+<li><a href="/resumes-vilshanka/">Ольшанка</a>&nbsp;5</li>
+<li><a href="/resumes-onufriivka/">Онуфриевка</a>&nbsp;7</li>
+<li><a href="/resumes-petrove/">Петрово</a>&nbsp;8</li>
+<li><a href="/resumes-svitlovodsk/">Светловодск</a>&nbsp;481</li>
+<li><a href="/resumes-ustynivka/">Устиновка</a>&nbsp;3</li>
+</ul>
+</div>
+</div>
+<hr class="wide">
+<h2 class="cut-top">Крым</h2>
+<div class="row">
+<div class="col-sm-4 col-md-4">
+<ul class="list-dot-gray text-gray-light">
+<li><a href="/resumes-alushta/">Алушта</a>&nbsp;1580</li>
+<li><a href="/resumes-armyansk/">Армянск</a>&nbsp;66</li>
+<li><a href="/resumes-bakhchysarai/">Бахчисарай</a>&nbsp;337</li>
+<li><a href="/resumes-bilohirsk/">Белогорск</a>&nbsp;56</li>
+<li><a href="/resumes-dzhankoi/">Джанкой</a>&nbsp;402</li>
+<li><a href="/resumes-yevpatoriya/">Евпатория</a>&nbsp;2112</li>
+<li><a href="/resumes-yedy-kuiu/">Еды-Кую (Ленино)</a>&nbsp;30</li>
+<li><a href="/resumes-isliam-terek/">Ислам-Терек (Кировское)</a>&nbsp;29</li>
+</ul>
+</div>
+<div class="col-sm-4 col-md-4">
+<ul class="list-dot-gray text-gray-light margin-top-xs">
+<li><a href="/resumes-ichki/">Ички (Советский)</a>&nbsp;33</li>
+<li><a href="/resumes-kerch/">Керчь</a>&nbsp;1341</li>
+<li><a href="/resumes-kurman/">Курман (Красногвардейское)</a>&nbsp;149</li>
+<li><a href="/resumes-nyzhnohirskyi/">Нижнегорский</a>&nbsp;30</li>
+<li><a href="/resumes-pervomaiske/">Первомайское</a>&nbsp;20</li>
+<li><a href="/resumes-rozdolne/">Раздольное</a>&nbsp;22</li>
+<li><a href="/resumes-saky/">Саки</a>&nbsp;417</li>
+<li><a href="/resumes-sevastopol/">Севастополь</a>&nbsp;9599</li>
+</ul>
+</div>
+<div class="col-sm-4 col-md-4">
+<ul class="list-dot-gray text-gray-light margin-top-xs">
+<li><a href="/resumes-simferopol/">Симферополь</a>&nbsp;20416</li>
+<li><a href="/resumes-sudak/">Судак</a>&nbsp;445</li>
+<li><a href="/resumes-feodosiya/">Феодосия</a>&nbsp;1412</li>
+<li><a href="/resumes-chornomorske/">Черноморское</a>&nbsp;108</li>
+<li><a href="/resumes-shcholkine/">Щелкино</a>&nbsp;46</li>
+<li><a href="/resumes-yalta/">Ялта</a>&nbsp;5208</li>
+<li><a href="/resumes-yany-kapu/">Яны Капу (Красноперекопск)</a>&nbsp;123</li>
+</ul>
+</div>
+</div>
+<hr class="wide">
+<h2 class="cut-top">Луганская обл.</h2>
+<div class="row">
+<div class="col-sm-4 col-md-4">
+<ul class="list-dot-gray text-gray-light">
+<li><a href="/resumes-alchevsk/">Алчевск</a>&nbsp;982</li>
+<li><a href="/resumes-antratsyt/">Антрацит</a>&nbsp;114</li>
+<li><a href="/resumes-bilovodsk/">Беловодск</a>&nbsp;36</li>
+<li><a href="/resumes-bilokurakyne/">Белокуракино</a>&nbsp;16</li>
+<li><a href="/resumes-bryanka/">Брянка</a>&nbsp;91</li>
+<li><a href="/resumes-holubivka/">Голубовка (Кировск)</a>&nbsp;29</li>
+<li><a href="/resumes-dovzhansk/">Довжанск (Свердловск)</a>&nbsp;177</li>
+<li><a href="/resumes-kadiivka/">Кадиевка (Стаханов)</a>&nbsp;313</li>
+<li><a href="/resumes-kreminna/">Кременная</a>&nbsp;74</li>
+<li><a href="/resumes-lysychansk/">Лисичанск</a>&nbsp;941</li>
+</ul>
+</div>
+<div class="col-sm-4 col-md-4">
+<ul class="list-dot-gray text-gray-light margin-top-xs">
+<li><a href="/resumes-luhansk/">Луганск</a>&nbsp;17360</li>
+<li><a href="/resumes-lutuhyne/">Лутугино</a>&nbsp;46</li>
+<li><a href="/resumes-markivka/">Марковка</a>&nbsp;27</li>
+<li><a href="/resumes-novoaidar/">Новоайдар</a>&nbsp;15</li>
+<li><a href="/resumes-novopskov/">Новопсков</a>&nbsp;39</li>
+<li><a href="/resumes-pervomaisk_lg/">Первомайск (Луганская обл.)</a>&nbsp;71</li>
+<li><a href="/resumes-perevalsk/">Перевальск</a>&nbsp;73</li>
+<li><a href="/resumes-popasna/">Попасная</a>&nbsp;33</li>
+<li><a href="/resumes-rovenky/">Ровеньки</a>&nbsp;108</li>
+<li><a href="/resumes-rubizhne/">Рубежное</a>&nbsp;588</li>
+</ul>
+</div>
+<div class="col-sm-4 col-md-4">
+<ul class="list-dot-gray text-gray-light margin-top-xs">
+<li><a href="/resumes-svatove/">Сватово</a>&nbsp;66</li>
+<li><a href="/resumes-sjevjerodonetsk/">Северодонецк</a>&nbsp;2333</li>
+<li><a href="/resumes-slovyanoserbsk/">Славяносербск</a>&nbsp;8</li>
+<li><a href="/resumes-sorokyne/">Сорокино (Краснодон)</a>&nbsp;224</li>
+<li><a href="/resumes-stanytsya_luhanska/">Станица Луганская</a>&nbsp;21</li>
+<li><a href="/resumes-starobilsk/">Старобельск</a>&nbsp;240</li>
+<li><a href="/resumes-schastye/">Счастье</a>&nbsp;23</li>
+<li><a href="/resumes-troitske/">Троицкое</a>&nbsp;9</li>
+<li><a href="/resumes-khrustalnyi/">Хрустальный (Красный Луч)</a>&nbsp;229</li>
+</ul>
+</div>
+</div>
+<hr class="wide">
+<h2 class="cut-top">Львовская обл.</h2>
+<div class="row">
+<div class="col-sm-4 col-md-4">
+<ul class="list-dot-gray text-gray-light">
+<li><a href="/resumes-boryslav/">Борислав</a>&nbsp;456</li>
+<li><a href="/resumes-brody/">Броды</a>&nbsp;245</li>
+<li><a href="/resumes-busk/">Буск</a>&nbsp;122</li>
+<li><a href="/resumes-vynnyky/">Винники</a>&nbsp;44</li>
+<li><a href="/resumes-horodok_lv/">Городок (Львовская обл.)</a>&nbsp;286</li>
+<li><a href="/resumes-drohobych/">Дрогобыч</a>&nbsp;2876</li>
+<li><a href="/resumes-zhydachiv/">Жидачов</a>&nbsp;155</li>
+<li><a href="/resumes-zhovkva/">Жолква</a>&nbsp;185</li>
+<li><a href="/resumes-zolochiv_lv/">Золочев (Львовская обл.)</a>&nbsp;155</li>
+<li><a href="/resumes-kamyanka-buzka/">Каменка-Бугская</a>&nbsp;110</li>
+<li><a href="/resumes-komarno/">Комарно</a>&nbsp;4</li>
+</ul>
+</div>
+<div class="col-sm-4 col-md-4">
+<ul class="list-dot-gray text-gray-light margin-top-xs">
+<li><a href="/resumes-lviv/">Львов</a>&nbsp;121766</li>
+<li><a href="/resumes-morshyn/">Моршин</a>&nbsp;146</li>
+<li><a href="/resumes-mostyska/">Мостиска</a>&nbsp;93</li>
+<li><a href="/resumes-mykolaiv_lv/">Николаев (Львовская обл.)</a>&nbsp;308</li>
+<li><a href="/resumes-novoyavorovsk/">Новояворовск</a>&nbsp;243</li>
+<li><a href="/resumes-novyi rozdil/">Новый Роздол</a>&nbsp;68</li>
+<li><a href="/resumes-peremyshlyany/">Перемышляны</a>&nbsp;22</li>
+<li><a href="/resumes-pustomyty/">Пустомыты</a>&nbsp;71</li>
+<li><a href="/resumes-rava-ruska/">Рава-Русская</a>&nbsp;33</li>
+<li><a href="/resumes-radekhiv/">Радехов</a>&nbsp;80</li>
+<li><a href="/resumes-sambir/">Самбор</a>&nbsp;870</li>
+</ul>
+</div>
+<div class="col-sm-4 col-md-4">
+<ul class="list-dot-gray text-gray-light margin-top-xs">
+<li><a href="/resumes-skole/">Сколе</a>&nbsp;83</li>
+<li><a href="/resumes-sokal/">Сокаль</a>&nbsp;250</li>
+<li><a href="/resumes-staryi_sambir/">Старый Самбор</a>&nbsp;74</li>
+<li><a href="/resumes-stebnyk/">Стебник</a>&nbsp;52</li>
+<li><a href="/resumes-stryi/">Стрый</a>&nbsp;2480</li>
+<li><a href="/resumes-truskavets/">Трускавец</a>&nbsp;1956</li>
+<li><a href="/resumes-turka/">Турка</a>&nbsp;26</li>
+<li><a href="/resumes-chervonohrad/">Червоноград</a>&nbsp;1289</li>
+<li><a href="/resumes-yavoriv/">Яворов</a>&nbsp;144</li>
+</ul>
+</div>
+</div>
+<hr class="wide">
+<h2 class="cut-top">Николаевская обл.</h2>
+<div class="row">
+<div class="col-sm-4 col-md-4">
+<ul class="list-dot-gray text-gray-light">
+<li><a href="/resumes-arbuzynka/">Арбузинка</a>&nbsp;7</li>
+<li><a href="/resumes-bashtanka/">Баштанка</a>&nbsp;51</li>
+<li><a href="/resumes-berezanka/">Березанка</a>&nbsp;12</li>
+<li><a href="/resumes-bereznehuvate/">Березнеговатое</a>&nbsp;9</li>
+<li><a href="/resumes-bratske/">Братское</a>&nbsp;8</li>
+<li><a href="/resumes-veselynove/">Веселиново</a>&nbsp;12</li>
+<li><a href="/resumes-voznesensk/">Вознесенск</a>&nbsp;496</li>
+</ul>
+</div>
+<div class="col-sm-4 col-md-4">
+<ul class="list-dot-gray text-gray-light margin-top-xs">
+<li><a href="/resumes-vradiivka/">Врадиевка</a>&nbsp;10</li>
+<li><a href="/resumes-domanivka/">Доманевка</a>&nbsp;4</li>
+<li><a href="/resumes-yelanets/">Еланец</a>&nbsp;8</li>
+<li><a href="/resumes-kazanka/">Казанка</a>&nbsp;7</li>
+<li><a href="/resumes-kryve_ozero/">Кривое Озеро</a>&nbsp;14</li>
+<li><a href="/resumes-mykolaiv_nk/">Николаев (Николаевская обл.)</a>&nbsp;40598</li>
+<li><a href="/resumes-nova_odesa/">Новая Одесса</a>&nbsp;54</li>
+</ul>
+</div>
+<div class="col-sm-4 col-md-4">
+<ul class="list-dot-gray text-gray-light margin-top-xs">
+<li><a href="/resumes-novyi_buh/">Новый Буг</a>&nbsp;61</li>
+<li><a href="/resumes-ochakiv/">Очаков</a>&nbsp;105</li>
+<li><a href="/resumes-pervomaisk_nk/">Первомайск (Николаевская обл.)</a>&nbsp;930</li>
+<li><a href="/resumes-snihurivka/">Снигиревка</a>&nbsp;41</li>
+<li><a href="/resumes-yuzhnoukrainsk/">Южноукраинск</a>&nbsp;630</li>
+</ul>
+</div>
+</div>
+<hr class="wide">
+<h2 class="cut-top">Одесская обл.</h2>
+<div class="row">
+<div class="col-sm-4 col-md-4">
+<ul class="list-dot-gray text-gray-light">
+<li><a href="/resumes-ananiv/">Ананьев</a>&nbsp;25</li>
+<li><a href="/resumes-artsyz/">Арциз</a>&nbsp;112</li>
+<li><a href="/resumes-balta/">Балта</a>&nbsp;79</li>
+<li><a href="/resumes-bilhorod-dnistrovskyi/">Белгород-Днестровский</a>&nbsp;1215</li>
+<li><a href="/resumes-bilyaivka/">Беляевка</a>&nbsp;79</li>
+<li><a href="/resumes-berezivka/">Березовка</a>&nbsp;32</li>
+<li><a href="/resumes-bolhrad/">Болград</a>&nbsp;63</li>
+<li><a href="/resumes-velyka_mykhailivka/">Великая Михайловка</a>&nbsp;9</li>
+<li><a href="/resumes-vilkovo/">Вилково</a>&nbsp;10</li>
+<li><a href="/resumes-zakharivka/">Захарьевка (Фрунзовка)</a>&nbsp;6</li>
+</ul>
+</div>
+<div class="col-sm-4 col-md-4">
+<ul class="list-dot-gray text-gray-light margin-top-xs">
+<li><a href="/resumes-ivanivka_od/">Ивановка (Одесская обл.)</a>&nbsp;5</li>
+<li><a href="/resumes-izmail/">Измаил</a>&nbsp;1572</li>
+<li><a href="/resumes-kiliya/">Килия</a>&nbsp;60</li>
+<li><a href="/resumes-kodyma/">Кодыма</a>&nbsp;20</li>
+<li><a href="/resumes-kominternivske/">Коминтерновское</a>&nbsp;12</li>
+<li><a href="/resumes-liubashivka/">Любашевка</a>&nbsp;23</li>
+<li><a href="/resumes-mykolaivka_od/">Николаевка (Одесская обл.)</a>&nbsp;12</li>
+<li><a href="/resumes-ovidiopol/">Овидиополь</a>&nbsp;149</li>
+<li><a href="/resumes-odesa/">Одесса</a>&nbsp;162675</li>
+<li><a href="/resumes-okny/">Окны (Красные Окны)</a>&nbsp;8</li>
+</ul>
+</div>
+<div class="col-sm-4 col-md-4">
+<ul class="list-dot-gray text-gray-light margin-top-xs">
+<li><a href="/resumes-podilsk/">Подольск (Котовск)</a>&nbsp;552</li>
+<li><a href="/resumes-rozdilna/">Раздельная</a>&nbsp;102</li>
+<li><a href="/resumes-reni/">Рени</a>&nbsp;63</li>
+<li><a href="/resumes-savran/">Саврань</a>&nbsp;8</li>
+<li><a href="/resumes-sarata/">Сарата</a>&nbsp;22</li>
+<li><a href="/resumes-tarutyne/">Тарутино</a>&nbsp;20</li>
+<li><a href="/resumes-tatarbunary/">Татарбунары</a>&nbsp;42</li>
+<li><a href="/resumes-teplodar/">Теплодар</a>&nbsp;26</li>
+<li><a href="/resumes-chornomorsk/">Черноморск (Ильичевск)</a>&nbsp;2706</li>
+<li><a href="/resumes-yuzhne/">Южный</a>&nbsp;746</li>
+</ul>
+</div>
+</div>
+<hr class="wide">
+<h2 class="cut-top">Полтавская обл.</h2>
+<div class="row">
+<div class="col-sm-4 col-md-4">
+<ul class="list-dot-gray text-gray-light">
+<li><a href="/resumes-velyka_bahachka/">Великая Багачка</a>&nbsp;19</li>
+<li><a href="/resumes-hadyach/">Гадяч</a>&nbsp;169</li>
+<li><a href="/resumes-hlobyne/">Глобино</a>&nbsp;130</li>
+<li><a href="/resumes-horishni-plavni/">Горишние Плавни (Комсомольск)</a>&nbsp;762</li>
+<li><a href="/resumes-hrebinka/">Гребенка</a>&nbsp;54</li>
+<li><a href="/resumes-dykanka/">Диканька</a>&nbsp;39</li>
+<li><a href="/resumes-zinkiv/">Зеньков</a>&nbsp;45</li>
+<li><a href="/resumes-karlivka/">Карловка</a>&nbsp;93</li>
+<li><a href="/resumes-kobelyaky/">Кобеляки</a>&nbsp;60</li>
+</ul>
+</div>
+<div class="col-sm-4 col-md-4">
+<ul class="list-dot-gray text-gray-light margin-top-xs">
+<li><a href="/resumes-kozelshchyna/">Козельщина</a>&nbsp;9</li>
+<li><a href="/resumes-kotelva/">Котельва</a>&nbsp;55</li>
+<li><a href="/resumes-kremenchuk/">Кременчуг</a>&nbsp;10558</li>
+<li><a href="/resumes-lokhvytsya/">Лохвица</a>&nbsp;108</li>
+<li><a href="/resumes-lubny/">Лубны</a>&nbsp;1084</li>
+<li><a href="/resumes-mashivka/">Машевка</a>&nbsp;10</li>
+<li><a href="/resumes-myrhorod/">Миргород</a>&nbsp;857</li>
+<li><a href="/resumes-novi_sanzhary/">Новые Санжары</a>&nbsp;32</li>
+<li><a href="/resumes-orzhytsya/">Оржица</a>&nbsp;15</li>
+</ul>
+</div>
+<div class="col-sm-4 col-md-4">
+<ul class="list-dot-gray text-gray-light margin-top-xs">
+<li><a href="/resumes-pyryatyn/">Пирятин</a>&nbsp;148</li>
+<li><a href="/resumes-poltava/">Полтава</a>&nbsp;33233</li>
+<li><a href="/resumes-reshetylivka/">Решетиловка</a>&nbsp;50</li>
+<li><a href="/resumes-semenivka_pl/">Семеновка (Полтавская обл.)</a>&nbsp;14</li>
+<li><a href="/resumes-khorol/">Хорол</a>&nbsp;103</li>
+<li><a href="/resumes-chornukhy/">Чернухи</a>&nbsp;15</li>
+<li><a href="/resumes-chutove/">Чутово</a>&nbsp;15</li>
+<li><a href="/resumes-shyshaky/">Шишаки</a>&nbsp;9</li>
+</ul>
+</div>
+</div>
+<hr class="wide">
+<h2 class="cut-top">Ровенская обл.</h2>
+<div class="row">
+<div class="col-sm-4 col-md-4">
+<ul class="list-dot-gray text-gray-light">
+<li><a href="/resumes-berezne/">Березно</a>&nbsp;74</li>
+<li><a href="/resumes-varash/">Вараш (Кузнецовск)</a>&nbsp;395</li>
+<li><a href="/resumes-volodymyrets/">Владимирец</a>&nbsp;38</li>
+<li><a href="/resumes-hoshcha/">Гоща</a>&nbsp;59</li>
+<li><a href="/resumes-demydivka/">Демидовка</a>&nbsp;9</li>
+<li><a href="/resumes-dubno/">Дубно</a>&nbsp;820</li>
+</ul>
+</div>
+<div class="col-sm-4 col-md-4">
+<ul class="list-dot-gray text-gray-light margin-top-xs">
+<li><a href="/resumes-dubrovytsya/">Дубровица</a>&nbsp;61</li>
+<li><a href="/resumes-zarichne/">Заречное</a>&nbsp;12</li>
+<li><a href="/resumes-zdolbuniv/">Здолбунов</a>&nbsp;357</li>
+<li><a href="/resumes-korets/">Корец</a>&nbsp;50</li>
+<li><a href="/resumes-kostopil/">Костополь</a>&nbsp;340</li>
+<li><a href="/resumes-mlyniv/">Млинов</a>&nbsp;57</li>
+</ul>
+</div>
+<div class="col-sm-4 col-md-4">
+<ul class="list-dot-gray text-gray-light margin-top-xs">
+<li><a href="/resumes-ostroh/">Острог</a>&nbsp;276</li>
+<li><a href="/resumes-radyvyliv/">Радивилов</a>&nbsp;73</li>
+<li><a href="/resumes-rivne/">Ровно</a>&nbsp;28964</li>
+<li><a href="/resumes-rokytne_rv/">Рокитное</a>&nbsp;29</li>
+<li><a href="/resumes-sarny/">Сарны</a>&nbsp;549</li>
+</ul>
+</div>
+</div>
+<hr class="wide">
+<h2 class="cut-top">Сумская обл.</h2>
+<div class="row">
+<div class="col-sm-4 col-md-4">
+<ul class="list-dot-gray text-gray-light">
+<li><a href="/resumes-okhtyrka/">Ахтырка</a>&nbsp;556</li>
+<li><a href="/resumes-bilopillya/">Белополье</a>&nbsp;33</li>
+<li><a href="/resumes-buryn/">Бурынь</a>&nbsp;34</li>
+<li><a href="/resumes-velyka_pysarivka/">Великая Писаревка</a>&nbsp;1</li>
+<li><a href="/resumes-hlukhiv/">Глухов</a>&nbsp;290</li>
+<li><a href="/resumes-konotop/">Конотоп</a>&nbsp;1363</li>
+</ul>
+</div>
+<div class="col-sm-4 col-md-4">
+<ul class="list-dot-gray text-gray-light margin-top-xs">
+<li><a href="/resumes-krasnopillya/">Краснополье</a>&nbsp;7</li>
+<li><a href="/resumes-krolevets/">Кролевец</a>&nbsp;89</li>
+<li><a href="/resumes-lebedyn/">Лебедин</a>&nbsp;98</li>
+<li><a href="/resumes-lypova_dolyna/">Липовая Долина</a>&nbsp;12</li>
+<li><a href="/resumes-nedryhailiv/">Недригайлов</a>&nbsp;9</li>
+<li><a href="/resumes-putyvl/">Путивль</a>&nbsp;58</li>
+</ul>
+</div>
+<div class="col-sm-4 col-md-4">
+<ul class="list-dot-gray text-gray-light margin-top-xs">
+<li><a href="/resumes-romny/">Ромны</a>&nbsp;596</li>
+<li><a href="/resumes-seredyna-buda/">Середина-Буда</a>&nbsp;17</li>
+<li><a href="/resumes-sumy/">Сумы</a>&nbsp;22263</li>
+<li><a href="/resumes-trostyanets_sm/">Тростянец (Сумская обл.)</a>&nbsp;123</li>
+<li><a href="/resumes-shostka/">Шостка</a>&nbsp;1017</li>
+<li><a href="/resumes-yampil_sm/">Ямполь (Сумская обл.)</a>&nbsp;16</li>
+</ul>
+</div>
+</div>
+<hr class="wide">
+<h2 class="cut-top">Тернопольская обл.</h2>
+<div class="row">
+<div class="col-sm-4 col-md-4">
+<ul class="list-dot-gray text-gray-light">
+<li><a href="/resumes-berezhany/">Бережаны</a>&nbsp;75</li>
+<li><a href="/resumes-borshchiv/">Борщев</a>&nbsp;97</li>
+<li><a href="/resumes-buchach/">Бучач</a>&nbsp;112</li>
+<li><a href="/resumes-husyatyn/">Гусятин</a>&nbsp;66</li>
+<li><a href="/resumes-zalishchyky/">Залещики</a>&nbsp;75</li>
+<li><a href="/resumes-zbarazh/">Збараж</a>&nbsp;67</li>
+<li><a href="/resumes-zboriv/">Зборов</a>&nbsp;21</li>
+</ul>
+</div>
+<div class="col-sm-4 col-md-4">
+<ul class="list-dot-gray text-gray-light margin-top-xs">
+<li><a href="/resumes-kozova/">Козова</a>&nbsp;44</li>
+<li><a href="/resumes-kopychyntsi/">Копычинцы</a>&nbsp;17</li>
+<li><a href="/resumes-kremenets/">Кременец</a>&nbsp;268</li>
+<li><a href="/resumes-lanivtsi/">Лановцы</a>&nbsp;33</li>
+<li><a href="/resumes-monastyryska/">Монастыриска</a>&nbsp;15</li>
+<li><a href="/resumes-pidvolochysk/">Подволочиск</a>&nbsp;39</li>
+<li><a href="/resumes-pidhaitsi/">Подгайцы</a>&nbsp;11</li>
+</ul>
+</div>
+<div class="col-sm-4 col-md-4">
+<ul class="list-dot-gray text-gray-light margin-top-xs">
+<li><a href="/resumes-pochaev/">Почаев</a>&nbsp;25</li>
+<li><a href="/resumes-terebovlya/">Теребовля</a>&nbsp;110</li>
+<li><a href="/resumes-ternopil/">Тернополь</a>&nbsp;19728</li>
+<li><a href="/resumes-khorostkov/">Хоростков</a>&nbsp;15</li>
+<li><a href="/resumes-chortkiv/">Чортков</a>&nbsp;465</li>
+<li><a href="/resumes-shumsk/">Шумск</a>&nbsp;38</li>
+</ul>
+</div>
+</div>
+<hr class="wide">
+<h2 class="cut-top">Харьковская обл.</h2>
+<div class="row">
+<div class="col-sm-4 col-md-4">
+<ul class="list-dot-gray text-gray-light">
+<li><a href="/resumes-balakliya/">Балаклея</a>&nbsp;214</li>
+<li><a href="/resumes-barvinkove/">Барвенково</a>&nbsp;10</li>
+<li><a href="/resumes-blyznyuky/">Близнюки</a>&nbsp;11</li>
+<li><a href="/resumes-bohodukhiv/">Богодухов</a>&nbsp;57</li>
+<li><a href="/resumes-borova/">Боровая</a>&nbsp;24</li>
+<li><a href="/resumes-valky/">Валки</a>&nbsp;28</li>
+<li><a href="/resumes-velykyi_burluk/">Великий Бурлук</a>&nbsp;5</li>
+<li><a href="/resumes-vovchansk/">Волчанск</a>&nbsp;48</li>
+<li><a href="/resumes-dvorichna/">Двуречная</a>&nbsp;8</li>
+<li><a href="/resumes-derhachi/">Дергачи</a>&nbsp;119</li>
+</ul>
+</div>
+<div class="col-sm-4 col-md-4">
+<ul class="list-dot-gray text-gray-light margin-top-xs">
+<li><a href="/resumes-zachepylivka/">Зачепиловка</a>&nbsp;6</li>
+<li><a href="/resumes-zmiiv/">Змиев</a>&nbsp;136</li>
+<li><a href="/resumes-zolochiv_kh/">Золочев (Харьковская обл.)</a>&nbsp;12</li>
+<li><a href="/resumes-izyum/">Изюм</a>&nbsp;367</li>
+<li><a href="/resumes-kehychivka/">Кегичевка</a>&nbsp;15</li>
+<li><a href="/resumes-kolomak/">Коломак</a>&nbsp;3</li>
+<li><a href="/resumes-krasnohrad/">Красноград</a>&nbsp;172</li>
+<li><a href="/resumes-krasnokutsk/">Краснокутск</a>&nbsp;24</li>
+<li><a href="/resumes-kupiansk/">Купянск</a>&nbsp;454</li>
+<li><a href="/resumes-lozova/">Лозовая</a>&nbsp;760</li>
+</ul>
+</div>
+<div class="col-sm-4 col-md-4">
+<ul class="list-dot-gray text-gray-light margin-top-xs">
+<li><a href="/resumes-lubotin/">Люботин</a>&nbsp;76</li>
+<li><a href="/resumes-merefa/">Мерефа</a>&nbsp;99</li>
+<li><a href="/resumes-nova_vodolaha/">Новая Водолага</a>&nbsp;38</li>
+<li><a href="/resumes-pervomaiskyi/">Первомайский</a>&nbsp;119</li>
+<li><a href="/resumes-pechenihy/">Печенеги</a>&nbsp;8</li>
+<li><a href="/resumes-sakhnovshchyna/">Сахновщина</a>&nbsp;11</li>
+<li><a href="/resumes-kharkiv/">Харьков</a>&nbsp;154764</li>
+<li><a href="/resumes-chuhuiv/">Чугуев</a>&nbsp;483</li>
+<li><a href="/resumes-shevchenkove/">Шевченково</a>&nbsp;5</li>
+</ul>
+</div>
+</div>
+<hr class="wide">
+<h2 class="cut-top">Херсонская обл.</h2>
+<div class="row">
+<div class="col-sm-4 col-md-4">
+<ul class="list-dot-gray text-gray-light">
+<li><a href="/resumes-bilozerka/">Белозерка</a>&nbsp;31</li>
+<li><a href="/resumes-beryslav/">Берислав</a>&nbsp;103</li>
+<li><a href="/resumes-velyka_oleksandrivka/">Великая Александровка</a>&nbsp;25</li>
+<li><a href="/resumes-velyka_lepetykha/">Великая Лепетиха</a>&nbsp;7</li>
+<li><a href="/resumes-verkhnii_rohachyk/">Верхний Рогачик</a>&nbsp;10</li>
+<li><a href="/resumes-vysokopillya/">Высокополье</a>&nbsp;6</li>
+<li><a href="/resumes-henichesk/">Геническ</a>&nbsp;317</li>
+</ul>
+</div>
+<div class="col-sm-4 col-md-4">
+<ul class="list-dot-gray text-gray-light margin-top-xs">
+<li><a href="/resumes-hola_prystan/">Голая Пристань</a>&nbsp;148</li>
+<li><a href="/resumes-hornostaivka/">Горностаевка</a>&nbsp;14</li>
+<li><a href="/resumes-ivanivka_ks/">Ивановка (Херсонская обл.)</a>&nbsp;8</li>
+<li><a href="/resumes-kalanchak/">Каланчак</a>&nbsp;21</li>
+<li><a href="/resumes-kakhovka/">Каховка</a>&nbsp;1062</li>
+<li><a href="/resumes-nyzhni_sirohozy/">Нижние Серогозы</a>&nbsp;4</li>
+<li><a href="/resumes-nova_kakhovka/">Новая Каховка</a>&nbsp;2379</li>
+</ul>
+</div>
+<div class="col-sm-4 col-md-4">
+<ul class="list-dot-gray text-gray-light margin-top-xs">
+<li><a href="/resumes-novovorontsovka/">Нововоронцовка</a>&nbsp;12</li>
+<li><a href="/resumes-novotroitske/">Новотроицкое</a>&nbsp;29</li>
+<li><a href="/resumes-oleshky/">Олешки (Цюрупинск)</a>&nbsp;411</li>
+<li><a href="/resumes-skadovsk/">Скадовск</a>&nbsp;319</li>
+<li><a href="/resumes-kherson/">Херсон</a>&nbsp;27938</li>
+<li><a href="/resumes-chaplynka/">Чаплинка</a>&nbsp;31</li>
+</ul>
+</div>
+</div>
+<hr class="wide">
+<h2 class="cut-top">Хмельницкая обл.</h2>
+<div class="row">
+<div class="col-sm-4 col-md-4">
+<ul class="list-dot-gray text-gray-light">
+<li><a href="/resumes-bilohirya/">Белогорье</a>&nbsp;19</li>
+<li><a href="/resumes-vinkivtsi/">Виньковцы</a>&nbsp;10</li>
+<li><a href="/resumes-volochysk/">Волочиск</a>&nbsp;163</li>
+<li><a href="/resumes-horodok_km/">Городок (Хмельницкая обл.)</a>&nbsp;50</li>
+<li><a href="/resumes-derazhnya/">Деражня</a>&nbsp;35</li>
+<li><a href="/resumes-dunaivtsi/">Дунаевцы</a>&nbsp;120</li>
+<li><a href="/resumes-izyaslav/">Изяслав</a>&nbsp;72</li>
+</ul>
+</div>
+<div class="col-sm-4 col-md-4">
+<ul class="list-dot-gray text-gray-light margin-top-xs">
+<li><a href="/resumes-kamyanets-podilskyi/">Каменец-Подольский</a>&nbsp;2967</li>
+<li><a href="/resumes-krasyliv/">Красилов</a>&nbsp;138</li>
+<li><a href="/resumes-letychiv/">Летичев</a>&nbsp;24</li>
+<li><a href="/resumes-netishyn/">Нетешин</a>&nbsp;508</li>
+<li><a href="/resumes-nova_ushytsya/">Новая Ушица</a>&nbsp;19</li>
+<li><a href="/resumes-polonne/">Полонное</a>&nbsp;109</li>
+<li><a href="/resumes-slavuta/">Славута</a>&nbsp;413</li>
+</ul>
+</div>
+<div class="col-sm-4 col-md-4">
+<ul class="list-dot-gray text-gray-light margin-top-xs">
+<li><a href="/resumes-stara_synyavka/">Старая Синява</a>&nbsp;7</li>
+<li><a href="/resumes-starokostyantyniv/">Староконстантинов</a>&nbsp;378</li>
+<li><a href="/resumes-teofipol/">Теофиполь</a>&nbsp;33</li>
+<li><a href="/resumes-khmelnytskyi/">Хмельницкий</a>&nbsp;21211</li>
+<li><a href="/resumes-chemerivtsi/">Чемеровцы</a>&nbsp;18</li>
+<li><a href="/resumes-shepetivka/">Шепетовка</a>&nbsp;738</li>
+<li><a href="/resumes-yarmolyntsi/">Ярмолинцы</a>&nbsp;31</li>
+</ul>
+</div>
+</div>
+<hr class="wide">
+<h2 class="cut-top">Черкасская обл.</h2>
+<div class="row">
+<div class="col-sm-4 col-md-4">
+<ul class="list-dot-gray text-gray-light">
+<li><a href="/resumes-vatutino/">Ватутино</a>&nbsp;59</li>
+<li><a href="/resumes-horodyshche/">Городище</a>&nbsp;48</li>
+<li><a href="/resumes-drabiv/">Драбов</a>&nbsp;20</li>
+<li><a href="/resumes-zhashkiv/">Жашков</a>&nbsp;73</li>
+<li><a href="/resumes-zvenyhorodka/">Звенигородка</a>&nbsp;132</li>
+<li><a href="/resumes-zolotonosha/">Золотоноша</a>&nbsp;516</li>
+<li><a href="/resumes-kamyanka/">Каменка</a>&nbsp;56</li>
+</ul>
+</div>
+<div class="col-sm-4 col-md-4">
+<ul class="list-dot-gray text-gray-light margin-top-xs">
+<li><a href="/resumes-kaniv/">Канев</a>&nbsp;315</li>
+<li><a href="/resumes-katerynopil/">Катеринополь</a>&nbsp;21</li>
+<li><a href="/resumes-korsun-shevchenkivskyi/">Корсунь-Шевченковский</a>&nbsp;140</li>
+<li><a href="/resumes-lysyanka/">Лысянка</a>&nbsp;16</li>
+<li><a href="/resumes-mankivka/">Маньковка</a>&nbsp;35</li>
+<li><a href="/resumes-monastyryshche/">Монастырище</a>&nbsp;60</li>
+<li><a href="/resumes-smila/">Смела</a>&nbsp;1596</li>
+</ul>
+</div>
+<div class="col-sm-4 col-md-4">
+<ul class="list-dot-gray text-gray-light margin-top-xs">
+<li><a href="/resumes-talne/">Тальное</a>&nbsp;65</li>
+<li><a href="/resumes-uman/">Умань</a>&nbsp;3520</li>
+<li><a href="/resumes-khrystynivka/">Христиновка</a>&nbsp;58</li>
+<li><a href="/resumes-cherkasy/">Черкассы</a>&nbsp;30778</li>
+<li><a href="/resumes-chornobai/">Чернобай</a>&nbsp;47</li>
+<li><a href="/resumes-chyhyryn/">Чигирин</a>&nbsp;44</li>
+<li><a href="/resumes-shpola/">Шпола</a>&nbsp;78</li>
+</ul>
+</div>
+</div>
+<hr class="wide">
+<h2 class="cut-top">Черниговская обл.</h2>
+<div class="row">
+<div class="col-sm-4 col-md-4">
+<ul class="list-dot-gray text-gray-light">
+<li><a href="/resumes-bakhmach/">Бахмач</a>&nbsp;135</li>
+<li><a href="/resumes-bobrovytsya/">Бобровица</a>&nbsp;43</li>
+<li><a href="/resumes-borzna/">Борзна</a>&nbsp;62</li>
+<li><a href="/resumes-varva/">Варва</a>&nbsp;32</li>
+<li><a href="/resumes-horodnya/">Городня</a>&nbsp;48</li>
+<li><a href="/resumes-ichnia/">Ичня</a>&nbsp;36</li>
+<li><a href="/resumes-kozelets/">Козелец</a>&nbsp;58</li>
+<li><a href="/resumes-korop/">Короп</a>&nbsp;16</li>
+</ul>
+</div>
+<div class="col-sm-4 col-md-4">
+<ul class="list-dot-gray text-gray-light margin-top-xs">
+<li><a href="/resumes-koriukivka/">Корюковка</a>&nbsp;46</li>
+<li><a href="/resumes-kulykivka/">Куликовка</a>&nbsp;11</li>
+<li><a href="/resumes-mena/">Мена</a>&nbsp;41</li>
+<li><a href="/resumes-nizhyn/">Нежин</a>&nbsp;1603</li>
+<li><a href="/resumes-novhorod-siverskyi/">Новгород-Северский</a>&nbsp;47</li>
+<li><a href="/resumes-nosivka/">Носовка</a>&nbsp;38</li>
+<li><a href="/resumes-oster/">Остер</a>&nbsp;13</li>
+<li><a href="/resumes-pryluky/">Прилуки</a>&nbsp;1264</li>
+</ul>
+</div>
+<div class="col-sm-4 col-md-4">
+<ul class="list-dot-gray text-gray-light margin-top-xs">
+<li><a href="/resumes-ripky/">Репки</a>&nbsp;14</li>
+<li><a href="/resumes-semenivka_cn/">Семеновка (Черниговская обл.)</a>&nbsp;11</li>
+<li><a href="/resumes-snovsk/">Сновск (Щорс)</a>&nbsp;48</li>
+<li><a href="/resumes-sosnytsya/">Сосница</a>&nbsp;13</li>
+<li><a href="/resumes-sribne/">Сребное</a>&nbsp;8</li>
+<li><a href="/resumes-talalaivka/">Талалаевка</a>&nbsp;12</li>
+<li><a href="/resumes-chernihiv/">Чернигов</a>&nbsp;20382</li>
+</ul>
+</div>
+</div>
+<hr class="wide">
+<h2 class="cut-top">Черновицкая обл.</h2>
+<div class="row">
+<div class="col-sm-4 col-md-4">
+<ul class="list-dot-gray text-gray-light">
+<li><a href="/resumes-vyzhnytsya/">Вижница</a>&nbsp;40</li>
+<li><a href="/resumes-hertsa/">Герца</a>&nbsp;6</li>
+<li><a href="/resumes-hlyboka/">Глыбокая</a>&nbsp;18</li>
+<li><a href="/resumes-zastavna/">Заставна</a>&nbsp;25</li>
+<li><a href="/resumes-kelmentsi/">Кельменцы</a>&nbsp;20</li>
+</ul>
+</div>
+<div class="col-sm-4 col-md-4">
+<ul class="list-dot-gray text-gray-light margin-top-xs">
+<li><a href="/resumes-kitsman/">Кицмань</a>&nbsp;58</li>
+<li><a href="/resumes-novodnestrovsk/">Новоднестровск</a>&nbsp;33</li>
+<li><a href="/resumes-novoselytsya/">Новоселица</a>&nbsp;57</li>
+<li><a href="/resumes-putyla/">Путила</a>&nbsp;6</li>
+<li><a href="/resumes-sokyryany/">Сокиряны</a>&nbsp;42</li>
+</ul>
+</div>
+<div class="col-sm-4 col-md-4">
+<ul class="list-dot-gray text-gray-light margin-top-xs">
+<li><a href="/resumes-storozhynets/">Сторожинец</a>&nbsp;67</li>
+<li><a href="/resumes-khotyn/">Хотин</a>&nbsp;49</li>
+<li><a href="/resumes-chernivtsi_cv/">Черновцы</a>&nbsp;19555</li>
+</ul>
+</div>
+</div>
+<hr class="wide">
+<h2 class="cut-top">Другое</h2>
+<ul class="list-dot-gray text-gray-light pull-left no-pull-xs">
+<li><a href="/resumes-other/">Другие страны</a> 33605</li>
+</ul>
+<ul class="list-inline margin-top-xs pull-right no-pull-xs">
+<li><a href="/resumes/by-region/">Сгруппировать по алфавиту<span class="glyphicon glyphicon-chevron-right"></span></a></li>
+</ul>
+</div>
+</div>
+</section>
+
+<footer class="footer-inverse">
+<div class="container hidden-print">
+<div class="row">
+<div class="col-sm-9 col-md-9">
+<div class="dropdown"><a href="javascript:;" class="dropdown-toggle" role="button" id="dropdownMenu100" data-toggle="dropdown" aria-expanded="true">Русский<span class="glyphicon glyphicon-chevron-down glyph-indent"></span></a>
+<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu100">
+<li class="active"><a href="">Русский</a></li>
+<li><a href="/ua/resumes/by-region/?grouped=1&setlp=ua">Українська</a></li>
+</ul></div>
+<ul class="list-inline menu-action">
+<li><a href="/services/" class="text-muted">Услуги сайта</a></li>
+<li>&nbsp;&middot;&nbsp;</li>
+<li><a href="/about-us/" class="text-muted">О нас</a></li>
+<li>&nbsp;&middot;&nbsp;</li>
+<li><a href="/about-us/contact/" class="text-muted">Контакты</a></li>
+<li>&nbsp;&middot;&nbsp;</li>
+<li><a href="/news/site/" class="text-muted">Новости сайта</a></li>
+<li>&nbsp;&middot;&nbsp;</li>
+<li><a href="/employer/resources/" class="text-muted">Ресурсы</a></li>
+<li>&nbsp;&middot;&nbsp;</li>
+<li><a href="/about-us/conditions/" class="text-muted">Условия использования</a></li>
+
+</ul>
+</div>
+<div class="col-sm-3 col-md-3">
+<a href="/" class="btn btn-supplement pull-right no-pull-xs" role="button">
+Соискателю
+
+<span class="glyphicon glyphicon-chevron-right"></span></a>
+</div>
+</div>
+
+<div class="text-muted">©&nbsp;2006–2017 Work.ua. Сайт поиска работы №1 в Украине.</div>
+
+<hr class="hidden-xs">
+
+<div class="row hidden-xs">
+<div class="col-sm-5 col-md-5">
+<p class="text-muted">Сделано в компании «<a href="http://www.reactor.com.ua/" target="_blank" class="text-danger">Реактор</a>».</p>
+</div>
+<div class="col-sm-7 col-md-7">
+<ul class="list-inline menu-action pull-right no-pull-xs" style="margin-top: 0">
+<li><a href="http://www.education.ua/" class="text-muted" target="_blank">Образование</a></li>
+<li>&nbsp;&middot;&nbsp;</li>
+<li><a href="http://www.trn.ua/" class="text-muted" target="_blank">Тренинги</a></li>
+<li>&nbsp;&middot;&nbsp;</li>
+<li><a href="http://vse10.ru/" class="text-muted" target="_blank">Клавиатурный тренажер</a></li>
+<li>&nbsp;&middot;&nbsp;</li>
+<li><a href="http://www.ratatype.com/" class="text-muted" target="_blank">Typing tutor</a></li>
+</ul>
+</div>
+</div>
+</div>
+</footer>
+
+<script src="//st.work.ua/js/bootstrap/bootstrap-min_1489556447.js"></script>
+
+<script src="//st.work.ua/js/bootstrap/bootstrap-affix-fix-min_1489556442.js"></script>
+
+
+
+    <noindex>
+
+<div style="display:none;">
+    <a rel="nofollow" id="iuaCounter" href="http://www.i.ua/" target="_blank" onclick="this.href='http://i.ua/r.php?952'" title="Rated by I.UA" class="no-hover"><noscript><img src="https://r.i.ua/s?u952&p6" border="0" width="88" height="31" /></noscript></a>
+    <div id="bigmirCounter">
+        <noscript><a href="http://www.bigmir.net/" target="_blank" style="padding-right:4px"><img src="https://c.bigmir.net/?v132195&s132195&t2"
+            width="88" height="31" alt="bigmir)net TOP 100" title="bigmir)net TOP 100" border="0" /></a></noscript>
+    </div>
+</div>
+
+
+<script>
+function pageLoaded(d){var f=window,e=f.onload;if(f.addEventListener){f.addEventListener("load",d,!1)}else{if(f.attachEvent){f.attachEvent("onload",d)}else{f.onload=function(){if(typeof e==="function"){e()}d()}}}}function loadScriptCounters(i,f){var l,e="script",k=document,d=k.getElementsByTagName(e)[0];
+if(f&&k.getElementById(f)){return}l=k.createElement(e);l.id=f;l.src=i;d.parentNode.insertBefore(l,d)}
+function BM_Draw(a){if(document.getElementById("bigmirCounter")) document.getElementById("bigmirCounter").innerHTML=('<table cellpadding="0" cellspacing="0" border="0" ><tr><td><div class="cont"><div class="cent"><div><a rel="nofollow" class="no-hover" href="http://www.bigmir.net/" target="_blank">bigmir<span>)</span>net</a></div><div class="counters"><div>'+a.hosts+"</div><div>"+a.hits+'</div></div><br clear="all"/></div></div></td></tr></table>')
+}function bigmirCounter(){var bmN=navigator,bmD=document;bmD.cookie="b=b; path=/";var i=0,bs=[],bm={o:1,v:132195,s:132195,t:0,c:bmD.cookie?1:0,n:Math.round((Math.random()*1000000)),w:0};for(var f=self;f!=f.parent;f=f.parent){bm.w++}try{if(bmN.plugins&&bmN.mimeTypes.length&&(x=bmN.plugins["Shockwave Flash"])){bm.m=parseInt(x.description.replace(/([a-zA-Z]|\s)+/,""))
+}else{for(var f=3;f<20;f++){if(eval('new ActiveXObject("ShockwaveFlash.ShockwaveFlash.'+f+'")')){bm.m=f}}}}catch(e){}try{bm.y=bmN.javaEnabled()?1:0}catch(e){}try{bmS=screen;bm.v^=bm.d=bmS.colorDepth||bmS.pixelDepth;bm.v^=bm.r=bmS.width}catch(e){}r=bmD.referrer.slice(7);
+if(r&&r.split("/")[0]!=window.location.host){bm.f=escape(r).slice(0,400);bm.v^=r.length}bm.v^=window.location.href.length;for(var x in bm){if(/^[ovstcnwmydrf]$/.test(x)){bs[i++]=x+bm[x]}}loadScriptCounters("https://c.bigmir.net/?"+bs.join("&"),"bigmir-counter")
+}pageLoaded(function(){setTimeout(bigmirCounter,50)});function iuaCounter(){iS='<img src="'+(window.location.protocol=="https:"?"https":"http")+"://r.i.ua/s?u952&p6&n"+Math.random();iD=document;if(!iD.cookie){iD.cookie="b=b; path=/"}if(iD.cookie){iS+="&c1"
+}iS+="&d"+(screen.colorDepth?screen.colorDepth:screen.pixelDepth)+"&w"+screen.width+"&h"+screen.height;iT=iR=iD.referrer.replace(iP=/^[a-z]*:\/\//,"");iH=window.location.href.replace(iP,"");((iI=iT.indexOf("/"))!=-1)?(iT=iT.substring(0,iI)):(iI=iT.length);
+if(iT!=iH.substring(0,iI)){iS+="&f"+escape(iR)}iS+="&r"+escape(iH);iD.getElementById("iuaCounter").innerHTML=(iS+'" border="0" width="88" height="31" />')}pageLoaded(function(){setTimeout(iuaCounter,50)});
+</script>
+<script>(function() {
+  var _fbq = window._fbq || (window._fbq = []);
+  if (!_fbq.loaded) {
+    var fbds = document.createElement('script');
+    fbds.async = true;
+    fbds.src = '//connect.facebook.net/en_US/fbds.js';
+var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(fbds, s);
+    _fbq.loaded = true;
+  }
+  _fbq.push(['addPixelId', '712180692188430']);
+})();
+window._fbq = window._fbq || [];
+window._fbq.push(['track', 'PixelInitialized', {}]);
+</script>
+<noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?id=712180692188430&amp;ev=PixelInitialized" /></noscript>
+</noindex><global_counter>
+</body>
+</html>

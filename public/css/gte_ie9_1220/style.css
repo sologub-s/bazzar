@@ -1,0 +1,583 @@
+/* This file will hold styles that are loaded using the same media query as the wide grid. */
+
+
+/* Header */
+h1.title {
+  font-size: 200%;
+}
+h6.site-slogan { font-size: 1.2em; text-align: center; }
+.zone-content-wrapper h2.block-title {
+  font-size: 160%;
+}
+.branding-data {
+  width: auto;
+  padding: 40px 30px 20px 30px;
+}
+/*------------------------------------*\
+	NEWS CSS
+\*------------------------------------*/
+
+/* Block slideshow */
+.view-article-slideshow .view-content {
+  float: left;
+  width: 280px;
+  height: auto;
+  margin-right: 20px;
+  padding: 30px 30px 30px 40px;
+}
+.view-article-slideshow .view-content .views-row {
+}
+.view-article-slideshow .views-field-field-image,
+.view-article-slideshow .views-field-field-image img {
+  width: 280px;
+}
+.view-article-slideshow .views-field-title a {
+  font-size: 160%;
+  line-height: 1.2
+}
+
+.view-article-slideshow .attachment {
+  float: left;
+  width: 500px;
+}
+.view-article-slideshow .attachment .view-content {
+  width: 100%;
+  margin: 0;
+}
+.view-article-slideshow .attachment .view-content .views-row {
+  padding-bottom: 20px;
+}
+.view-article-slideshow .attachment .views-field-field-image {
+  width: 85px;
+  margin-right: 15px;
+}
+
+/* Article detail */
+article.node-article .field-name-field-intro,
+article.node-article .field-name-body {
+  margin-left: 50px;
+}
+/* List article */
+article.node-article.node-teaser .field-name-field-image,
+article.node-article.node-teaser .field-name-field-image img,
+article.node-video.node-teaser .field-name-field-video,
+article.node-video.node-teaser .field-name-field-video img,
+article.node-photos.node-teaser .field-name-field-images,
+article.node-photos.node-teaser .field-name-field-images img {
+  width: 275px;
+}
+
+.view-list-articles .views-field-field-image,
+.view-list-articles .views-field-field-image img {
+  width: 300px;
+}
+
+article.node-article.node-teaser .node-title a {
+  font-size: 110%;
+}
+
+.field-name-field-related-news {
+  width: 280px;
+}
+
+/* Home topic block */
+.block-topic-news .view-content {
+  width: 50%;
+  margin-right: 0;
+  border-bottom: none;
+  padding-right: 5%;
+}
+.block-topic-news .view-content .views-field-field-image {
+  width: 100%;
+  margin-right: 0px;
+  margin-top: 15px;
+}
+.block-topic-news .view-content .views-field-title a {
+  font-size: 140%;
+  line-height: 1.2;
+}
+.block-topic-news .attachment {
+  width: 45%;
+  margin-top: 0;
+}
+.block-topic-news .attachment .view-content .views-field-title a {
+  line-height: 1.5;
+}
+.block-topic-news .attachment .view-content .views-field-field-image {
+  width: 100px;
+}
+.block-topic-news.block-topic-news-list .view-content .views-field-field-image {
+  width: 120px;
+}
+
+
+/*------------------------------------*\
+	PHOTO CSS
+\*------------------------------------*/
+
+/* Photo Detail */
+.galleryformatter .gallery-slides,
+.galleryformatter .gallery-slides img {
+  width: 840px;
+}
+
+.galleryformatter .gallery-thumbs {
+  height: 70px;
+  overflow: hidden;
+}
+
+/*------------------------------------*\
+	VIDEO CSS
+\*------------------------------------*/
+
+/* Latest Video */
+.block-video-block .jcarousel-skin-default .jcarousel-container-horizontal {
+  height: 150px;
+  padding: 0;
+}
+.block-video-block .jcarousel-skin-default .jcarousel-item {
+  width: 200px;
+  height: 150px;
+  margin: 0 20px 0 0;
+}
+
+/* Video node */
+article.node-video .field-name-field-media iframe {
+  height: 500px;
+}
+
+/*------------------------------------*\
+	BLOCK CSS
+\*------------------------------------*/
+/* Block login */
+.block-login input.form-text {
+  width: 255px;
+}
+
+/* Block search */
+.block-search {
+  width: 300px;
+  margin-right: 100px;
+}
+
+
+/* Contact form */
+.contact-form .form-item label {
+  float: left;
+  width: 200px;
+  font-size: 110%;
+  font-weight: bold;
+}
+.contact-form .form-item.form-type-checkbox label {
+  float: none;
+  font-size: 100%;
+  font-weight: normal;
+}
+.contact-form .form-item .form-textarea-wrapper {
+  float: left;
+  width: 70%;
+}
+.contact-form .form-item.form-type-checkbox,
+.contact-form .form-actions {
+  margin-left: 200px;
+  width: auto;
+  clear: left;
+  float: left;
+}
+.contact-form .form-actions {
+  margin-left: 210px;
+}
+
+/*------------------------------------*\
+	MENU CSS
+\*------------------------------------*/
+.zone-menu ul.nice-menu li a {
+  padding: 15px 30px;
+}
+
+
+/*
+ * ==========================================================
+ * Grid
+ * ==========================================================
+ */
+
+.grid-1, .grid-2, .grid-3, .grid-4, .grid-5, .grid-6, .grid-7, .grid-8, .grid-9, .grid-10, 
+.grid-11, .grid-12, .grid-13, .grid-14, .grid-15, .grid-16 {
+  display: inline;
+  float: left;
+  position: relative;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.push-1, .pull-1, .push-2, .pull-2, .push-3, .pull-3, .push-4, .pull-4,
+.push-5, .pull-5, .push-6, .pull-6, .push-7, .pull-7, .push-8, .pull-8,
+.push-9, .pull-9, .push-10, .pull-10, .push-11, .pull-11, .push-12, .pull-12,
+.push-13, .pull-13, .push-14, .pull-14, .push-15, .pull-15, .push-16, .pull-16 {
+  position: relative;
+}
+
+/*
+ * ==========================================================
+ * Alpha - Omega
+ * ==========================================================
+ */
+
+.alpha {
+  margin-left: 0;
+}
+
+.omega {
+  margin-right: 0;
+}
+
+/*
+ * ==========================================================
+ * Container
+ * ==========================================================
+ */
+
+body {
+  min-width: 1200px;
+}
+
+.container-16 {
+  margin-left: auto;
+  margin-right: auto;
+  width: 1200px;
+}
+
+/*
+ * ==========================================================
+ * Columns
+ * ==========================================================
+ */
+
+.container-16 .grid-1 {
+  width: 55px;
+}
+
+.container-16 .grid-2 {
+  width: 130px;
+}
+
+.container-16 .grid-3 {
+  width: 205px;
+}
+
+.container-16 .grid-4 {
+  width: 280px;
+}
+
+.container-16 .grid-5 {
+  width: 355px;
+}
+
+.container-16 .grid-6 {
+  width: 430px;
+}
+
+.container-16 .grid-7 {
+  width: 505px;
+}
+
+.container-16 .grid-8 {
+  width: 580px;
+}
+
+.container-16 .grid-9 {
+  width: 655px;
+}
+
+.container-16 .grid-10 {
+  width: 730px;
+}
+
+.container-16 .grid-11 {
+  width: 805px;
+}
+
+.container-16 .grid-12 {
+  width: 880px;
+}
+
+.container-16 .grid-13 {
+  width: 955px;
+}
+
+.container-16 .grid-14 {
+  width: 1030px;
+}
+
+.container-16 .grid-15 {
+  width: 1105px;
+}
+
+.container-16 .grid-16 {
+  width: 1180px;
+}
+
+/*
+ * ==========================================================
+ * Prefix
+ * ==========================================================
+ */
+
+.container-16 .prefix-1 {
+  padding-left: 75px;
+}
+
+.container-16 .prefix-2 {
+  padding-left: 150px;
+}
+
+.container-16 .prefix-3 {
+  padding-left: 225px;
+}
+
+.container-16 .prefix-4 {
+  padding-left: 300px;
+}
+
+.container-16 .prefix-5 {
+  padding-left: 375px;
+}
+
+.container-16 .prefix-6 {
+  padding-left: 450px;
+}
+
+.container-16 .prefix-7 {
+  padding-left: 525px;
+}
+
+.container-16 .prefix-8 {
+  padding-left: 600px;
+}
+
+.container-16 .prefix-9 {
+  padding-left: 675px;
+}
+
+.container-16 .prefix-10 {
+  padding-left: 750px;
+}
+
+.container-16 .prefix-11 {
+  padding-left: 825px;
+}
+
+.container-16 .prefix-12 {
+  padding-left: 900px;
+}
+
+.container-16 .prefix-13 {
+  padding-left: 975px;
+}
+
+.container-16 .prefix-14 {
+  padding-left: 1050px;
+}
+
+.container-16 .prefix-15 {
+  padding-left: 1125px;
+}
+
+/*
+ * ==========================================================
+ * Suffix
+ * ==========================================================
+ */
+
+.container-16 .suffix-1 {
+  padding-right: 75px;
+}
+
+.container-16 .suffix-2 {
+  padding-right: 150px;
+}
+
+.container-16 .suffix-3 {
+  padding-right: 225px;
+}
+
+.container-16 .suffix-4 {
+  padding-right: 300px;
+}
+
+.container-16 .suffix-5 {
+  padding-right: 375px;
+}
+
+.container-16 .suffix-6 {
+  padding-right: 450px;
+}
+
+.container-16 .suffix-7 {
+  padding-right: 525px;
+}
+
+.container-16 .suffix-8 {
+  padding-right: 600px;
+}
+
+.container-16 .suffix-9 {
+  padding-right: 675px;
+}
+
+.container-16 .suffix-10 {
+  padding-right: 750px;
+}
+
+.container-16 .suffix-11 {
+  padding-right: 825px;
+}
+
+.container-16 .suffix-12 {
+  padding-right: 900px;
+}
+
+.container-16 .suffix-13 {
+  padding-right: 975px;
+}
+
+.container-16 .suffix-14 {
+  padding-right: 1050px;
+}
+
+.container-16 .suffix-15 {
+  padding-right: 1125px;
+}
+
+/*
+ * ==========================================================
+ * Push
+ * ==========================================================
+ */
+
+.container-16 .push-1 {
+  left: 75px;
+}
+
+.container-16 .push-2 {
+  left: 150px;
+}
+
+.container-16 .push-3 {
+  left: 225px;
+}
+
+.container-16 .push-4 {
+  left: 300px;
+}
+
+.container-16 .push-5 {
+  left: 375px;
+}
+
+.container-16 .push-6 {
+  left: 450px;
+}
+
+.container-16 .push-7 {
+  left: 525px;
+}
+
+.container-16 .push-8 {
+  left: 600px;
+}
+
+.container-16 .push-9 {
+  left: 675px;
+}
+
+.container-16 .push-10 {
+  left: 750px;
+}
+
+.container-16 .push-11 {
+  left: 825px;
+}
+
+.container-16 .push-12 {
+  left: 900px;
+}
+
+.container-16 .push-13 {
+  left: 975px;
+}
+
+.container-16 .push-14 {
+  left: 1050px;
+}
+
+.container-16 .push-15 {
+  left: 1125px;
+}
+
+/*
+ * ==========================================================
+ * Pull
+ * ==========================================================
+ */
+
+.container-16 .pull-1 {
+  left: -75px;
+}
+
+.container-16 .pull-2 {
+  left: -150px;
+}
+
+.container-16 .pull-3 {
+  left: -225px;
+}
+
+.container-16 .pull-4 {
+  left: -300px;
+}
+
+.container-16 .pull-5 {
+  left: -375px;
+}
+
+.container-16 .pull-6 {
+  left: -450px;
+}
+
+.container-16 .pull-7 {
+  left: -525px;
+}
+
+.container-16 .pull-8 {
+  left: -600px;
+}
+
+.container-16 .pull-9 {
+  left: -675px;
+}
+
+.container-16 .pull-10 {
+  left: -750px;
+}
+
+.container-16 .pull-11 {
+  left: -825px;
+}
+
+.container-16 .pull-12 {
+  left: -900px;
+}
+
+.container-16 .pull-13 {
+  left: -975px;
+}
+
+.container-16 .pull-14 {
+  left: -1050px;
+}
+
+.container-16 .pull-15 {
+  left: -1125px;
+}

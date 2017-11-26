@@ -1,0 +1,7 @@
+{
+    "/js/app.js": "/js/app.js",
+    "/css/style.css": "/css/style.css",
+    "/css/ie9_not_mobile/style.css": "/css/ie9_not_mobile/style.css",
+    "/css/gte_ie9_980/style.css": "/css/gte_ie9_980/style.css",
+    "/css/gte_ie9_1220/style.css": "/css/gte_ie9_1220/style.css"
+}

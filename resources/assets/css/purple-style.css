@@ -1,0 +1,183 @@
+@charset "utf-8";
+/* CSS Document */
+/*------------------------------------*\
+	RESET
+\*------------------------------------*/
+a,
+a:link,
+a:visited {
+  color:#9966cc;
+  text-decoration: none;
+}
+a:focus,
+a:hover,
+a:active {
+  color: #333;
+}
+h1, h2, h3, h4 {
+  color:#9966cc;
+}
+pre,
+div.code {
+  border-color: #9966cc;
+}
+.highlight {
+  background: #9966cc;
+}
+li a.active {
+  color: #9966cc;
+}
+
+/*------------------------------------*\
+	Pages CSS
+\*------------------------------------*/
+
+.item-list .pager .pager-current,
+.item-list .pager li a:hover {
+  background: #9966cc;
+  border: 1px solid #9966cc;
+  color: #fff;
+}
+
+/*  Zone branding  */
+.zone-branding-wrapper,
+.zone-menu-wrapper {
+  background-color: #9966cc;
+}
+/* Zone submenu */
+.zone-submenu-wrapper {
+  background-color: #7540AA;
+}
+
+
+/*------------------------------------*\
+	NAVIGATION CSS
+\*------------------------------------*/
+/*
+ * Main menu links
+ */
+
+ul#main-menu li a:hover,
+ul#main-menu li a.active:hover,
+ul#main-menu li a.active,
+.zone-menu ul.menu li a:hover,
+.zone-menu ul.menu li a.active:hover,
+.zone-menu ul.menu li a.active,
+.zone-menu ul.menu li.active-trail a {
+  background-color: #7540AA;
+}
+
+.zone-menu ul.nice-menu li.active-trail a,
+.zone-menu ul.nice-menu li a.active,
+.zone-menu ul.nice-menu li a:hover,
+.zone-menu ul.nice-menu li.over a {
+  background-color: #7540AA;
+}
+.zone-menu ul.nice-menu ul {
+  border: none ;
+  background-color: #7540AA;
+}
+
+/* Search menu item */
+.zone-menu ul.nice-menu li.menu-path-search { 
+  background-color: #7540AA;
+}
+
+/* User menu */
+.block-system-user-menu ul.menu a {
+  border-right: 1px solid #ddd0e9;
+  color: #ddd0e9;
+}
+.block-system-user-menu ul li.last a {
+  border: none;
+}
+.block-system-user-menu ul.menu a:hover,
+.block-system-user-menu ul.menu a.active {
+  color: #fff;
+}
+
+/* Footer menu */
+.zone-footer .block-menu {
+  border-bottom: 2px solid #9966cc;
+}
+.zone-footer ul.menu li a:hover,
+.zone-footer ul.menu li a.active {
+  color: #9966cc;
+}
+
+/* Mobile menu */
+ul#om-menu-mobile-menu li.om-leaf.open #menu-item-menu {
+  background: #57288e url(../images/icon-menu-menu.png) 10px center no-repeat;
+}
+ul#om-menu-mobile-menu li.om-leaf.open #menu-item-search {
+  background: #57288e url(../images/icon-menu-search.png) 10px center no-repeat;
+}
+ul#om-menu-mobile-menu li.om-leaf.open #menu-item-account {
+  background: #57288e url(../images/icon-menu-account.png) 10px center no-repeat;
+}
+
+.ui-accordion .ui-accordion-header span.accordion-link,
+.ui-accordion .ui-accordion-header a.accordion-link {
+  color: #9966cc;
+}
+
+/*------------------------------------*\
+	BLOCKS CSS
+\*------------------------------------*/
+
+h2.block-title {
+  border-bottom: 2px solid #9966cc;
+}
+
+.views-field-view-node a:hover,
+li.node-readmore a:hover {
+  color: #9966cc;
+}
+
+article.node-article.node-teaser .node-title a:hover,
+article.node-photos.node-teaser .node-title a:hover,
+.view-article-slideshow .attachment .views-field-title a:hover,
+.block-topic-news .view-content .views-field-title a:hover,
+.block-topic-news .attachment .more-link a:hover,
+.block-breaking-news h2.block-title,
+.block-breaking-news .content .views-field-title a:hover,
+article.node-article.node-teaser .node-title a:hover,
+.block-latest-news .views-row .views-field-title a:hover,
+.block-most-read .views-row .views-field-title a:hover,
+.block-video-block .views-field-title a:hover,
+.block-comments-recent-block li a:hover {
+  color: #9966cc;
+}
+
+/* Block slideshow */
+.view-list-photos .views-slideshow-pager-fields .views-slideshow-pager-field-item.active,
+.view-article-slideshow .views-slideshow-pager-fields .views-slideshow-pager-field-item.active {
+  background: url(../images/purple/slideshow-nav-active.png) 0 0 no-repeat;
+}
+.view-list-photos .views-row .views-field-title a:hover { color: #9966cc; }
+
+/* Multimedia */
+.block-video-block .jcarousel-skin-default .jcarousel-prev-horizontal:hover {
+  background: url(../images/purple/jcarousel-prev-hover.png) 0 0 no-repeat;
+}
+.block-video-block .jcarousel-skin-default .jcarousel-next-horizontal:hover {
+  background: url(../images/purple/jcarousel-next-hover.png) 0 0 no-repeat;
+}
+/*------------------------------------*\
+	FORMS CSS
+\*------------------------------------*/
+
+button, input[type="reset"], input[type="submit"], input[type="button"] { background: none repeat scroll 0 0 #9966cc; }
+.section-content .block-simplenews .block-inner input.form-submit:hover,
+input.form-submit:hover {
+  background-color: #7540AA;
+}
+.section-content .block-simplenews .block-inner input.form-submit {
+  background-color: #9966cc;;
+}
+
+ul.primary li.active a,
+ul.primary li.active a:hover,
+ul.primary li.active a:focus {
+  background-color: #9966cc;
+}
