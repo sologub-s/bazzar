@@ -21,4 +21,13 @@ Auth::routes();
 
 Route::get('/', 'IndexController@index')->name('index_index');
 
+Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'before' => 'admin'], function()
+{
+    // only /admin/ routes in here that will be in a namespace folder of "backend" with admin middleware
+    //Route::resource('pages', 'PagesController'); // app/Http/controllers/backend/PagesController.php
+
+    Route::get('/', 'IndexController@index')->name('admin_home');
+
+});
+
 //Route::get('/home', 'HomeController@index')->name('home');

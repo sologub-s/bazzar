@@ -1,6 +1,15 @@
 @extends('layouts.app')
 
 @section('contentleft')
+    <div id="messages" class="grid-16"><div class="messages error">
+            <h2 class="element-invisible">Сообщение об ошибке</h2>
+            <ul>
+                <li>Поле "Ваш email-адрес" обязательно для заполнения.</li>
+                <li>Поле "Тема" обязательно для заполнения.</li>
+                <li>Поле "Сообщение" обязательно для заполнения.</li>
+            </ul>
+        </div>
+    </div>
 <div class="grid-12 region region-content" id="region-content">
     <div class="region-inner region-content-inner">
         <a id="main-content"></a>
