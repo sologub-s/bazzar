@@ -347,10 +347,11 @@
 
                 @yield('contentleft')
 
-                <aside class="grid-4 region region-sidebar-second" id="region-sidebar-second">
+                <aside class="grid-4 region region-sidebar-second" id="">
                     <div class="region-inner region-sidebar-second-inner">
 
                         {{--@include('shared.twitter-timeline')--}}
+                        @include('shared.login-widget')
 
                         <section class="block block-views block-latest-news-block-1 block-views-latest-news-block-1 even" id="block-views-latest-news-block-1">
                             <div class="block-inner clearfix">
