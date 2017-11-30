@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
@@ -19,7 +20,7 @@ class ProductsController extends Controller
     }
 
     /**
-     * Show the application dashboard.
+     * Show the products list
      *
      * @return \Illuminate\Http\Response
      */
@@ -55,10 +56,22 @@ class ProductsController extends Controller
             $products->whereIn('id', $ids);
         }
 
-        //dd($products->paginate($request->has('items_limit') && in_array($request->input('items_limit'), ['10','25','50','100',]) ? $request->input('items_limit') : 10));
-
         return view('admin/products/index', [
             'products' => $products->paginate($request->has('items_limit') && in_array($request->input('items_limit'), ['10','25','50','100',]) ? $request->input('items_limit') : 10),
+            'categories' => \App\Category::orderBy('name')->get(),
+            'brands' => \App\Brand::orderBy('name')->get(),
+        ]);
+    }
+
+    /**
+     * Show the product edit form
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(\Illuminate\Http\Request $request)
+    {
+        return view('admin/products/edit', [
+            'product' => \App\Product::firstOrFail($request->get('id')),
             'categories' => \App\Category::orderBy('name')->get(),
             'brands' => \App\Brand::orderBy('name')->get(),
         ]);

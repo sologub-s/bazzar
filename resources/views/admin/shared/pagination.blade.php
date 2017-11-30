@@ -1,6 +1,5 @@
 @if ($paginator->hasPages())
 <?php
-        //dd($paginator);
     $from = ($paginator->currentPage() - 1) * $paginator->perPage() + 1;
 ?>
 <div class="row">
