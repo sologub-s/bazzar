@@ -3,9 +3,13 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Laravel\Scout\Searchable;
 
 class Product extends Model
 {
+
+    use Searchable;
+
     protected $fillable = ['ava_id','name','parent_id','category_id','brand_id','img','parsed','properties_json','description','images_json','active','in_stock','prices_json','price_min','price_max',];
 
     public function category () {
@@ -19,5 +23,18 @@ class Product extends Model
     public function prices()
     {
         return $this->hasMany('App\Price', 'product_id');
+    }
+
+    public function searchableAs()
+    {
+        return 'products';
+    }
+
+    public function toSearchableArray () {
+        return [
+            'id' => $this->id,
+            'name' => $this->name,
+            'description' => $this->description,
+        ];
     }
 }

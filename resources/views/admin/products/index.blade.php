@@ -31,8 +31,9 @@
                                 </div>
                             </div>
                             <div class="col-sm-12 col-md-6">
-                                <div id="dataTable_filter" class="dataTables_filter">
-                                    <label>Search:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="dataTable"></label>
+                                <div id="dataTable_filter" class="dataTables_filter ">
+                                    <label>Search:<input type="search" id="search_request_input" class="form-control" placeholder="" aria-controls="dataTable" value="{{ request()->input('search_request') }}"></label>
+                                    <button class="btn btn-outline-primary" target="_blank" role="button" onclick="location.href='{{url()->current().'?'.http_build_query(request()->except('search_request'))}}&search_request='+$('#search_request_input').val()">Search</button>
                                 </div>
                             </div>
                         </div>
@@ -45,7 +46,7 @@
                                         <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Name+Slug: activate to sort column descending" style="">Name+Slug</th>
                                         <th class="" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Category" style="">Category
                                             <select name="filter_category" aria-controls="dataTable" class="form-control form-control-sm jsApplyFilter" onchange="location.href=$(this).val()">
-                                                <option value="">*</option>
+                                                <option value="{{url()->current().'?'.http_build_query(request()->except('filter_category'))}}">*</option>
                                                 @foreach($categories as $category)
                                                     <option value="{{url()->current().'?'.http_build_query(array_merge(request()->all(),['filter_category'=>$category->id]))}}"
                                                     {{ request()->input('filter_category') == $category->id ? ' selected="selected" ' : '' }}>{{$category->name}}</option>
@@ -54,7 +55,7 @@
                                         </th>
                                         <th class="" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Brand" style="">Brand
                                             <select name="filter_brand" aria-controls="dataTable" class="form-control form-control-sm jsApplyFilter" onchange="location.href=$(this).val()">
-                                                <option value="">*</option>
+                                                <option value="{{url()->current().'?'.http_build_query(request()->except('filter_brand'))}}">*</option>
                                                 @foreach($brands as $brand)
                                                     <option value="{{url()->current().'?'.http_build_query(array_merge(request()->all(),['filter_brand'=>$brand->id]))}}"
                                                     {{ request()->input('filter_brand') == $brand->id ? ' selected="selected" ' : '' }}>{{$brand->name}}</option>
@@ -118,10 +119,10 @@
                                             <td>{{$product->name}}<br /><small>{{$product->slug}}</small></td>
                                             <td>{{$product->category->name}}</td>
                                             <td>{{$product->brand->name}}</td>
-                                            <td><img src="{{$product->img}}" /></td>
-                                            <td>{{$product->active}}</td>
-                                            <td>{{$product->in_stock}}</td>
-                                            <td>{{$product->parsed}}</td>
+                                            <td class="text-center"><img src="{{$product->img}}" /></td>
+                                            <td class="text-center">{{$product->active}}</td>
+                                            <td class="text-center">{{$product->in_stock}}</td>
+                                            <td class="text-center">{{$product->parsed}}</td>
                                             <td>{!! implode('<br />', array_map(function($v){
                                                 return $v['price'];
                                             }, $product->prices->toArray())) !!}</td>
@@ -136,16 +137,7 @@
                                 </table>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-sm-12 col-md-5">
-                                <div class="dataTables_info" id="dataTable_info" role="status" aria-live="polite">Showing 1 to 10 of 57 entries</div>
-                            </div>
-                            <div class="col-sm-12 col-md-7">
-                                <div class="dataTables_paginate paging_simple_numbers" id="dataTable_paginate">
-                                    {{ $products->appends(request()->except('page'))->links('admin.shared.pagination') }}
-                                </div>
-                            </div>
-                        </div>
+                        {{ $products->appends(request()->except('page'))->links('admin.shared.pagination') }}
                     </div>
                 </div>
             </div>
