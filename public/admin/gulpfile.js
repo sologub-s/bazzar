@@ -8,6 +8,7 @@ var rename = require("gulp-rename");
 var uglify = require('gulp-uglify');
 var beautify = require('gulp-html-beautify');
 var pkg = require('./package.json');
+var babel = require('gulp-babel');
 
 // Set the banner content
 var banner = ['/*!\n',
@@ -49,6 +50,9 @@ gulp.task('minify-css', ['sass'], function() {
 // Minify custom JS
 gulp.task('minify-js', function() {
   return gulp.src(['js/**/*.js', '!js/**/*.min.js'])
+    .pipe(babel({
+      presets: ['env']
+    }))
     .pipe(uglify())
     .pipe(header(banner, {
       pkg: pkg
