@@ -56,6 +56,8 @@ class ProductsController extends Controller
             $products->whereIn('id', $ids);
         }
 
+        $products->where('broken', 0);
+
         return view('admin/products/index', [
             'products' => $products->paginate($request->has('items_limit') && in_array($request->input('items_limit'), ['10','25','50','100',]) ? $request->input('items_limit') : 10),
             'categories' => \App\Category::orderBy('name')->get(),

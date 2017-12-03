@@ -34,6 +34,7 @@ class CreateProductsTable extends Migration
             $table->longText('prices_json')->nullable();
             $table->unsignedDecimal('price_min')->default(0);
             $table->unsignedDecimal('price_max')->default(0);
+            $table->unsignedDecimal('broken')->default(0);
 
             $table->unique('ava_id');
             $table->index('category_id');
@@ -43,6 +44,7 @@ class CreateProductsTable extends Migration
             $table->index('in_stock');
             $table->index('price_min');
             $table->index('price_max');
+            $table->index('broken');
 
             //$table->foreign('parent_id')->references('ava_id')->on('categories')->onDelete('cascade');
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('set null');

@@ -20,8 +20,14 @@ class CreateCategoriesTable extends Migration
             $table->unsignedInteger('ava_id');
             $table->string('name');
             $table->string('slug');
+            $table->unsignedInteger('parent_id')->nullable()->default(0);
+            $table->unsignedTinyInteger('active')->default(1);
+            $table->unsignedTinyInteger('broken')->default(0);
 
             $table->unique('ava_id');
+            $table->index('parent_id');
+            $table->index('active');
+            $table->index('broken');
         });
     }
 

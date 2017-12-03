@@ -77,5 +77,7 @@ class BazzarParseCategories extends Command
                   ");
         }
         $this->info('Done.');
+
+        $this->call('bazzar:createcategoriestree');
     }
 }

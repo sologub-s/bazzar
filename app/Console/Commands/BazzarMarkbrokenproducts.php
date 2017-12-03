@@ -9,21 +9,21 @@ use App\Components\BazzarParser;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
 
-class BazzarWorkflowAll extends Command
+class BazzarMarkbrokenproducts extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'bazzar:workflow:all';
+    protected $signature = 'bazzar:markbrokenproducts';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Do main stuff';
+    protected $description = 'Mark products with broken category';
 
     /**
      * Create a new command instance.
@@ -42,17 +42,12 @@ class BazzarWorkflowAll extends Command
      */
     public function handle(BazzarParser $parser)
     {
-        $this->call('bazzar:clean');
-        $this->call('bazzar:download');
-        $this->call('bazzar:parse:shops');
-        $this->call('bazzar:parse:categories');
-        $this->call('bazzar:parse:productsandbrands');
-        $this->call('bazzar:parse:prices');
-        $this->call('bazzar:clean');
-        $this->call('bazzar:index:products');
-        //$this->call('php artisan bazzar:parse:properties');
-        //$this->call('php artisan bazzar:parse:images');
+        set_time_limit(0);
 
-        $this->line('');
+        $this->comment('Parsing the list of Categories...');
+        DB::connection()->getPdo()->exec("UPDATE products SET broken = 1 WHERE category_id IN(SELECT id FROM categories WHERE broken = 1)");
+        $this->info('Done.');
+
+        $this->call('bazzar:createcategoriestree');
     }
 }

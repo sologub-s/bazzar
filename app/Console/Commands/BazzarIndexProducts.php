@@ -50,7 +50,7 @@ class BazzarIndexProducts extends Command
             'storage'   => config('scout.tntsearch.storage'),
         ]);
         $indexer = $tnt->createIndex('products.index');
-        $indexer->query('SELECT `id`, `name`, `description` FROM products;');
+        $indexer->query('SELECT p.`id`, p.`name`, p.`description`, c.`name` AS `category_name` FROM products p INNER JOIN categories c ON (p.category_id = c.id) WHERE c.active = 1 AND c.broken = 0');
         $indexer->run();
     }
 }

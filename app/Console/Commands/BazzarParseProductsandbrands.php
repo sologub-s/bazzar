@@ -173,5 +173,7 @@ class BazzarParseProductsandbrands extends Command
         $bar->finish();
         $this->line('');
         $this->info('Done.');
+
+        $this->call('bazzar:markbrokenproducts');
     }
 }
