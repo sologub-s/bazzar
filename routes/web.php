@@ -30,7 +30,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['rol
 
     Route::get('products', 'ProductsController@index')->name('admin_products');
     Route::get('products/{id}', 'ProductsController@edit')->name('admin_products_edit');
-
+    Route::post('products/{id}', 'ProductsController@editHandler')->name('admin_products_edit_handler');
 });
 
 //Route::get('/home', 'HomeController@index')->name('home');

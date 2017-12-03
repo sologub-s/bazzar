@@ -76,4 +76,24 @@ class ProductsController extends Controller
             'brands' => \App\Brand::orderBy('name')->get(),
         ]);
     }
+
+    /**
+     * Product edit handler
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function editHandler(\Illuminate\Http\Request $request, $id)
+    {
+        try {
+            \App\Product::where('id', $id)->firstOrFail()->fill([
+                'name' => $request->post('name'),
+                'slug' => $request->post('slug'),
+                'description' => $request->post('description'),
+                'active' => $request->has('active') ? 1 : 0,
+            ])->save();
+        } catch (\Exception $e) {
+            return redirect()->route('admin_products_edit', $id)->with('error', $e->getMessage());
+        }
+        return redirect()->route('admin_products_edit', $id)->with('status', 'Product updated!');
+    }
 }

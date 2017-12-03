@@ -15,28 +15,34 @@
             </div>
         </div>
         -->
+        @if(request()->session()->has('status'))
+            <div class="alert alert-success" role="alert">
+                {{ request()->session()->get('status') }}
+            </div>
+        @endif
+        @if(request()->session()->has('error'))
+            <div class="alert alert-danger" role="alert">
+                {{ request()->session()->get('error') }}
+            </div>
+        @endif
         <div class="card mb-3">
             <div class="card-header">
                 <i class="fa fa-pencil-square-o"></i> {{ $product->name }}</div>
             <div class="card-body">
-                <form>
+                <form method="post" enctype="multipart/form-data" action="{{ route('admin_products_edit_handler', $product->id) }}">
                     <div class="row">
                         <div class="col-lg-6">
-                        <fieldset disabled>
-                            <div class="form-group">
-                                <label for="control_name">Name</label>
-                                <input type="name" class="form-control" id="control_name" aria-describedby="control_name_help" placeholder="Enter product name" value="{{ $product->name }}">
-                                <small id="control_name_help" class="form-text text-muted disabled">Автоматическое поле</small>
-                            </div>
-                        </fieldset>
+                        <div class="form-group">
+                            <label for="control_name">Name</label>
+                            <input type="name" class="form-control" id="control_name" aria-describedby="control_name_help" placeholder="Enter product name" name='name' value="{{ $product->name }}">
+                            <!--<small id="control_name_help" class="form-text text-muted disabled">Автоматическое поле</small>-->
+                        </div>
 
-                        <fieldset disabled>
-                            <div class="form-group">
-                                <label for="control_slug">Slug</label>
-                                <input type="slug" class="form-control" id="control_slug" aria-describedby="control_slug_help" placeholder="Enter product slug" value="{{ $product->slug }}">
-                                <small id="control_slug_help" class="form-text text-muted disabled">Автоматическое поле</small>
-                            </div>
-                        </fieldset>
+                        <div class="form-group">
+                            <label for="control_slug">Slug</label>
+                            <input type="slug" class="form-control" id="control_slug" aria-describedby="control_slug_help" placeholder="Enter product slug" name='slug' value="{{ $product->slug }}">
+                            <!--<small id="control_slug_help" class="form-text text-muted disabled">Автоматическое поле</small>-->
+                        </div>
 
                         <fieldset disabled>
                             <div class="form-group">
@@ -87,7 +93,7 @@
 
                         <div class="form-group">
                             <label for="control_description">Описание</label>
-                            <textarea class="form-control" id="control_textarea" rows="3">{{ $product->description }}</textarea>
+                            <textarea class="form-control ckeditor" id="control_textarea" rows="3" name='description'>{{ $product->description }}</textarea>
                         </div>
 
                         </div>
@@ -108,7 +114,7 @@
 
                 </form>
             </div>
-            <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+            <div class="card-footer small text-muted">Updated at {{ $product->updated_at }}</div>
         </div>
     </div>
     <!-- /.container-fluid-->

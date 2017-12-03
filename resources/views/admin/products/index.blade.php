@@ -7,14 +7,16 @@
         ]])
         <div class="row">
             <div class="col-12">
+                <!--
                 <h1>Products list</h1>
                 <p>Hello world from empty page.</p>
                 <p>{{url()->current().(request()->except('page')?'?':'').http_build_query(request()->except('page'))}}</p>
+                -->
             </div>
         </div>
         <div class="card mb-3">
             <div class="card-header">
-                <i class="fa fa-table"></i> Products</div>
+                <i class="fa fa-table"></i> Products list</div>
             <div class="card-body">
                 <div class="table-responsive">
                     <div id="dataTable_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4">

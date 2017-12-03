@@ -163,8 +163,6 @@ class BazzarParseProductsandbrands extends Command
                   VALUES ".implode(', ', $chunk)."
                   ON DUPLICATE KEY UPDATE
                    `updated_at` = CURRENT_TIMESTAMP,
-                   `name` = VALUES(`name`),
-                   `slug` = VALUES(`slug`),
                    `parent_id` = VALUES(`parent_id`),
                    `category_id` = VALUES(`category_id`),
                    `brand_id` = VALUES(`brand_id`),
