@@ -70,10 +70,10 @@ class ProductsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function edit(\Illuminate\Http\Request $request)
+    public function edit(\Illuminate\Http\Request $request, $id)
     {
         return view('admin/products/edit', [
-            'product' => \App\Product::firstOrFail($request->get('id')),
+            'product' => \App\Product::where('id', $id)->firstOrFail(),
             'categories' => \App\Category::orderBy('name')->get(),
             'brands' => \App\Brand::orderBy('name')->get(),
         ]);

@@ -17,7 +17,7 @@ class BazzarParseAdditional extends Command
      *
      * @var string
      */
-    protected $signature = 'bazzar:parse:additional {--w|worker} {--cs|chunksize=10}';
+    protected $signature = 'bazzar:parse:additional {--w|worker} {--cs|chunksize=100}';
 
     /**
      * The console command description.
@@ -47,7 +47,7 @@ class BazzarParseAdditional extends Command
 
         if ($this->option('worker')) {
             $this->info('Worker mode is ON');
-            $this->info('Parsing all items with parsed == 0 and in_stock == 1, '.(int)abs($this->option('chunksize')).' per time...');
+            $this->info('Parsing all items with parsed == 0, '.(int)abs($this->option('chunksize')).' per time...');
         } else {
             $this->info('Worker mode is OFF');
             $this->info('Parsing '.(int)abs($this->option('chunksize')).' items and then stop...');
@@ -57,7 +57,7 @@ class BazzarParseAdditional extends Command
 
         while(true)
         {
-            $products = \App\Product::where('parsed', 0)->where('in_stock', 1)->limit((int)abs($this->option('chunksize')))->get();
+            $products = \App\Product::where('parsed', 0)/*->where('in_stock', 1)*/->limit((int)abs($this->option('chunksize')))->get();
             if (!sizeof($products)) {
                 $this->info('No products found with parsed == 0');
                 if ($this->option('worker')) {
