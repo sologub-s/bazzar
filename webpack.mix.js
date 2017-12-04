@@ -28,7 +28,36 @@ mix.webpackConfig( {
 mix
     .copy( 'resources/assets/images', 'public/images', false )
 
-    .js('resources/assets/js/app.js', 'public/js')
+    .babel([
+        'resources/assets/js/jquery.js',
+        'resources/assets/js/jquery.once.js',
+        'resources/assets/js/drupal.js',
+        'resources/assets/js/jquery.ui.core.min.js',
+        'resources/assets/js/jquery.ui.widget.min.js',
+        'resources/assets/js/jquery.bgiframe.js',
+        'resources/assets/js/jquery.hoverIntent.js',
+        'resources/assets/js/superfish.js',
+        'resources/assets/js/nice_menus.js',
+        'resources/assets/js/jquery.ui.accordion.min.js',
+        'resources/assets/js/jquery.ui.tabs.min.js',
+        'resources/assets/js/ru_rfvRusY_ByZmBNfd8z1iVQ1tIIFfQxmVhFV4gKl1a7c.js',
+        'resources/assets/js/jquery.colorbox-min.js',
+        'resources/assets/js/colorbox.js',
+        'resources/assets/js/colorbox_style.js',
+        'resources/assets/js/floating_block.js',
+        'resources/assets/js/jquery.jcarousel.min.js',
+        'resources/assets/js/jcarousel.js',
+        'resources/assets/js/jquery.flexslider.js',
+        'resources/assets/js/responsive_menus_simple.js',
+        'resources/assets/js/jquery.formalize.js',
+        'resources/assets/js/omega-mediaqueries.js',
+        'resources/assets/js/custom.js',
+        'resources/assets/js/flexslider.load.js',
+        'resources/assets/js/addthis.js',
+        'resources/assets/js/drupal.settings.js',
+
+        'resources/assets/js/app.js'
+    ], 'public/js/script.js')
 
     //.sass('resources/assets/sass/app.scss', 'public/css')
 
