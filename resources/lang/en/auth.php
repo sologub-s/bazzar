@@ -15,5 +15,8 @@ return [
 
     'failed' => 'These credentials do not match our records.',
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
+    'banned' => 'Your account has been banned.',
+    'password_wrong' => 'Your email and password does not match.',
+    'user_not_found' => 'The user with provided email was not found.',
 
 ];

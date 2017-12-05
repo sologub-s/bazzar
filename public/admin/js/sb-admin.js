@@ -43,4 +43,43 @@
     event.preventDefault();
   });
 
+  $('.jsToggleAdminButton').on('click', function () {
+    if($(this).hasClass('disabled')) {
+      return;
+    }
+    $(this).html($(this).data('loading-text'));
+    $.post(`/admin/users/toggle/admin/${$(this).data('id')}/`, (data) => {
+      $(this).html($(this).data('default-text'));
+      if(!data.success) {
+        $(this).parent().find('small').html('<br />'+data.errors.join('; ')).show();
+        return;
+      }
+      $(this).parent().find('small').hide();
+      $(this)
+          .toggleClass('active', data.userIsAdmin)
+          .toggleClass('btn-outline-primary', !data.userIsAdmin)
+          .toggleClass('btn-primary', data.userIsAdmin);
+    })
+  });
+
+  $('.jsToggleBannedButton').on('click', function () {
+    if($(this).hasClass('disabled')) {
+      return;
+    }
+    $(this).html($(this).data('loading-text'));
+    $.post(`/admin/users/toggle/banned/${$(this).data('id')}/`, (data) => {
+      $(this).html($(this).data('default-text'));
+      if(!data.success) {
+        $(this).parent().find('small').html('<br />'+data.errors.join('; ')).show();
+        return;
+      }
+      $(this).parent().find('small').hide();
+      $(this)
+          .toggleClass('active', data.userBanned)
+          .toggleClass('btn-outline-warning', !data.userBanned)
+          .toggleClass('btn-warning', data.userBanned);
+    })
+  });
+
+
 })(jQuery); // End of use strict

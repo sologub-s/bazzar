@@ -26,6 +26,9 @@
                                                 @if ($errors->has('password'))
                                                     <li>{{ $errors->first('password') }}</li>
                                                 @endif
+                                                @if ($errors->has('banned'))
+                                                    <li>{{ $errors->first('banned') }}</li>
+                                                @endif
                                             </ul>
                                         </div>
                                     </div>

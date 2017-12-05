@@ -84,19 +84,22 @@ class BazzarParseAdditional extends Command
                         if(!empty((array)$html->find('tbody#properties'))) {
                             $trs = (array) $html->find('tbody#properties')[0]->children();
                         }
+                        $dataIndex = -1;
                         while(sizeof($trs) > 0) {
                             $item = array_shift($trs);
                             if (isset($item->style)) {
                                 continue;
                             }
                             if (!isset($item->class)) {
-                                $data['group'] = trim($item->find('h3')->plaintext);
-                                $data['properties'] = [];
+                                $dataIndex++;
+                                $data[$dataIndex] = [];
+                                $data[$dataIndex]['group'] = str_replace(["\n","\r"], '', trim($item->find('h3')->plaintext));
+                                $data[$dataIndex]['properties'] = [];
                                 continue;
                             }
-                            $data['group'] = isset($data['group']) ? $data['group'] : 'Основные характеристики';
-                            $data['properties'] = isset($data['properties']) ? $data['properties'] : [];
-                            array_push($data['properties'], ['name' => trim($item->find('th')->plaintext), 'value' => trim($item->find('td')->plaintext)]);
+                            $data[$dataIndex]['group'] = isset($data[$dataIndex]['group']) ? $data[$dataIndex]['group'] : 'Основные характеристики';
+                            $data[$dataIndex]['properties'] = isset($data[$dataIndex]['properties']) ? $data[$dataIndex]['properties'] : [];
+                            array_push($data[$dataIndex]['properties'], ['name' => str_replace(["\n","\r"], '', trim($item->find('th')->plaintext)), 'value' => str_replace(["\n","\r"], '', trim($item->find('td')->plaintext))]);
                         }
                     } catch (\Exception $e) {
                         $this->error('product # '.$product->id.' @ '.$url.' : properties : '.$e->getMessage());
