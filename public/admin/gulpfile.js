@@ -9,6 +9,7 @@ var uglify = require('gulp-uglify');
 var beautify = require('gulp-html-beautify');
 var pkg = require('./package.json');
 var babel = require('gulp-babel');
+var concatCss = require('gulp-concat-css');
 
 // Set the banner content
 var banner = ['/*!\n',
@@ -34,6 +35,9 @@ gulp.task('sass', function() {
 
 // Minify compiled CSS
 gulp.task('minify-css', ['sass'], function() {
+    //return gulp.src('css/**/*.css')
+    //return gulp.src(['css/sb-admin.css','css/typeahead.css'])
+    //    .pipe(concatCss("bundle.css"))
   return gulp.src('css/sb-admin.css')
     .pipe(cleanCSS({
       compatibility: 'ie8'
@@ -125,6 +129,17 @@ gulp.task('copy', function() {
         'node_modules/bootstrap-switch/dist/js/bootstrap-switch.js'
     ])
         .pipe(gulp.dest('vendor/bootstrap-switch'))
+
+    gulp.src([
+        'node_modules/bootstrap-tagsinput/dist/bootstrap-tagsinput.js',
+        'node_modules/bootstrap-tagsinput/dist/bootstrap-tagsinput.css',
+    ])
+        .pipe(gulp.dest('vendor/bootstrap-tagsinput'))
+
+    gulp.src([
+        'node_modules/typeahead/typeahead.js',
+    ])
+        .pipe(gulp.dest('vendor/typeahead'))
 })
 
 // Default task

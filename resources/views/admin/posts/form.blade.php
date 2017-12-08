@@ -13,6 +13,10 @@
                 <!--<small id="control_name_help" class="form-text text-muted disabled">Автоматическое поле</small>-->
             </div>
 
+            <div class="form-group">
+                <input type="text" class="form-control jsTagsinput" id="control_tags" aria-describedby="control_tags_help" placeholder="Enter post tags" name='tags' value="">
+            </div>
+
             <div class="form-check">
                 <label class="form-check-label">
                     <input type="checkbox" class="form-check-input jsBootstrapSwitch" {{ $post['active'] == 1 ? 'checked' : '' }} name="active" data-on-text="Enabled" data-off-text="Disabled" data-on-color="success">

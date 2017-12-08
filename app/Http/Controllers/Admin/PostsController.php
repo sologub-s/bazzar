@@ -141,4 +141,8 @@ class PostsController extends Controller
         }
 
     }
+
+    public function tagsSource (Request $request) {
+        die(json_encode(['amber','gold','moon','night','maverick',]));
+    }
 }

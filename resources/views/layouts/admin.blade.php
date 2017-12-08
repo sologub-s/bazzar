@@ -15,8 +15,10 @@
     <!-- Page level plugin CSS-->
     <link href="/admin/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
     <link href="/admin/vendor/bootstrap-switch/bootstrap-switch.css" rel="stylesheet">
+    <link href="/admin/vendor/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet">
     <!-- Custom styles for this template-->
-    <link href="/admin/css/sb-admin.css" rel="stylesheet">
+    {{--<link href="/admin/css/sb-admin.css" rel="stylesheet">--}}
+    <link href="/admin/css/sb-admin.min.css" rel="stylesheet">
 </head>
 
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
@@ -58,6 +60,8 @@
     <script src="/admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="/admin/vendor/bootstrap-confirmation/bootstrap-confirmation.js"></script>
     <script src="/admin/vendor/bootstrap-switch/bootstrap-switch.js"></script>
+    <script src="/admin/vendor/bootstrap-tagsinput/bootstrap-tagsinput.js"></script>
+    <script src="/admin/js/typeahead.bundle.js"></script>
     <script src="/admin/vendor/underscore/underscore.js"></script>
     <script src="{{asset('/admin/ckeditor/ckeditor/ckeditor.js')}}"></script>
     <!-- Core plugin JavaScript-->

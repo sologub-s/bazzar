@@ -190,5 +190,29 @@
         location.href = $(this).data('url') + '?terms=' + $(this).closest('.row').find('input[name=search_terms]').val();
     });
 
+    var allTags = new Bloodhound({
+        datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
+        queryTokenizer: Bloodhound.tokenizers.whitespace,
+        prefetch: {
+            url: '/admin/posts/tags/source',
+            cache: false,
+            filter: function(list) {
+                return $.map(list, function(tag) {
+                    return { name: tag }; });
+            }
+        }
+    });
+    allTags.initialize();
+
+    $('input.jsTagsinput').tagsinput({
+        tagClass: 'badge badge-info',
+        typeaheadjs: {
+            name: 'allTags',
+            displayKey: 'name',
+            valueKey: 'name',
+            source: allTags.ttAdapter()
+        }
+    });
+
 
 })(jQuery); // End of use strict

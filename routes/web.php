@@ -38,6 +38,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['rol
     Route::post('posts/{id}', 'PostsController@editHandler')->name('admin_posts_edit_handler');
     Route::post('posts/toggle/active/{id}', 'PostsController@toggleActive')->name('admin_posts_toggle_active');
     Route::post('posts/check/ability/{id}', 'PostsController@checkAbility')->name('admin_posts_check_ability');
+    Route::get('posts/tags/source', 'PostsController@tagsSource')->name('admin_posts_tags_source');
 
     Route::get('categories', 'CategoriesController@index')->name('admin_categories');
     Route::post('categories/{id}', 'CategoriesController@editHandler')->name('admin_categories_edit_handler');
