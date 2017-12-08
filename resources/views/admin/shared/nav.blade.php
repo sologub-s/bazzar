@@ -1,6 +1,6 @@
 <!-- Navigation-->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-    <a class="navbar-brand" href="index.html">Bazzar</a>
+    <a class="navbar-brand" href="index.html">{{ config('app.name') }}</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -36,6 +36,12 @@
                 <a class="nav-link" href="{{ route('admin_posts') }}">
                     <i class="fa fa-fw fa-file-text-o"></i>
                     <span class="nav-link-text">Posts</span>
+                </a>
+            </li>
+            <li class="nav-item @if(in_array(Route::currentRouteName(), ['admin_contentblocks','admin_contentblocks_add', 'admin_contentblocks_edit',])) active @endif" data-toggle="tooltip" data-placement="right" title="Contentblocks">
+                <a class="nav-link" href="{{ route('admin_contentblocks') }}">
+                    <i class="fa fa-fw fa-code"></i>
+                    <span class="nav-link-text">Contentblocks</span>
                 </a>
             </li>
         </ul>

@@ -1,4 +1,5 @@
 <div class="row">
+    @if($limit ?? true)
     <div class="col-sm-12 col-md-6">
         <div class="dataTables_length" id="dataTable_length">
             <label>Show <select name="paginate_amount" aria-controls="dataTable" class="form-control form-control-sm jsApplyFilter" onchange="location.href=$(this).val()">
@@ -10,15 +11,9 @@
                 </select> entries</label>
         </div>
     </div>
+    @endif
+    @if($search ?? true)
     <div class="col-sm-12 col-md-6">
-
-        {{--
-        <div id="dataTable_filter" class="dataTables_filter ">
-            <label>Search:<input type="search" id="search_request_input" class="form-control" placeholder="" aria-controls="dataTable" value="{{ request()->input('search_request') }}"></label>
-            <button class="btn btn-outline-primary" target="_blank" role="button" onclick="location.href='{{url()->current().'?'.http_build_query(request()->except('search_request'))}}&search_request='+$('#search_request_input').val()">Search</button>
-        </div>
-        --}}
-
         <div id="dataTable_filter" class="input-group dataTables_filter jsSearchContainer">
             <input type="search" id="search_request_input" class="form-control jsSearchInput" value="{{ request()->input('search_request') }}" placeholder="Search for...">
             <span class="input-group-btn">
@@ -27,4 +22,5 @@
             </span>
         </div>
     </div>
+    @endif
 </div>

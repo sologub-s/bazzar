@@ -25,6 +25,12 @@ class Post extends Model
             'slug' => $this->slug,
             'content' => $this->content,
             'image' => $this->image,
+            'tags' => implode(' ', array_map(function ($v) { return $v['name']; }, $this->tags()->get()->toArray())),
         ];
+    }
+
+    public function tags ()
+    {
+        return $this->belongsToMany('App\Tag');
     }
 }

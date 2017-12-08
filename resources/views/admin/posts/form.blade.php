@@ -1,4 +1,4 @@
-<form method="post" enctype="multipart/form-data" action="{{ route('admin_posts_edit_handler', $post['id']) }}">
+<form method="post" enctype="multipart/form-data" action="{{ $action }}">
     <div class="row">
         <div class="col-12">
             <div class="form-group">
@@ -14,7 +14,7 @@
             </div>
 
             <div class="form-group">
-                <input type="text" class="form-control jsTagsinput" id="control_tags" aria-describedby="control_tags_help" placeholder="Enter post tags" name='tags' value="">
+                <input type="text" class="form-control jsTagsinput" id="control_tags" aria-describedby="control_tags_help" placeholder="Enter post tags" name='tags' value="{{ implode(',', array_map(function($tag) { return $tag['name'] ?? $tag; }, $post['tags'])) }}">
             </div>
 
             <div class="form-check">
@@ -35,7 +35,7 @@
             </div>
 
             <div class="form-group">
-                <label for="control_content">Содержимое</label>
+                <label for="control_content">Content</label>
                 <textarea class="form-control ckeditor" id="control_content" rows="3" name='content'>{{ $post['content'] }}</textarea>
             </div>
 

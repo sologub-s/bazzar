@@ -36,11 +36,20 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['rol
     Route::post('posts/add', 'PostsController@addHandler')->name('admin_posts_add_handler');
     Route::get('posts/{id}', 'PostsController@edit')->name('admin_posts_edit');
     Route::post('posts/{id}', 'PostsController@editHandler')->name('admin_posts_edit_handler');
+    Route::get('posts/delete/{id}', 'PostsController@deleteHandler')->name('admin_posts_delete_handler');
     Route::post('posts/toggle/active/{id}', 'PostsController@toggleActive')->name('admin_posts_toggle_active');
-    Route::post('posts/check/ability/{id}', 'PostsController@checkAbility')->name('admin_posts_check_ability');
-    Route::get('posts/tags/source', 'PostsController@tagsSource')->name('admin_posts_tags_source');
+
+    Route::get('tags/source', 'TagsController@source')->name('admin_tags_source');
 
     Route::get('categories', 'CategoriesController@index')->name('admin_categories');
     Route::post('categories/{id}', 'CategoriesController@editHandler')->name('admin_categories_edit_handler');
     Route::get('categories/saveterms/{id}', 'CategoriesController@savetermsHandler')->name('admin_categories_saveterms_handler');
+
+    Route::get('contentblocks', 'ContentblocksController@index')->name('admin_contentblocks');
+    Route::get('contentblocks/add', 'ContentblocksController@add')->name('admin_contentblocks_add');
+    Route::post('contentblocks/add', 'ContentblocksController@addHandler')->name('admin_contentblocks_add_handler');
+    Route::get('contentblocks/{id}', 'ContentblocksController@edit')->name('admin_contentblocks_edit');
+    Route::post('contentblocks/{id}', 'ContentblocksController@editHandler')->name('admin_contentblocks_edit_handler');
+    Route::get('contentblocks/delete/{id}', 'ContentblocksController@deleteHandler')->name('admin_contentblocks_delete_handler');
+    Route::post('contentblocks/toggle/active/{id}', 'ContentblocksController@toggleActive')->name('admin_contentblocks_toggle_active');
 });

@@ -124,7 +124,7 @@
                                                 return $v['price'];
                                             }, $product->prices->toArray())) !!}</td>
                                             <td>
-                                                <a class="btn btn-outline-warning btn-block" href="{{ url()->current() }}/{{ $product->id }}" role="button">Edit</a><br />
+                                                <a class="btn btn-outline-warning btn-block" href="{{ route('admin_products_edit', $product->id) }}" role="button">Edit</a><br />
                                                 <a class="btn btn-outline-primary btn-block" target="_blank" href="#" role="button">Open on site</a>
                                             </td>
                                         </tr>

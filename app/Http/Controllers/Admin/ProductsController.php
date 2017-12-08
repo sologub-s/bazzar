@@ -26,7 +26,7 @@ class ProductsController extends Controller
      */
     public function index(\Illuminate\Http\Request $request)
     {
-        $products = \App\Product
+        $products = product
             ::with([
                 'category', 'brand', 'prices' => function($query) {
                     $query->orderBy('price', 'ASC');
@@ -34,7 +34,7 @@ class ProductsController extends Controller
             ]);
 
         if ($request->has('search_request') && !empty($request->input('search_request'))) {
-            $ids = \App\Product::search(urldecode($request->input('search_request')))->get()->toArray();
+            $ids = product::search(urldecode($request->input('search_request')))->get()->toArray();
             array_walk($ids, function (&$v) {
                 $v = $v['id'];
             });
@@ -69,7 +69,7 @@ class ProductsController extends Controller
 
     public function toggleActive (Request $request, $id) {
         header('Content-Type: application/json');
-        if (!$product = \App\Product::where('id', $id)->first()) {
+        if (!$product = product::where('id', $id)->first()) {
             die(json_encode(['success' => false, 'errors' => ['Product not found']]));
         }
         try {
@@ -90,7 +90,7 @@ class ProductsController extends Controller
     public function edit(\Illuminate\Http\Request $request, $id)
     {
         return view('admin/products/edit', [
-            'product' => \App\Product::where('id', $id)->firstOrFail(),
+            'product' => product::where('id', $id)->firstOrFail(),
             'categories' => \App\Category::orderBy('name')->get(),
             'brands' => \App\Brand::orderBy('name')->get(),
         ]);
@@ -104,7 +104,7 @@ class ProductsController extends Controller
     public function editHandler(\Illuminate\Http\Request $request, $id)
     {
         try {
-            \App\Product::where('id', $id)->firstOrFail()->fill([
+            product::where('id', $id)->firstOrFail()->fill([
                 'name' => $request->post('name'),
                 'slug' => $request->post('slug'),
                 'description' => $request->post('description'),
@@ -115,4 +115,5 @@ class ProductsController extends Controller
         }
         return redirect()->route('admin_products_edit', $id)->with('status', 'Product updated!');
     }
+
 }

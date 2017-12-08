@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>SB Admin - Start Bootstrap Template</title>
+    <title>{{ config('app.name') }}</title>
     <!-- Bootstrap core CSS-->
     <link href="/admin/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom fonts for this template-->
@@ -29,7 +29,7 @@
     <footer class="sticky-footer">
         <div class="container">
             <div class="text-center">
-                <small>Copyright © Your Website 2017</small>
+                <small>Copyright © {{ config('app.name') }} {{ date('Y') }}</small>
             </div>
         </div>
     </footer>

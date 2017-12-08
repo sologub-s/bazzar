@@ -3,12 +3,12 @@
 @section('content')
     <div class="container-fluid">
         @include('admin.shared.breadcrumbs', ['breadcrumbs' => [
-            ['name' => 'Posts', 'url' => url('/admin/posts')],
+            ['name' => 'Contentblocks', 'url' => url('/admin/contentblocks')],
         ]])
         <div class="row">
             <div class="col-12">
                 <!--
-                <h1>Posts list</h1>
+                <h1>Contentblocks list</h1>
                 <p>Hello world from empty page.</p>
                 <p>{{url()->current().(request()->except('page')?'?':'').http_build_query(request()->except('page'))}}</p>
                 -->
@@ -17,11 +17,11 @@
         @include('admin.shared.alerts')
         <div class="card mb-3">
             <div class="card-header">
-                <i class="fa fa-table"></i> Posts list <a href="{{ route('admin_posts_add') }}" class="btn btn-primary">Add</a></div>
+                <i class="fa fa-table"></i> Contentblocks list <a href="{{ route('admin_contentblocks_add') }}" class="btn btn-primary">Add</a></div>
             <div class="card-body">
                 <div class="table-responsive">
                     <div id="dataTable_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4">
-                        @include('admin.shared.search-and-limit')
+                        @include('admin.shared.search-and-limit', ['search' => false])
                         <div class="row">
                             <div class="col-sm-12">
                                 <table class="table table-bordered table-hover dataTable" id="dataTable" width="100%" cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
@@ -63,23 +63,23 @@
                                     <?php
                                             $odd = true;
                                     ?>
-                                    @foreach($posts as $post)
+                                    @foreach($contentblocks as $contentblock)
 
                                         <tr role="row" class="{{ $odd ? 'odd' : 'even' }}">
-                                            <td class="">{{$post->id}}</td>
-                                            <td>{{$post->name}} @if(sizeof($post->tags))<br /><small><strong>Tags: </strong>{!! implode(', ', array_map(function ($v) { return '<span class="badge badge-primary">'.$v['name'].'</span>'; }, $post->tags->toArray())) !!}</small> @endif @if(!empty($post->image))<br /><img src="{{$post->image}}" style="max-width: 200px;" />@endif</td>
-                                            <td>{{$post->slug}}</td>
+                                            <td class="">{{$contentblock->id}}</td>
+                                            <td>{{$contentblock->name}}</td>
+                                            <td>{{$contentblock->slug}}</td>
                                             <td class="text-center">
-                                                <button type="button" class="jsTogglePostActiveButton btn {{ $post->active ? 'btn-success active' : 'btn-outline-success' }}" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> Changing..." autocomplete="off" data-id="{{$post->id}}" data-default-text="Active">
+                                                <button type="button" class="jsToggleContentblockActiveButton btn {{ $contentblock->active ? 'btn-success active' : 'btn-outline-success' }}" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> Changing..." autocomplete="off" data-id="{{$contentblock->id}}" data-default-text="Active">
                                                     Active
                                                 </button>
                                                 <small class="text-danger hidden"></small>
                                             </td>
                                             <td>
-                                                <a class="btn btn-outline-warning btn-block" href="{{ route('admin_posts_edit', $post->id) }}" role="button">Edit</a><br />
+                                                <a class="btn btn-outline-warning btn-block" href="{{ route('admin_contentblocks_edit', $contentblock->id) }}" role="button">Edit</a><br />
                                                 <a class="btn btn-outline-primary btn-block" target="_blank" href="#" role="button">Open on site</a>
                                                 <button class="btn btn-outline-danger btn-block mt-4" data-toggle="popover" data-trigger="focus" title="Are you sure ?" data-html="true" data-content='
-<a class="btn btn-outline-danger btn-block" href="{{ route('admin_posts_delete_handler', $post->id) }}" role="button">Yes</a>
+<a class="btn btn-outline-danger btn-block" href="{{ route('admin_contentblocks_delete_handler', $contentblock->id) }}" role="button">Yes</a>
                                                 ' role="button">Delete</button>
                                             </td>
                                         </tr>
@@ -89,7 +89,7 @@
                                 </table>
                             </div>
                         </div>
-                        {{ $posts->appends(request()->except('page'))->links('admin.shared.pagination') }}
+                        {{ $contentblocks->appends(request()->except('page'))->links('admin.shared.pagination') }}
                     </div>
                 </div>
             </div>

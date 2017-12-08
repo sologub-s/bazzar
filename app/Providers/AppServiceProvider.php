@@ -8,6 +8,9 @@ use Illuminate\Support\Facades\Schema;
 use App\Post;
 use App\Observers\PostObserver;
 
+use App\Contentblock;
+use App\Observers\ContentblockObserver;
+
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -23,6 +26,7 @@ class AppServiceProvider extends ServiceProvider
          * Observers
          */
         Post::observe(PostObserver::class);
+        Contentblock::observe(ContentblockObserver::class);
     }
 
     /**

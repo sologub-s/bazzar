@@ -194,7 +194,7 @@
         datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
         queryTokenizer: Bloodhound.tokenizers.whitespace,
         prefetch: {
-            url: '/admin/posts/tags/source',
+            url: '/admin/tags/source',
             cache: false,
             filter: function(list) {
                 return $.map(list, function(tag) {
@@ -213,6 +213,29 @@
             source: allTags.ttAdapter()
         }
     });
+
+    $('.jsToggleContentblockActiveButton').on('click', function () {
+        if($(this).hasClass('disabled')) {
+            return;
+        }
+        $(this).html($(this).data('loading-text'));
+        $.post(`/admin/contentblocks/toggle/active/${$(this).data('id')}/`, (data) => {
+            $(this).html($(this).data('default-text'));
+            if(!data.success) {
+                $(this).parent().find('small').html('<br />'+data.errors.join('; ')).show();
+                return;
+            }
+            $(this).parent().find('small').hide();
+            $(this)
+                .toggleClass('active', data.contentblockActive)
+                .toggleClass('btn-outline-success', !data.contentblockActive)
+                .toggleClass('btn-success', data.contentblockActive);
+        })
+    });
+
+    $(function () {
+        $('[data-toggle="popover"]').popover()
+    })
 
 
 })(jQuery); // End of use strict

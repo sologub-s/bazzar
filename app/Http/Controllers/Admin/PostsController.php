@@ -3,13 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Post;
+use App\Tag;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Controller;
-
-use Spatie\Permission\Models\Role;
 
 class PostsController extends Controller
 {
@@ -30,10 +26,10 @@ class PostsController extends Controller
      */
     public function index(\Illuminate\Http\Request $request)
     {
-        $posts = \App\Post::where('id', '>', 0);
+        $posts = Post::with(['tags',]);
 
         if ($request->has('search_request') && !empty($request->input('search_request'))) {
-            $ids = \App\Post::search(urldecode($request->input('search_request')))->get()->toArray();
+            $ids = Post::search(urldecode($request->input('search_request')))->get()->toArray();
             array_walk($ids, function (&$v) {
                 $v = $v['id'];
             });
@@ -83,13 +79,19 @@ class PostsController extends Controller
                 'content' => $request->post('content'),
                 'active' => $request->has('active') ? 1 : 0,
                 'image' => $request->post('image'),
-            ])->save();
+            ]);
+            $post->save();
+            $post->tags()->sync(array_map(function($tag) {
+                return $tag->id;
+            }, Tag::instantiate($request->post('tags'))));
+            $post->searchable();
         } catch (\Exception $e) {
             if (false !== strpos($e->getMessage(), 'Duplicate entry')) {
                 if($duplicateEntry = Post::where('name', 'LIKE', '%'.$request->post('name').'%')->orWhere('slug', 'LIKE', '%'.slug($request->post('name')).'%')->first()) {
                     return redirect()->route('admin_posts_add')->with('error', "The Post with the same name or slug is already exists: ".route('admin_posts_edit', ['id' => $duplicateEntry->id]))->withInput();
                 }
             }
+            return redirect()->route('admin_posts_add')->with('error', $e->getMessage())->withInput();
         }
         return redirect()->route('admin_posts_edit', $post->id)->with('status', 'Post created!');
     }
@@ -102,7 +104,7 @@ class PostsController extends Controller
     public function edit(\Illuminate\Http\Request $request, $id)
     {
         return view('admin/posts/edit', [
-            'post' => \App\Post::where('id', $id)->firstOrFail(),
+            'post' => Post::with('tags')->where('id', $id)->firstOrFail(),
         ]);
     }
 
@@ -114,13 +116,18 @@ class PostsController extends Controller
     public function editHandler(\Illuminate\Http\Request $request, $id)
     {
         try {
-            \App\Post::where('id', $id)->firstOrFail()->fill([
+            $post = Post::where('id', $id)->firstOrFail()->fill([
                 'name' => $request->post('name'),
                 'slug' => $request->post('slug'),
                 'content' => $request->post('content'),
                 'active' => $request->has('active') ? 1 : 0,
                 'image' => $request->post('image'),
-            ])->save();
+            ]);
+            $post->tags()->sync(array_map(function($tag) {
+                return $tag->id;
+            }, Tag::instantiate($request->post('tags'))));
+            $post->save();
+            $post->searchable();
         } catch (\Exception $e) {
             return redirect()->route('admin_posts_edit', $id)->with('error', $e->getMessage());
         }
@@ -129,7 +136,7 @@ class PostsController extends Controller
 
     public function toggleActive (Request $request, $id) {
         header('Content-Type: application/json');
-        if (!$post = \App\Post::where('id', $id)->first()) {
+        if (!$post = Post::where('id', $id)->first()) {
             die(json_encode(['success' => false, 'errors' => ['Post not found']]));
         }
         try {
@@ -142,7 +149,14 @@ class PostsController extends Controller
 
     }
 
-    public function tagsSource (Request $request) {
-        die(json_encode(['amber','gold','moon','night','maverick',]));
+    public function deleteHandler(\Illuminate\Http\Request $request, $id)
+    {
+        try {
+            Post::destroy($id);
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Cannot delete entry with id #'.$id)->withInput();
+        }
+        return redirect()->back()->with('status', 'Post deleted!');
     }
+
 }
