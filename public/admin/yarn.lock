@@ -656,6 +656,14 @@ boom@5.x.x:
   dependencies:
     hoek "4.x.x"
 
+bootstrap-confirmation@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/bootstrap-confirmation/-/bootstrap-confirmation-0.0.2.tgz#846fcc9718cf72e5ad4053b1c78478d92a2c3d5c"
+
+bootstrap-switch@^3.3.4:
+  version "3.3.4"
+  resolved "https://registry.yarnpkg.com/bootstrap-switch/-/bootstrap-switch-3.3.4.tgz#70e0aeb2a877c0dc766991de108e2170fc29a2ff"
+
 bootstrap@^4.0.0-beta.2:
   version "4.0.0-beta.2"
   resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-4.0.0-beta.2.tgz#4d67d2aa2219f062cd90bc1247e6747b9e8fd051"
@@ -3771,6 +3779,10 @@ unc-path-regex@^0.1.0:
 underscore@1.7.x:
   version "1.7.0"
   resolved "https://registry.yarnpkg.com/underscore/-/underscore-1.7.0.tgz#6bbaf0877500d36be34ecaa584e0db9fef035209"
+
+underscore@^1.8.3:
+  version "1.8.3"
+  resolved "https://registry.yarnpkg.com/underscore/-/underscore-1.8.3.tgz#4f3fb53b106e6097fcf9cb4109f2a5e9bdfa5022"
 
 unique-stream@^1.0.0:
   version "1.0.0"

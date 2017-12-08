@@ -15,16 +15,7 @@
             </div>
         </div>
         -->
-        @if(request()->session()->has('status'))
-            <div class="alert alert-success" role="alert">
-                {{ request()->session()->get('status') }}
-            </div>
-        @endif
-        @if(request()->session()->has('error'))
-            <div class="alert alert-danger" role="alert">
-                {{ request()->session()->get('error') }}
-            </div>
-        @endif
+        @include('admin.shared.alerts')
         <div class="card mb-3">
             <div class="card-header">
                 <i class="fa fa-pencil-square-o"></i> {{ $product->name }}</div>

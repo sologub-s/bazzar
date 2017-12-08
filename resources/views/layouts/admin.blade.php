@@ -14,6 +14,7 @@
     <link href="/admin/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <!-- Page level plugin CSS-->
     <link href="/admin/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+    <link href="/admin/vendor/bootstrap-switch/bootstrap-switch.css" rel="stylesheet">
     <!-- Custom styles for this template-->
     <link href="/admin/css/sb-admin.css" rel="stylesheet">
 </head>
@@ -55,6 +56,9 @@
     <!-- Bootstrap core JavaScript-->
     <script src="/admin/vendor/jquery/jquery.min.js"></script>
     <script src="/admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/admin/vendor/bootstrap-confirmation/bootstrap-confirmation.js"></script>
+    <script src="/admin/vendor/bootstrap-switch/bootstrap-switch.js"></script>
+    <script src="/admin/vendor/underscore/underscore.js"></script>
     <script src="{{asset('/admin/ckeditor/ckeditor/ckeditor.js')}}"></script>
     <!-- Core plugin JavaScript-->
     <script src="/admin/vendor/jquery-easing/jquery.easing.min.js"></script>

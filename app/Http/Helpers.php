@@ -64,3 +64,22 @@ function get_location_curl($url) {
 
     return !empty($matches[1]) ? trim($matches[1][sizeof($matches[1])-1]) : false;
 }
+
+if (!function_exists('slug'))
+{
+    /**
+     * @param String|null $string String to be sluggified
+     * @return String
+     */
+    function slug (String $string = null) : String
+    {
+        return mb_strtolower(str_slug($string));
+    }
+}
+
+if (!function_exists('create_anchors')) {
+    function create_anchors (String $string, String $target = null) : String
+    {
+        return preg_replace('"\b(https?://\S+)"', '<a href="$1" target="'.($target ?? '_self').'">$1</a>', $string);
+    }
+}

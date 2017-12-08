@@ -113,6 +113,18 @@ gulp.task('copy', function() {
       'node_modules/datatables.net-bs4/css/*.css'
     ])
     .pipe(gulp.dest('vendor/datatables/'))
+
+    gulp.src(['node_modules/bootstrap-confirmation/*.js'])
+        .pipe(gulp.dest('vendor/bootstrap-confirmation'))
+
+    gulp.src(['node_modules/underscore/underscore.js'])
+        .pipe(gulp.dest('vendor/underscore'))
+
+    gulp.src([
+        'node_modules/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.css',
+        'node_modules/bootstrap-switch/dist/js/bootstrap-switch.js'
+    ])
+        .pipe(gulp.dest('vendor/bootstrap-switch'))
 })
 
 // Default task
@@ -129,7 +141,7 @@ gulp.task('browserSync', function() {
 
 // Dev task with browserSync
 //gulp.task('dev', ['browserSync', 'sass', 'minify-css', 'minify-js', 'pug'], function() {
-gulp.task('dev', ['sass', 'minify-css', 'minify-js', 'pug'], function() {
+gulp.task('dev', ['sass', 'minify-css', 'copy', 'minify-js', 'pug'], function() {
   gulp.watch('scss/**/*', ['sass']);
   gulp.watch('pug/**/*', ['pug']);
   gulp.watch('css/*.css', ['minify-css']);

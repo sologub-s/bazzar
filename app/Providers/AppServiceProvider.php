@@ -5,6 +5,9 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
 
+use App\Post;
+use App\Observers\PostObserver;
+
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -15,6 +18,11 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Schema::defaultStringLength(191);
+
+        /**
+         * Observers
+         */
+        Post::observe(PostObserver::class);
     }
 
     /**
@@ -26,5 +34,6 @@ class AppServiceProvider extends ServiceProvider
     {
         //
         require_once base_path('app/Http/Helpers.php');
+
     }
 }

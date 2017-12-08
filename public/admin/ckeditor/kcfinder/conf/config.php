@@ -49,8 +49,8 @@ $_CONFIG = array(
     'maxImageWidth' => 0,
     'maxImageHeight' => 0,
 
-    'thumbWidth' => 800,
-    'thumbHeight' => 800,
+    'thumbWidth' => 200,
+    'thumbHeight' => 200,
 
     'watermark' => "",
 

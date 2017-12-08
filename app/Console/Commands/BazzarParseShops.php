@@ -68,7 +68,7 @@ class BazzarParseShops extends Command
                     CURRENT_TIMESTAMP,
                     ".DB::connection()->getPdo()->quote($shopsItem['@attributes']['id']).",
                     ".DB::connection()->getPdo()->quote($shopsItem['name']).",
-                    ".DB::connection()->getPdo()->quote(mb_strtolower(str_slug($shopsItem['name']))).",
+                    ".DB::connection()->getPdo()->quote(slug($shopsItem['name'])).",
                     ".DB::connection()->getPdo()->quote($shopsItem['description']).",
                     ".DB::connection()->getPdo()->quote($shopsItem['href']).",
                     ".DB::connection()->getPdo()->quote($shopsItem['logo']).",

@@ -26,11 +26,23 @@
                                 <table class="table table-bordered table-hover dataTable" id="dataTable" width="100%" cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
                                     <thead>
                                     <tr role="row">
-                                        <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="">Id</th>
-                                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Name+Slug: activate to sort column descending" style="">Name</th>
-                                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Name+Slug: activate to sort column descending" style="">Email</th>
+                                        <th
+                                                class="jsSortBy sorting{{request()->input('orderby', 'id') == 'id' && request()->input('ascdesc', 'asc') == 'asc' ? '_asc' : ''}}{{request()->input('orderby', 'id') == 'id' && request()->input('ascdesc') == 'desc' ? '_desc' : ''}}"
+                                                data-sortbylinkasc="{{url()->current().'?'.http_build_query(array_merge(request()->all(),['orderby'=>'id','ascdesc'=>'asc',]))}}"
+                                                data-sortbylinkdesc="{{url()->current().'?'.http_build_query(array_merge(request()->all(),['orderby'=>'id','ascdesc'=>'desc',]))}}"
+                                        >Id</th>
+                                        <th
+                                                class="jsSortBy sorting{{request()->input('orderby') == 'name' && request()->input('ascdesc') == 'asc' ? '_asc' : ''}}{{request()->input('orderby') == 'name' && request()->input('ascdesc') == 'desc' ? '_desc' : ''}}"
+                                                data-sortbylinkasc="{{url()->current().'?'.http_build_query(array_merge(request()->all(),['orderby'=>'name','ascdesc'=>'asc',]))}}"
+                                                data-sortbylinkdesc="{{url()->current().'?'.http_build_query(array_merge(request()->all(),['orderby'=>'name','ascdesc'=>'desc',]))}}"
+                                        >Name</th>
+                                        <th
+                                                class="jsSortBy sorting{{request()->input('orderby') == 'email' && request()->input('ascdesc') == 'asc' ? '_asc' : ''}}{{request()->input('orderby') == 'email' && request()->input('ascdesc') == 'desc' ? '_desc' : ''}}"
+                                                data-sortbylinkasc="{{url()->current().'?'.http_build_query(array_merge(request()->all(),['orderby'=>'email','ascdesc'=>'asc',]))}}"
+                                                data-sortbylinkdesc="{{url()->current().'?'.http_build_query(array_merge(request()->all(),['orderby'=>'email','ascdesc'=>'desc',]))}}"
+                                        >Email</th>
                                         <th class="" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="">Admin
-                                            <select name="filter_admin" aria-controls="dataTable" class="form-control form-control-sm jsApplyFilter" onchange="location.href=$(this).val()">
+                                            <select name="filter_admin" aria-controls="dataTable" class="form-control form-control-sm jsApplyFilter">
                                                 <option value="{{url()->current().'?'.http_build_query(request()->except('filter_admin'))}}">*</option>
                                                 <option value="{{url()->current().'?'.http_build_query(array_merge(request()->all(),['filter_admin'=>'1']))}}"
                                                 {{ request()->input('filter_admin') == '1' ? ' selected="selected" ' : '' }}>Yes</option>
@@ -39,7 +51,7 @@
                                             </select>
                                         </th>
                                         <th class="" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="">Banned
-                                            <select name="filter_banned" aria-controls="dataTable" class="form-control form-control-sm jsApplyFilter" onchange="location.href=$(this).val()">
+                                            <select name="filter_banned" aria-controls="dataTable" class="form-control form-control-sm jsApplyFilter">
                                                 <option value="{{url()->current().'?'.http_build_query(request()->except('filter_banned'))}}">*</option>
                                                 <option value="{{url()->current().'?'.http_build_query(array_merge(request()->all(),['filter_banned'=>'1']))}}"
                                                         {{ request()->input('filter_banned') == '1' ? ' selected="selected" ' : '' }}>1</option>

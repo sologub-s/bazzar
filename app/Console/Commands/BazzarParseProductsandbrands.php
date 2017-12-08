@@ -128,8 +128,8 @@ class BazzarParseProductsandbrands extends Command
                 $presentBrands[$productsItem['brand']] =
                     !isset($presentBrands[$productsItem['brand']]) ?
                         \App\Brand::firstOrCreate(
-                            ['slug' => mb_strtolower(str_slug($productsItem['brand']))],
-                            ['name' => $productsItem['brand'], 'slug' => mb_strtolower(str_slug($productsItem['brand']))]
+                            ['slug' => slug($productsItem['brand'])],
+                            ['name' => $productsItem['brand'], 'slug' => slug($productsItem['brand'])]
                         )->id :
                         $presentBrands[$productsItem['brand']];
 
@@ -144,7 +144,7 @@ class BazzarParseProductsandbrands extends Command
                             'CURRENT_TIMESTAMP',                                                                // updated_at
                             DB::connection()->getPdo()->quote($productsItem['@attributes']['id']),              // ava_id
                             DB::connection()->getPdo()->quote($productsItem['name']),                           // name
-                            DB::connection()->getPdo()->quote(mb_strtolower(str_slug($productsItem['name']))),  // slug
+                            DB::connection()->getPdo()->quote(slug($productsItem['name'])),  // slug
                             DB::connection()->getPdo()->quote($productsItem['parent_id']),                      // parent_id
                             DB::connection()->getPdo()->quote($presentCategories[$productsItem['parent_id']]),  // category_id
                             DB::connection()->getPdo()->quote($presentBrands[$productsItem['brand']]),          // brand_id

@@ -68,7 +68,7 @@ class BazzarParseCategories extends Command
                     CURRENT_TIMESTAMP,
                     ".DB::connection()->getPdo()->quote($categoriesItem['@attributes']['id']).",
                     ".DB::connection()->getPdo()->quote($categoriesItem['name']).",
-                    ".DB::connection()->getPdo()->quote(mb_strtolower(str_slug($categoriesItem['name'])))." 
+                    ".DB::connection()->getPdo()->quote(slug($categoriesItem['name']))." 
                     )
                   ON DUPLICATE KEY UPDATE
                    `updated_at` = CURRENT_TIMESTAMP,

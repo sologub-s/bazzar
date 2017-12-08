@@ -81,5 +81,114 @@
     })
   });
 
+  $('.jsToggleProductActiveButton').on('click', function () {
+    if($(this).hasClass('disabled')) {
+      return;
+    }
+    $(this).html($(this).data('loading-text'));
+    $.post(`/admin/products/toggle/active/${$(this).data('id')}/`, (data) => {
+      $(this).html($(this).data('default-text'));
+      if(!data.success) {
+        $(this).parent().find('small').html('<br />'+data.errors.join('; ')).show();
+        return;
+      }
+      $(this).parent().find('small').hide();
+      $(this)
+          .toggleClass('active', data.productActive)
+          .toggleClass('btn-outline-success', !data.productActive)
+          .toggleClass('btn-success', data.productActive);
+    })
+  });
+
+  $('.jsApplyFilter').on('change', function () {
+    location.href = $(this).val();
+  });
+
+  $('.jsSortBy').on('click', function () {
+    location.href = $(this).hasClass('sorting_asc') ? $(this).data('sortbylinkdesc') : $(this).data('sortbylinkasc');
+  });
+
+  $('.jsSearchContainer').each(function () {
+    var container = $(this);
+    container.find('.jsSearchReset').on('click', function () {
+      location.href = $(this).data('reseturl');
+    });
+    container.find('.jsSearchGo').on('click', function () {
+      location.href = $(this).data('gourl') + '&search_request=' + container.find('.jsSearchInput').val();
+    });
+    container.find('.jsSearchInput').on('keypress', function (e) {
+      if (e.which == 13) {
+        container.find('.jsSearchGo').click();
+        return;
+      }
+      if (e.which == 27) {
+        container.find('.jsSearchInput').val('');
+        return;
+      }
+    });
+  });
+
+  $('.jsKcOpener').on('click', function () {
+      var opener = $(this);
+      var targetInput = $(opener.data('target'));
+      window.KCFinder = {
+          callBack: function(url) {
+            window.KCFinder = null;
+            if (targetInput.length) {
+                targetInput.val(url).trigger('input');
+            }
+          }
+      };
+      window.open('/admin/ckeditor/kcfinder/browse.php?type=images', 'kcfinder_textbox',
+          'status=0, toolbar=0, location=0, menubar=0, directories=0, ' +
+          'resizable=1, scrollbars=0, width=800, height=600'
+      );
+  });
+
+  $('.jsImageUrl').on('input', function () {
+    _.debounce(() => {
+        //$($(this).data('target')).attr('src', $(this).val()).toggle(!$(this).val().length);
+        $.ajax({
+            url: $(this).val(),
+            type: 'GET',
+            success: () => {
+                $($(this).data('target')).attr('src', $(this).val()).removeClass('d-none');
+            },
+            error: () => {
+                $($(this).data('target')).addClass('d-none');
+            }
+        });
+    }, 500)();
+  });
+
+  $('.jsTogglePostActiveButton').on('click', function () {
+      if($(this).hasClass('disabled')) {
+          return;
+      }
+      $(this).html($(this).data('loading-text'));
+      $.post(`/admin/posts/toggle/active/${$(this).data('id')}/`, (data) => {
+          $(this).html($(this).data('default-text'));
+          if(!data.success) {
+              $(this).parent().find('small').html('<br />'+data.errors.join('; ')).show();
+              return;
+          }
+          $(this).parent().find('small').hide();
+          $(this)
+              .toggleClass('active', data.postActive)
+              .toggleClass('btn-outline-success', !data.postActive)
+              .toggleClass('btn-success', data.postActive);
+      })
+  });
+
+  $('.jsBootstrapSwitch').bootstrapSwitch();
+
+  setInterval(() => {
+      $('.jsBrokenCategory').toggleClass('d-none', !$('.jsToggleBrokenCategories:checked').length);
+  }, 1000);
+
+    $('.jsSaveCategory').on('click', function () {
+        location.href = $(this).data('url') + '?terms=' + $(this).closest('.row').find('input[name=search_terms]').val();
+    });
+
 
 })(jQuery); // End of use strict

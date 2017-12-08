@@ -11,9 +11,20 @@
         </div>
     </div>
     <div class="col-sm-12 col-md-6">
+
+        {{--
         <div id="dataTable_filter" class="dataTables_filter ">
             <label>Search:<input type="search" id="search_request_input" class="form-control" placeholder="" aria-controls="dataTable" value="{{ request()->input('search_request') }}"></label>
             <button class="btn btn-outline-primary" target="_blank" role="button" onclick="location.href='{{url()->current().'?'.http_build_query(request()->except('search_request'))}}&search_request='+$('#search_request_input').val()">Search</button>
+        </div>
+        --}}
+
+        <div id="dataTable_filter" class="input-group dataTables_filter jsSearchContainer">
+            <input type="search" id="search_request_input" class="form-control jsSearchInput" value="{{ request()->input('search_request') }}" placeholder="Search for...">
+            <span class="input-group-btn">
+                <button {!! empty(request()->input('search_request')) ? 'style="display: none;"' : '' !!} class="btn btn-secondary jsSearchReset" type="button" data-reseturl="{{url()->current().'?'.http_build_query(request()->except('search_request'))}}"><i class="fa fa-times" aria-hidden="true"></i></button>
+                <button class="btn btn-outline-primary jsSearchGo" data-gourl="{{url()->current().'?'.http_build_query(request()->except('search_request'))}}" type="button">Go!</button>
+            </span>
         </div>
     </div>
 </div>

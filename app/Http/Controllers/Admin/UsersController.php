@@ -57,6 +57,8 @@ class UsersController extends Controller
             }
         }
 
+        $users->orderBy($request->input('orderby', 'id'), $request->input('ascdesc', 'asc'));
+
         return view('admin/users/index', [
             'users' => $users->paginate($request->has('items_limit') && in_array($request->input('items_limit'), ['10','25','50','100',]) ? $request->input('items_limit') : 10),
         ]);

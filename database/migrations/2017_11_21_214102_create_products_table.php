@@ -37,6 +37,8 @@ class CreateProductsTable extends Migration
             $table->unsignedDecimal('broken')->default(0);
 
             $table->unique('ava_id');
+            $table->index('name');
+            $table->index('slug');
             $table->index('category_id');
             $table->index('brand_id');
             $table->index('parsed');

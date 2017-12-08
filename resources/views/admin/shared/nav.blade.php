@@ -24,10 +24,10 @@
                     <span class="nav-link-text">Users</span>
                 </a>
             </li>
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
-                <a class="nav-link" href="charts.html">
-                    <i class="fa fa-fw fa-area-chart"></i>
-                    <span class="nav-link-text">Charts</span>
+            <li class="nav-item @if(in_array(Route::currentRouteName(), ['admin_posts','admin_posts_add', 'admin_posts_edit',])) active @endif" data-toggle="tooltip" data-placement="right" title="Posts">
+                <a class="nav-link" href="/admin/posts/">
+                    <i class="fa fa-fw fa-file-text-o"></i>
+                    <span class="nav-link-text">Posts</span>
                 </a>
             </li>
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">

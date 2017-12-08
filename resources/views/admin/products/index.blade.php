@@ -26,10 +26,18 @@
                                 <table class="table table-bordered table-hover dataTable" id="dataTable" width="100%" cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
                                     <thead>
                                     <tr role="row">
-                                        <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="">Id</th>
-                                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Name+Slug: activate to sort column descending" style="">Name+Slug</th>
+                                        <th
+                                                class="jsSortBy sorting{{request()->input('orderby', 'id') == 'id' && request()->input('ascdesc', 'asc') == 'asc' ? '_asc' : ''}}{{request()->input('orderby', 'id') == 'id' && request()->input('ascdesc') == 'desc' ? '_desc' : ''}}"
+                                                data-sortbylinkasc="{{url()->current().'?'.http_build_query(array_merge(request()->all(),['orderby'=>'id','ascdesc'=>'asc',]))}}"
+                                                data-sortbylinkdesc="{{url()->current().'?'.http_build_query(array_merge(request()->all(),['orderby'=>'id','ascdesc'=>'desc',]))}}"
+                                        >Id</th>
+                                        <th
+                                                class="jsSortBy sorting{{request()->input('orderby') == 'name' && request()->input('ascdesc', 'asc') == 'asc' ? '_asc' : ''}}{{request()->input('orderby') == 'name' && request()->input('ascdesc') == 'desc' ? '_desc' : ''}}"
+                                                data-sortbylinkasc="{{url()->current().'?'.http_build_query(array_merge(request()->all(),['orderby'=>'name','ascdesc'=>'asc',]))}}"
+                                                data-sortbylinkdesc="{{url()->current().'?'.http_build_query(array_merge(request()->all(),['orderby'=>'name','ascdesc'=>'desc',]))}}"
+                                        >Name+Slug</th>
                                         <th class="" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Category" style="">Category
-                                            <select name="filter_category" aria-controls="dataTable" class="form-control form-control-sm jsApplyFilter" onchange="location.href=$(this).val()">
+                                            <select name="filter_category" aria-controls="dataTable" class="form-control form-control-sm jsApplyFilter">
                                                 <option value="{{url()->current().'?'.http_build_query(request()->except('filter_category'))}}">*</option>
                                                 @foreach($categories as $category)
                                                     <option value="{{url()->current().'?'.http_build_query(array_merge(request()->all(),['filter_category'=>$category->id]))}}"
@@ -38,7 +46,7 @@
                                             </select>
                                         </th>
                                         <th class="" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Brand" style="">Brand
-                                            <select name="filter_brand" aria-controls="dataTable" class="form-control form-control-sm jsApplyFilter" onchange="location.href=$(this).val()">
+                                            <select name="filter_brand" aria-controls="dataTable" class="form-control form-control-sm jsApplyFilter">
                                                 <option value="{{url()->current().'?'.http_build_query(request()->except('filter_brand'))}}">*</option>
                                                 @foreach($brands as $brand)
                                                     <option value="{{url()->current().'?'.http_build_query(array_merge(request()->all(),['filter_brand'=>$brand->id]))}}"
@@ -48,7 +56,7 @@
                                         </th>
                                         <th class="" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="">Img</th>
                                         <th class="" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="">Active
-                                            <select name="filter_active" aria-controls="dataTable" class="form-control form-control-sm jsApplyFilter" onchange="location.href=$(this).val()">
+                                            <select name="filter_active" aria-controls="dataTable" class="form-control form-control-sm jsApplyFilter">
                                                 <option value="{{url()->current().'?'.http_build_query(request()->except('filter_active'))}}">*</option>
                                                 <option value="{{url()->current().'?'.http_build_query(array_merge(request()->all(),['filter_active'=>'1']))}}"
                                                 {{ request()->input('filter_active') == '1' ? ' selected="selected" ' : '' }}>1</option>
@@ -57,7 +65,7 @@
                                             </select>
                                         </th>
                                         <th class="" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="">In&nbsp;stock
-                                            <select name="filter_in_stock" aria-controls="dataTable" class="form-control form-control-sm jsApplyFilter" onchange="location.href=$(this).val()">
+                                            <select name="filter_in_stock" aria-controls="dataTable" class="form-control form-control-sm jsApplyFilter">
                                                 <option value="{{url()->current().'?'.http_build_query(request()->except('filter_in_stock'))}}">*</option>
                                                 <option value="{{url()->current().'?'.http_build_query(array_merge(request()->all(),['filter_in_stock'=>'1']))}}"
                                                 {{ request()->input('filter_in_stock') == '1' ? ' selected="selected" ' : '' }}>1</option>
@@ -66,7 +74,7 @@
                                             </select>
                                         </th>
                                         <th class="" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" style="">Parsed
-                                            <select name="filter_parsed" aria-controls="dataTable" class="form-control form-control-sm jsApplyFilter" onchange="location.href=$(this).val()">
+                                            <select name="filter_parsed" aria-controls="dataTable" class="form-control form-control-sm jsApplyFilter">
                                                 <option value="{{url()->current().'?'.http_build_query(request()->except('filter_parsed'))}}">*</option>
                                                 <option value="{{url()->current().'?'.http_build_query(array_merge(request()->all(),['filter_parsed'=>'1']))}}"
                                                 {{ request()->input('filter_parsed') == '1' ? ' selected="selected" ' : '' }}>1</option>
@@ -104,7 +112,12 @@
                                             <td>{{$product->category->name}}</td>
                                             <td>{{$product->brand->name}}</td>
                                             <td class="text-center"><img src="{{$product->img}}" /></td>
-                                            <td class="text-center">{{$product->active}}</td>
+                                            <td class="text-center">
+                                                <button type="button" class="jsToggleProductActiveButton btn {{ $product->active ? 'btn-success active' : 'btn-outline-success' }}" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> Changing..." autocomplete="off" data-id="{{$product->id}}" data-default-text="Active">
+                                                    Active
+                                                </button>
+                                                <small class="text-danger hidden"></small>
+                                            </td>
                                             <td class="text-center">{{$product->in_stock}}</td>
                                             <td class="text-center">{{$product->parsed}}</td>
                                             <td>{!! implode('<br />', array_map(function($v){
