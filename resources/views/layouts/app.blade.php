@@ -167,6 +167,10 @@
                         {{--@include('shared.twitter-timeline')--}}
                         @include('shared.login-widget')
 
+                        @if(str_is('users_*', request()->route()->getName()))
+                            @include('users.aside-nav')
+                        @endif
+
                         <section class="block block-views block-latest-news-block-1 block-views-latest-news-block-1 even" id="block-views-latest-news-block-1">
                             <div class="block-inner clearfix">
                                 <h2 class="block-title">Самые популярные</h2>

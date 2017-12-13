@@ -48,8 +48,18 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
+        if($request->route()->getPrefix() == '/admin') {
+            return $this->renderAdmin($request, $exception);
+        }
         if ($exception instanceof \Spatie\Permission\Exceptions\UnauthorizedException) {
-            // Code here ...
+            //
+        }
+        return parent::render($request, $exception);
+    }
+
+    protected function renderAdmin($request, Exception $exception) {
+        if ($exception instanceof \Spatie\Permission\Exceptions\UnauthorizedException) {
+            return redirect()->route('admin_login')->with('error', $exception->getMessage())->withInput();
         }
         return parent::render($request, $exception);
     }

@@ -13,7 +13,7 @@
 
                                 <h1 class="title" id="page-title">Вход</h1>
                                 <p>Nulla eget urna ac ante ullamcorper blandit vel nec turpis. Pellentesque commodo tincidunt nisl, vel pellentesque eros pharetra vel. Phasellus in erat ligula. Nunc pretium sollicitudin nunc, non hendrerit turpis facilisis in.</p>
-                                {{-- @include('shared.messages') --}}
+                                @include('shared.messages')
 
                                 @if (sizeof($errors))
                                     <div id="messages" class="">

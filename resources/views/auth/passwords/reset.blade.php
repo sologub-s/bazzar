@@ -1,70 +1,81 @@
 @extends('layouts.app')
 
-@section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Reset Password</div>
 
-                <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('password.request') }}">
-                        {{ csrf_field() }}
+@section('contentleft')
+    <div class="grid-12 region region-content" id="region-content">
+        <div class="region-inner region-content-inner">
+            <a id="main-content"></a>
+            <div class="tabs clearfix"></div>
+            <div class="grid-12 region region-content-bottom-first" id="region-content-bottom-first">
+                <div class="region-inner region-content-bottom-first-inner">
+                    <div class="block block-system block-main block-system-main even block-without-title" id="block-system-main">
+                        <div class="block-inner clearfix">
+                            <div class="content clearfix">
 
-                        <input type="hidden" name="token" value="{{ $token }}">
+                                <h1 class="title" id="page-title">Восстановление пароля</h1>
+                                <p>Введите ваш email и новый пароль</p>
+                                {{-- @include('shared.messages') --}}
 
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ $email or old('email') }}" required autofocus>
-
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
+                                @if (session('status'))
+                                    <div class="alert alert-success">
+                                        {{ session('status') }}
+                                    </div>
                                 @endif
-                            </div>
-                        </div>
 
-                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">Password</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
+                                @if (sizeof($errors))
+                                    <div id="messages" class="">
+                                        <div class="messages error">
+                                            <h2 class="element-invisible">Сообщение об ошибке</h2>
+                                            <ul>
+                                                @if ($errors->has('email'))
+                                                    <li>{{ $errors->first('email') }}</li>
+                                                @endif
+                                                @if ($errors->has('password'))
+                                                    <li>{{ $errors->first('password') }}</li>
+                                                @endif
+                                                @if ($errors->has('password_confirmation'))
+                                                    <li>{{ $errors->first('password_confirmation') }}</li>
+                                                @endif
+                                            </ul>
+                                        </div>
+                                    </div>
                                 @endif
+
+                                <form class="user-info-from-cookie contact-form" method="POST" action="{{ route('password.request') }}" id="contact-site-form" accept-charset="UTF-8">
+                                    {{ csrf_field() }}
+
+                                    <input type="hidden" name="token" value="{{ $token }}">
+
+                                    <div>
+                                        <div class="form-item form-type-textfield form-item-mail">
+                                            <label for="edit-mail">Ваш email-адрес <span class="form-required" title="Это поле обязательно для заполнения.">*</span></label>
+                                            <input type="text" id="email" name="email" value="{{ $email or old('email') }}" required autofocus size="60" maxlength="255" class="form-text required {{ $errors->has('email') ? ' error' : '' }}" />
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <div class="form-item form-type-textfield form-item-mail">
+                                            <label for="edit-mail">Новый пароль <span class="form-required" title="Это поле обязательно для заполнения.">*</span></label>
+                                            <input type="password" id="password" name="password" required class="form-text required {{ $errors->has('password') ? ' error' : '' }}" />
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <div class="form-item form-type-textfield form-item-mail">
+                                            <label for="edit-mail">Новый пароль ещё раз <span class="form-required" title="Это поле обязательно для заполнения.">*</span></label>
+                                            <input type="password" id="password-confirm" name="password_confirmation" required class="form-text required {{ $errors->has('password_confirmation') ? ' error' : '' }}" />
+                                        </div>
+                                    </div>
+
+                                    <div class="form-actions form-wrapper" id="edit-actions">
+                                        <input type="submit" id="edit-submit" name="op" value="Установить новый пароль" class="form-submit" />
+                                    </div>
+                                </form>
                             </div>
                         </div>
-
-                        <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
-                            <label for="password-confirm" class="col-md-4 control-label">Confirm Password</label>
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
-
-                                @if ($errors->has('password_confirmation'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password_confirmation') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Reset Password
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 @endsection

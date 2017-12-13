@@ -9,6 +9,7 @@
             <form class="simplenews-subscribe" action="{{ route('logout') }}" method="post" id="simplenews-block-form-120" accept-charset="UTF-8">
                 <input type="submit" id="edit-submit" name="op" value="Выход" class="form-submit" />
             </form>
+            <a class="btn btn-link" href="{{ route('users_profile') }}">Профиль</a>
 
         @else
 
@@ -28,6 +29,7 @@
                     <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }} />
                 </div>
                 <input type="submit" id="edit-submit" name="op" value="Войти" class="form-submit" /> или <a class="btn btn-link" href="{{ route('register') }}">Создать аккаунт</a>
+                <a class="btn btn-link" href="{{ route('password.request') }}">Забыли пароль ?</a>
             </div>
         </form>
         @endif

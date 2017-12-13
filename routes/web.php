@@ -53,3 +53,12 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['rol
     Route::get('contentblocks/delete/{id}', 'ContentblocksController@deleteHandler')->name('admin_contentblocks_delete_handler');
     Route::post('contentblocks/toggle/active/{id}', 'ContentblocksController@toggleActive')->name('admin_contentblocks_toggle_active');
 });
+
+Route::group(['prefix' => 'user',], function()
+{
+    Route::get('profile', 'UsersController@profile')->name('users_profile');
+    Route::post('profile', 'UsersController@profileHandler')->name('users_profile_handler');
+
+    Route::get('password', 'UsersController@password')->name('users_password');
+    Route::post('password', 'UsersController@passwordHandler')->name('users_password_handler');
+});

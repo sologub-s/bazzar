@@ -63,3 +63,5 @@
     @import url("/css_dev/gte_ie9_1220/alpha-default-wide-16.css");
 </style>
 <!--<![endif]-->
+
+<link type="text/css" rel="stylesheet" href="/css_dev/style.css" media="all" />
