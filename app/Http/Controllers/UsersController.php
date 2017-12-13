@@ -9,9 +9,12 @@ use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\Controller;
 
 use Spatie\Permission\Models\Role;
+use Illuminate\Foundation\Auth\ResetsPasswords;
 
 class UsersController extends Controller
 {
+    use ResetsPasswords;
+
     /**
      * Create a new controller instance.
      *
@@ -63,13 +66,37 @@ class UsersController extends Controller
             if ($request->post('password_new') != $request->post('password_confirmation')) {
                 return redirect()->route('users_password')->with('error', 'Новый пароль и подтверждение нового пароля не совпадают');
             }
+            if(!$request->post('password_new') || strlen($request->post('password_new')) < 6) {
+                return redirect()->route('users_password')->with('error', 'Пароль должен быть 6 символов или длиннее');
+            }
             Auth()->user()->fill([
                 'password' => Hash::make($request->post('password_new')),
             ])->save();
         } catch (\Exception $e) {
             return redirect()->route('users_password')->with('error', $e->getMessage());
         }
-        return redirect()->route('users_password')->with('status', 'Password changed!');
+        return redirect()->route('users_password')->with('status', 'Пароль изменен!');
+    }
+
+    public function passwordSetup(\Illuminate\Http\Request $request)
+    {
+        try {
+            if (!is_null(Auth()->user()->password)) {
+                return redirect()->route('users_password')->with('error', 'У этой учетной записи уже установлен пароль');
+            }
+            if ($request->post('password_new') != $request->post('password_confirmation')) {
+                return redirect()->route('users_password')->with('error', 'Новый пароль и подтверждение нового пароля не совпадают');
+            }
+            if(!$request->post('password_new') || strlen($request->post('password_new')) < 6) {
+                return redirect()->route('users_password')->with('error', 'Пароль должен быть 6 символов или длиннее');
+            }
+            Auth()->user()->fill([
+                'password' => Hash::make($request->post('password_new')),
+            ])->save();
+        } catch (\Exception $e) {
+            return redirect()->route('users_password')->with('error', $e->getMessage());
+        }
+        return redirect()->route('users_password')->with('status', 'Пароль установлен!');
     }
 
 }

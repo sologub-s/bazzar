@@ -12,6 +12,9 @@
 */
 
 Auth::routes();
+// OAuth Routes
+Route::get('auth/{provider}', 'Auth\LoginController@redirectToProvider')->name('social_redirect');
+Route::get('auth/{provider}/callback', 'Auth\LoginController@handleProviderCallback')->name('social_callback');
 
 Route::get('/', 'IndexController@index')->name('index_index');
 
@@ -61,4 +64,5 @@ Route::group(['prefix' => 'user',], function()
 
     Route::get('password', 'UsersController@password')->name('users_password');
     Route::post('password', 'UsersController@passwordHandler')->name('users_password_handler');
+    Route::post('password/setup', 'UsersController@passwordSetup')->name('users_password_setup');
 });
