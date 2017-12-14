@@ -1,11 +1,11 @@
 <section class="block block-simplenews block-120 block-simplenews-120 odd" id="block-simplenews-120">
     <div class="block-inner clearfix">
-        @if(!\Illuminate\Support\Facades\Auth::check())
+        @if(!Auth::check())
         <h2 class="block-title">Вход</h2>
         @endif
 
-        @if(\Illuminate\Support\Facades\Auth::check())
-            <p>Здравствуйте, {{ \Illuminate\Support\Facades\Auth::user()->name  }}!</p>
+        @if(Auth::check())
+            <p>Здравствуйте, {{ Auth::user()->name  }}!</p>
             <form class="simplenews-subscribe" action="{{ route('logout') }}" method="post" id="simplenews-block-form-120" accept-charset="UTF-8">
                 <input type="submit" id="edit-submit" name="op" value="Выход" class="form-submit" />
             </form>
@@ -30,6 +30,12 @@
                 </div>
                 <input type="submit" id="edit-submit" name="op" value="Войти" class="form-submit" /> или <a class="btn btn-link" href="{{ route('register') }}">Создать аккаунт</a>
                 <a class="btn btn-link" href="{{ route('password.request') }}">Забыли пароль ?</a>
+                <hr>
+                <div class="form-group">
+                    <div class="col-md-6 col-md-offset-4">
+                        <a href="{{ route('social_redirect', 'facebook') }}" class="btn btn-facebook"><i class="fa fa-facebook"></i> Facebook</a>
+                    </div>
+                </div>
             </div>
         </form>
         @endif

@@ -21,3 +21,8 @@
     color: white;
     background-color: #9966cc;
 }
+
+.block-simplenews a {
+    color: white;
+    text-decoration: underline;
+}

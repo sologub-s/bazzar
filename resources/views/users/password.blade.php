@@ -11,48 +11,76 @@
                         <div class="block-inner clearfix">
                             <div class="content clearfix">
 
-                                <h1 class="title" id="page-title">Смена пароля</h1>
-                                @include('shared.messages')
+                                    <h1 class="title" id="page-title">Смена пароля</h1>
+                                    @include('shared.messages')
 
-                                @if (sizeof($errors))
-                                    <div id="messages" class="">
-                                        <div class="messages error">
-                                            <h2 class="element-invisible">Сообщение об ошибке</h2>
-                                            <ul>
-                                                @if ($errors->has('password_current'))
-                                                    <li>{{ $errors->first('password_current') }}</li>
-                                                @endif
-                                                    @if ($errors->has('password_new'))
-                                                        <li>{{ $errors->first('password_new') }}</li>
+                                    @if (sizeof($errors))
+                                        <div id="messages" class="">
+                                            <div class="messages error">
+                                                <h2 class="element-invisible">Сообщение об ошибке</h2>
+                                                <ul>
+                                                    @if ($errors->has('password_current'))
+                                                        <li>{{ $errors->first('password_current') }}</li>
                                                     @endif
-                                                @if ($errors->has('password_confirmation'))
-                                                    <li>{{ $errors->first('password_confirmation') }}</li>
-                                                @endif
-                                            </ul>
+                                                        @if ($errors->has('password_new'))
+                                                            <li>{{ $errors->first('password_new') }}</li>
+                                                        @endif
+                                                    @if ($errors->has('password_confirmation'))
+                                                        <li>{{ $errors->first('password_confirmation') }}</li>
+                                                    @endif
+                                                </ul>
+                                            </div>
                                         </div>
-                                    </div>
+                                    @endif
+
+                                @if (!is_null(Auth::user()->password))
+
+                                    <form class="user-info-from-cookie contact-form" action="{{ route('users_password_handler') }}" method="post" id="contact-site-form" accept-charset="UTF-8">
+                                        <div>
+                                            <div class="form-item form-type-textfield form-item-mail">
+                                                <label for="password">Текущий пароль <span class="form-required" title="Это поле обязательно для заполнения.">*</span></label>
+                                                <input type="password" required id="password_current" name="password_current" value="" size="60" maxlength="255" class="form-text required {{ $errors->has('password_current') ? ' error' : '' }}" />
+                                            </div>
+                                            <div class="form-item form-type-textfield form-item-mail">
+                                                <label for="password_new">Новый пароль <span class="form-required" title="Это поле обязательно для заполнения.">*</span></label>
+                                                <input type="password" required id="password_new" name="password_new" size="60" maxlength="255" class="form-text required {{ $errors->has('password_new') ? ' error' : '' }}" />
+                                            </div>
+                                            <div class="form-item form-type-textfield form-item-mail">
+                                                <label for="password_confirmation">Новый пароль ещё раз <span class="form-required" title="Это поле обязательно для заполнения.">*</span></label>
+                                                <input type="password" required id="password_confirmation" name="password_confirmation" size="60" maxlength="255" class="form-text required {{ $errors->has('password_confirmation') ? ' error' : '' }}" />
+                                            </div>
+
+                                            <div class="form-actions form-wrapper" id="edit-actions">
+                                                <input type="submit" id="edit-submit" name="op" value="Изменить пароль" class="form-submit" />
+                                            </div>
+                                        </div>
+                                    </form>
+                                @else
+
+                                    <p>В вашей учетной записи не установлен пароль. Пожалуйста, укажите пароль для вашей учетной записи. Вы по прежнему сможете авторизоваться как с помощью социальных сетей, так и с помощью ваших email и пароля.</p>
+
+                                    <form class="user-info-from-cookie contact-form" action="{{ route('users_password_setup') }}" method="post" id="contact-site-form" accept-charset="UTF-8">
+                                        <div>
+                                            <div class="form-item form-type-textfield form-item-mail">
+                                                <label for="edit-mail">Ваш email-адрес </label>
+                                                <input type="text" id="email" name="email" value="{{ auth()->user()['email'] }}" disabled size="60" maxlength="255" class="form-text disabled" />
+                                            </div>
+                                            <div class="form-item form-type-textfield form-item-mail">
+                                                <label for="password_new">Новый пароль <span class="form-required" title="Это поле обязательно для заполнения.">*</span></label>
+                                                <input type="password" required id="password_new" name="password_new" size="60" maxlength="255" class="form-text required {{ $errors->has('password_new') ? ' error' : '' }}" />
+                                            </div>
+                                            <div class="form-item form-type-textfield form-item-mail">
+                                                <label for="password_confirmation">Новый пароль ещё раз <span class="form-required" title="Это поле обязательно для заполнения.">*</span></label>
+                                                <input type="password" required id="password_confirmation" name="password_confirmation" size="60" maxlength="255" class="form-text required {{ $errors->has('password_confirmation') ? ' error' : '' }}" />
+                                            </div>
+
+                                            <div class="form-actions form-wrapper" id="edit-actions">
+                                                <input type="submit" id="edit-submit" name="op" value="Установить пароль" class="form-submit" />
+                                            </div>
+                                        </div>
+                                    </form>
+
                                 @endif
-                                <form class="user-info-from-cookie contact-form" action="{{ route('users_password_handler') }}" method="post" id="contact-site-form" accept-charset="UTF-8">
-
-                                    <div>
-                                        <div class="form-item form-type-textfield form-item-mail">
-                                            <label for="password">Текущий пароль <span class="form-required" title="Это поле обязательно для заполнения.">*</span></label>
-                                            <input type="password" required id="password_current" name="password_current" value="" size="60" maxlength="255" class="form-text required {{ $errors->has('password_current') ? ' error' : '' }}" />
-                                        </div>
-                                        <div class="form-item form-type-textfield form-item-mail">
-                                            <label for="password_new">Новый пароль <span class="form-required" title="Это поле обязательно для заполнения.">*</span></label>
-                                            <input type="password" required id="password_new" name="password_new" size="60" maxlength="255" class="form-text required {{ $errors->has('password_new') ? ' error' : '' }}" />
-                                        </div>
-                                        <div class="form-item form-type-textfield form-item-mail">
-                                            <label for="password_confirmation">Новый пароль ещё раз <span class="form-required" title="Это поле обязательно для заполнения.">*</span></label>
-                                            <input type="password" required id="password_confirmation" name="password_confirmation" size="60" maxlength="255" class="form-text required {{ $errors->has('password_confirmation') ? ' error' : '' }}" />
-                                        </div>
-
-                                        <div class="form-actions form-wrapper" id="edit-actions">
-                                            <input type="submit" id="edit-submit" name="op" value="Изменить пароль" class="form-submit" />
-                                        </div>
-                                    </div>
-                                </form>
                             </div>
                         </div>
                     </div>

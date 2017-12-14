@@ -53,7 +53,7 @@
                                             <input type="submit" id="edit-submit" name="op" value="Войти" class="form-submit" /> или <a class="btn btn-link" href="{{ route('register') }}">Создать аккаунт</a>
                                         </div>
                                         <div class="form-actions form-wrapper" id="edit-actions">
-                                            <a class="btn btn-link" href="{{ route('password.request') }}">Забыли пароль ?</a>
+                                            <a class="btn btn-link" href="{{ route('password.request') }}">Забыли пароль ?</a> | Вход через <a href="{{ route('social_redirect', 'facebook') }}" class="btn btn-facebook"><i class="fa fa-facebook"></i> Facebook</a>
                                         </div>
                                     </div>
                                 </form>

@@ -6,8 +6,11 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Validation\ValidationException;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Laravel\Socialite\Facades\Socialite;
+use App\User;
 
 class LoginController extends Controller
 {
@@ -97,5 +100,18 @@ class LoginController extends Controller
 
         return redirect()->route('login')->with('error', $messages)->withInput();
         throw ValidationException::withMessages($messages);
+    }
+
+    public function redirectToProvider($provider)
+    {
+        return Socialite::driver($provider)->redirect();
+    }
+
+    public function handleProviderCallback($provider)
+    {
+        $socialUser = Socialite::driver($provider)->user();
+        $user = User::fromSocial($socialUser, $provider);
+        Auth::login($user, true);
+        return redirect($this->redirectTo);
     }
 }
