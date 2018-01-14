@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Setting;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Support\Facades\View;
+use App\Product;
 
 use App\Category;
 
@@ -20,10 +22,8 @@ class Controller extends BaseController
     public function __construct()
     {
 
-        $this->categoriesList = Category::with(['categories'])->where('broken', 0)->get()->toArray();
-        $this->categoriesTree = Category::createTree($this->categoriesList);
+        $this->categoriesList = View::shared('categoriesList');
+        $this->categoriesTree = View::shared('categoriesTree');
 
-        View::share('categoriesList', $this->categoriesList);
-        View::share('categoriesTree', $this->categoriesTree);
     }
 }

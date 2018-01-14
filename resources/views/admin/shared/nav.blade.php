@@ -44,6 +44,24 @@
                     <span class="nav-link-text">Contentblocks</span>
                 </a>
             </li>
+            <li class="nav-item @if(in_array(Route::currentRouteName(), ['admin_setings_edit',])) active @endif" data-toggle="tooltip" data-placement="right" title="Settings">
+                <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" data-parent="#exampleAccordion" aria-expanded="false" href="#settings-actions">
+                    <i class="fa fa-cogs"></i>
+                    <span class="nav-link-text">Settings</span>
+                </a>
+                <ul class="sidenav-second-level collapse" id="settings-actions">
+                    <li>
+                        <a href="{{ route('admin_settings') }}">
+                            <span>List</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('admin_settings_edit') }}">
+                            <span>Create</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
         </ul>
         <ul class="navbar-nav sidenav-toggler">
             <li class="nav-item">

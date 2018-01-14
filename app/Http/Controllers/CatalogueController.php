@@ -210,6 +210,20 @@ class CatalogueController extends Controller
             }
         }
 
+        $product = Product
+            ::with([
+                'category', 'brand', 'prices' => function($query) {
+                    $query->orderBy('price', 'ASC');
+                }
+            ])
+            ->where('broken', 0)
+            ->where('active', 1)
+            ->where('slug', $product_slug)
+            ->first();
+
+        $product->viewed++;
+        $product->save();
+
         return view('catalogue/theproduct', [
             'cats' => trim($cats, '/'),
             'breadcrumbs' => $breadcrumbs,
@@ -221,16 +235,7 @@ class CatalogueController extends Controller
                 }
                 return $result;
             })(),
-            'product' => Product
-                ::with([
-                    'category', 'brand', 'prices' => function($query) {
-                        $query->orderBy('price', 'ASC');
-                    }
-                ])
-                ->where('broken', 0)
-                ->where('active', 1)
-                ->where('slug', $product_slug)
-                ->first(),
+            'product' => $product,
             'favourites' => $favouritesMapped,
         ]);
     }

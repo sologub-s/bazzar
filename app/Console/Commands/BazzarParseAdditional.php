@@ -183,11 +183,13 @@ class BazzarParseAdditional extends Command
             }
             $bar->finish();
             $this->line('');
-            $totalIterations++;
+            $this->call('bazzar:categoriesimages');
+            /*
             if ($totalIterations >= (int)abs($this->option('chunksize')) || !$this->option('worker')) {
                 $this->call('bazzar:categoriesimages');
                 $totalIterations = 0;
             }
+            */
             if (!$this->option('worker')) {
                 break;
             } else {

@@ -4,6 +4,10 @@ namespace App\Exceptions;
 
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Response;
+use Illuminate\Support\Facades\Route;
 
 class Handler extends ExceptionHandler
 {
@@ -52,6 +56,9 @@ class Handler extends ExceptionHandler
             return $this->renderAdmin($request, $exception);
         }
         if ($exception instanceof \Spatie\Permission\Exceptions\UnauthorizedException) {
+            //
+        }
+        if($exception instanceof NotFoundHttpException) {
             //
         }
         return parent::render($request, $exception);

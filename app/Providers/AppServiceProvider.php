@@ -11,6 +11,10 @@ use App\Observers\PostObserver;
 use App\Contentblock;
 use App\Observers\ContentblockObserver;
 
+use Illuminate\Support\Facades\View;
+use App\Category;
+use App\Product;
+
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -27,6 +31,25 @@ class AppServiceProvider extends ServiceProvider
          */
         Post::observe(PostObserver::class);
         Contentblock::observe(ContentblockObserver::class);
+
+        View::share('categoriesList', Category::with(['categories'])->where('broken', 0)->get()->toArray());
+        View::share('categoriesTree', Category::createTree(View::shared('categoriesList')));
+
+        View::share(
+            'mostViewed',
+            Product
+                ::with(['category', 'brand', 'prices' => function($query) {
+                    $query->orderBy('price', 'ASC');
+                }
+                ])
+                ->where('broken', 0)
+                ->where('active', 1)
+                ->orderBy('viewed', 'desc')
+                ->orderBy('created_at', 'desc')
+                //->inRandomOrder()
+                ->limit(6)
+                ->get()
+        );
     }
 
     /**

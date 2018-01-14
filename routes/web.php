@@ -55,6 +55,10 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['rol
     Route::post('contentblocks/{id}', 'ContentblocksController@editHandler')->name('admin_contentblocks_edit_handler');
     Route::get('contentblocks/delete/{id}', 'ContentblocksController@deleteHandler')->name('admin_contentblocks_delete_handler');
     Route::post('contentblocks/toggle/active/{id}', 'ContentblocksController@toggleActive')->name('admin_contentblocks_toggle_active');
+
+    Route::get('settings', 'SettingsController@index')->name('admin_settings');
+    Route::match(['get', 'post'], 'settings/edit/{id?}', 'SettingsController@edit')->name('admin_settings_edit');
+
 });
 
 Route::group(['prefix' => 'user',], function()

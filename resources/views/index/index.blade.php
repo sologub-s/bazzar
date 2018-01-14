@@ -10,7 +10,7 @@
             <div class="region-inner region-content-bottom-first-inner">
 
                 {{-- @include('shared.buisiness') --}}
-                @include('shared.recent')
+                @include('shared.mostViewed')
                 @include('shared.recent')
             </div>
         </div>
