@@ -30,6 +30,11 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    public function products ()
+    {
+        return $this->belongsToMany('App\Product')->withTimestamps();
+    }
+
     public static function fromSocial($socialUser, $provider)
     {
         if ($provider == 'facebook') {

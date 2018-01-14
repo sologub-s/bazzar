@@ -1,7 +1,6 @@
 {
+    "/../resources/assets/css/bootstrap-btn.css": "/../resources/assets/css/bootstrap-btn.css",
+    "/../resources/assets/css/custom.css": "/../resources/assets/css/custom.css",
     "/js/script.js": "/js/script.js",
-    "/css/style.css": "/css/style.css",
-    "/css/ie9_not_mobile/style.css": "/css/ie9_not_mobile/style.css",
-    "/css/gte_ie9_980/style.css": "/css/gte_ie9_980/style.css",
-    "/css/gte_ie9_1220/style.css": "/css/gte_ie9_1220/style.css"
+    "/css/style.css": "/css/style.css"
 }

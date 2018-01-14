@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML+RDFa 1.1//EN">
+<!DOCTYPE html>
 <html lang="ru" dir="ltr" version="HTML+RDFa 1.1" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://ogp.me/ns#" xmlns:article="http://ogp.me/ns/article#" xmlns:book="http://ogp.me/ns/book#" xmlns:profile="http://ogp.me/ns/profile#" xmlns:video="http://ogp.me/ns/video#" xmlns:product="http://ogp.me/ns/product#" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/terms/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:sioc="http://rdfs.org/sioc/ns#" xmlns:sioct="http://rdfs.org/sioc/types#" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
 
 <head profile="http://www.w3.org/1999/xhtml/vocab">
@@ -12,10 +12,20 @@
     <meta property="og:description" content="Найди то, что тебе нужно по самой оптимальной цене!!!" />
     <title>Сравнение цен в Украине | Найди то, что тебе нужно по самой оптимальной цене!!!</title>
 
-    @include('shared.header-dev')
-    {{-- @include('shared.header-prod') --}}
+    {{-- @include('shared.header-dev') --}}
+    @include('shared.header-prod')
+
+    <script async src="https://static.addtoany.com/menu/page.js"></script>
+
+    <script>
+        window.Laravel = {!! json_encode([
+                'csrfToken' => csrf_token(),
+        ]); !!}
+    </script>
 
     <script type="text/javascript" src="/js/script.js?v=1.2"></script>
+
+
     {{--
     <script type="text/javascript" src="https://bazzar.com.ua/sites/all/modules/jquery_update/replace/jquery/1.8/jquery.min.js?v=1.8.3"></script>
     <script type="text/javascript" src="https://bazzar.com.ua/misc/jquery.once.js?v=1.2"></script>
@@ -47,21 +57,8 @@
         //--><!]]>
     </script>
 
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-
     <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700,300,300italic' rel='stylesheet' type='text/css' />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,700,700italic,800,800italic,300italic,300' rel='stylesheet' type='text/css'>
-    <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-
-    <!--[if IE 8]>
-    <link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/quatro/css/ie8-fixes.css" />
-    <![endif]-->
-    <!--[if IE 7]>
-    <link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/quatro/css/ie7-fixes.css" />
-    <![endif]-->
-    <!--[if IE]>
-    <link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/quatro/css/ie-fixes.css" />
-    <![endif]-->
 
 </head>
 
@@ -102,45 +99,47 @@
         </div>
         <div id="zone-menu-wrapper" class="zone-wrapper zone-menu-wrapper clearfix">
             <div id="zone-menu" class="zone zone-menu clearfix container-16">
-                <div class="grid-16 region region-menu" id="region-menu">
-                    <div class="region-inner region-menu-inner">
-                        <div class="block block-nice-menus block-1 block-nice-menus-1 odd block-without-title" id="block-nice-menus-1">
-                            <div class="block-inner clearfix">
-
-                                <div class="content clearfix">
-                                    <ul class="nice-menu nice-menu-down nice-menu-main-menu" id="nice-menu-1">
-                                        <li class="menu-227 menu-path-front first odd "><a href="/" title="" class="active">Home Default</a></li>
-                                        <li class="menu-877 menu-path-new-stories  even "><a href="/new-stories" title="">Home Blog</a></li>
-                                        <li class="menu-1137 menu-path-taxonomy-term-4  odd "><a href="/topic/business" title="">Business</a></li>
-                                        <li class="menu-769 menu-path-photos  even "><a href="/photos" title="">Photos</a></li>
-                                        <li class="menu-757 menu-path-video  odd "><a href="/video" title="">Videos</a></li>
-                                        <li class="menu-761 menuparent  menu-path-node-70  even "><a href="/responsive-layout">Features</a>
-                                            <ul>
-                                                <li class="menu-1152 menu-path-node-1 first odd "><a href="/welcome-quatro">About Page</a></li>
-                                                <li class="menu-1149 menu-path-user-1  even "><a href="/users/admin" title="">Author Page</a></li>
-                                                <li class="menu-756 menu-path-node-30  odd "><a href="/travel/under-tuscany-sun-golden-field">Text Article</a></li>
-                                                <li class="menu-758 menu-path-node-69  even "><a href="/photo/example-photo-article-juicebox">Photo Article</a></li>
-                                                <li class="menu-759 menu-path-node-59  odd "><a href="/video/example-youtube-video-article">Video Article</a></li>
-                                                <li class="menu-762 menu-path-node-70  even "><a href="/responsive-layout">Responsive Layout</a></li>
-                                                <li class="menu-763 menu-path-node-71  odd last"><a href="/access-control">Access Control</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="menu-1138 menuparent  menu-path-nolink  odd "><span title="" class="nolink">Shortcodes</span>
-                                            <ul>
-                                                <li class="menu-1150 menu-path-node-76 first odd "><a href="/accordions">Accordions</a></li>
-                                                <li class="menu-1151 menu-path-node-72  even "><a href="/columns" title="">Columns</a></li>
-                                                <li class="menu-1154 menu-path-node-73  odd "><a href="/icons">Icons</a></li>
-                                                <li class="menu-1153 menu-path-node-75  even "><a href="/tables" title="">Tables</a></li>
-                                                <li class="menu-1155 menu-path-node-74  odd "><a href="/tabs">Tabs</a></li>
-                                                <li class="menu-479 menu-path-node-57  even last"><a href="/typography">Typography</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="menu-1139 menu-path-contact  even "><a href="/contact" title="">Контакт</a></li>
-                                        <li class="menu-1140 menu-path-search  odd last"><a href="/search" title="">Поиск</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                <div class="grid-16">
+                    <div data-mediasize="800" class="responsive-menu">
+                        <span class="toggler jsToggler">☰ Menu</span>
+                        <ul class="">
+                            <li class="@if(request()->route()->getName() == 'mainpage') active @endif"><a href="{{ route('mainpage') }}" title="">Главная</a></li>
+                            <li class="@if(str_is('catalogue*', request()->route()->getName())) active @endif"><a href="{{ route('catalogue') }}" title="">Каталог</a>
+                                <span class="jsToggler"><i class="fa fa-caret-left" aria-hidden="true"></i></span>
+                                <ul>
+                                    @foreach($categoriesTree as $category)
+                                        <li><a href="{{ route('catalogue_products', $category['id']) }}">{{ $category['name'] }}</a></li>
+                                    @endforeach
+                                </ul>
+                            </li>
+                            <li class="@if(str_is('blog*', request()->route()->getName())) active @endif"><a href="{{ route('blog') }}" title="">Блог</a></li>
+                            <li><a href="/photos" title="">Photos</a></li>
+                            <li><a href="/video" title="">Videos</a></li>
+                            <li><a href="#">Features</a>
+                                <span class="jsToggler"><i class="fa fa-caret-left" aria-hidden="true"></i></span>
+                                <ul>
+                                    <li><a href="/welcome-quatro">About Page</a></li>
+                                    <li><a href="/users/admin" title="">Author Page</a></li>
+                                    <li><a href="/travel/under-tuscany-sun-golden-field">Text Article</a></li>
+                                    <li><a href="/photo/example-photo-article-juicebox">Photo Article</a></li>
+                                    <li><a href="/video/example-youtube-video-article">Video Article</a></li>
+                                    <li><a href="/responsive-layout">Responsive Layout</a></li>
+                                    <li><a href="/access-control">Access Control</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Shortcodes</a>
+                                <span class="jsToggler"><i class="fa fa-caret-left" aria-hidden="true"></i></span>
+                                <ul>
+                                    <li><a href="/accordions">Accordions</a></li>
+                                    <li><a href="/columns" title="">Columns</a></li>
+                                    <li><a href="/icons">Icons</a></li>
+                                    <li><a href="/tables" title="">Tables</a></li>
+                                    <li><a href="/tabs">Tabs</a></li>
+                                    <li><a href="/typography">Typography</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="/contact" title="">Контакты</a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -165,71 +164,20 @@
                     <div class="region-inner region-sidebar-second-inner">
 
                         {{--@include('shared.twitter-timeline')--}}
+                        @include('shared.search')
+
                         @include('shared.login-widget')
 
                         @if(str_is('users_*', request()->route()->getName()))
                             @include('users.aside-nav')
                         @endif
 
-                        <section class="block block-views block-latest-news-block-1 block-views-latest-news-block-1 even" id="block-views-latest-news-block-1">
-                            <div class="block-inner clearfix">
-                                <h2 class="block-title">Самые популярные</h2>
+                        @if(str_is('catalogue*', request()->route()->getName()))
+                            @include('catalogue.aside-nav')
+                        @endif
 
-                                <div class="content clearfix">
-                                    <div class="view view-latest-news view-id-latest_news view-display-id-block_1 block-most-read view-dom-id-547339b34001a376573eedc6511030f6">
+                        @include('shared.top-products')
 
-                                        <div class="view-content">
-                                            <div class="views-row views-row-1 views-row-odd views-row-first">
-
-                                                <div class="views-field views-field-field-image">
-                                                    <div class="field-content">
-                                                        <a href="/culture/nice-day-lively-village"><img typeof="foaf:Image" src="https://bazzar.com.ua/sites/default/files/styles/thumbnail/public/articles/90PZOijCSquhzM1A3cq8_photo-1000.JPG?itok=hEuhTVKN" width="100" height="100" alt="" /></a>
-                                                    </div>
-                                                </div>
-                                                <div class="views-field views-field-title"> <span class="field-content"><a href="/culture/nice-day-lively-village">A nice day on a lively village</a></span> </div>
-                                            </div>
-                                            <div class="views-row views-row-2 views-row-even">
-
-                                                <div class="views-field views-field-field-image">
-                                                    <div class="field-content">
-                                                        <a href="/travel/under-tuscany-sun-golden-field"><img typeof="foaf:Image" src="https://bazzar.com.ua/sites/default/files/styles/thumbnail/public/articles/TuscanyHay.jpg?itok=a0OfPPyK" width="100" height="100" alt="" /></a>
-                                                    </div>
-                                                </div>
-                                                <div class="views-field views-field-title"> <span class="field-content"><a href="/travel/under-tuscany-sun-golden-field">Under the Tuscany sun, on a golden field</a></span> </div>
-                                            </div>
-                                            <div class="views-row views-row-3 views-row-odd">
-
-                                                <div class="views-field views-field-field-image">
-                                                    <div class="field-content">
-                                                        <a href="/technology/will-windows-surface-tablet-be-ipad-killer"><img typeof="foaf:Image" src="https://bazzar.com.ua/sites/default/files/styles/thumbnail/public/articles/windows-10-start-screen.jpg?itok=_whnBpV2" width="100" height="100" alt="" /></a>
-                                                    </div>
-                                                </div>
-                                                <div class="views-field views-field-title"> <span class="field-content"><a href="/technology/will-windows-surface-tablet-be-ipad-killer">Will Windows Surface tablet be an iPad killer?</a></span> </div>
-                                            </div>
-                                            <div class="views-row views-row-4 views-row-even">
-
-                                                <div class="views-field views-field-field-image">
-                                                    <div class="field-content">
-                                                        <a href="/sport/euro-2012-started-expects-great-games-come"><img typeof="foaf:Image" src="https://bazzar.com.ua/sites/default/files/styles/thumbnail/public/articles/euro2012_launch.jpg?itok=3zjD15GM" width="100" height="100" alt="" /></a>
-                                                    </div>
-                                                </div>
-                                                <div class="views-field views-field-title"> <span class="field-content"><a href="/sport/euro-2012-started-expects-great-games-come">The Euro 2012 started, expects great games to come</a></span> </div>
-                                            </div>
-                                            <div class="views-row views-row-5 views-row-odd views-row-last">
-
-                                                <div class="views-field views-field-field-image">
-                                                    <div class="field-content">
-                                                        <a href="/culture/new-discovered-nightlife-los-angeles"><img typeof="foaf:Image" src="https://bazzar.com.ua/sites/default/files/styles/thumbnail/public/articles/Ta3Z3hRxTTCTHmi1s1B1_Brooklyn_Bridge_by_Anders_Jilden_1000.jpg?itok=BiSmhI9Q" width="100" height="100" alt="" /></a>
-                                                    </div>
-                                                </div>
-                                                <div class="views-field views-field-title"> <span class="field-content"><a href="/culture/new-discovered-nightlife-los-angeles">New discovered nightlife on Los Angeles</a></span> </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
                         <!--
                         <section class="block block-simplenews block-120 block-simplenews-120 odd" id="block-simplenews-120">
                             <div class="block-inner clearfix">
@@ -366,6 +314,16 @@
     <div class="region-inner region-page-bottom-inner">
     </div>
 </div>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v2.11&appId=341148453027133';
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
 </body>
 
 </html>

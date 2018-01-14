@@ -71,14 +71,27 @@ class BazzarCompilePrices extends Command
                 });
                 $productIds[] = (int)$product['id'];
                 unset($products[$k]);
-                $products_prices_json[] = "WHEN ".(int)$product['id']." THEN ".DB::connection()->getPdo()->quote(json_encode($prices, JSON_UNESCAPED_UNICODE));
+                //$products_prices_json[] = "WHEN ".(int)$product['id']." THEN ".DB::connection()->getPdo()->quote(json_encode($prices, JSON_UNESCAPED_UNICODE));
                 $products_price_min[] = "WHEN ".(int)$product['id']." THEN ".DB::connection()->getPdo()->quote(isset($prices[0]) ? $prices[0]['price'] : 0);
                 $products_price_max[] = "WHEN ".(int)$product['id']." THEN ".DB::connection()->getPdo()->quote(isset($prices[sizeof($prices)-1]) ? $prices[sizeof($prices)-1]['price'] : 0);
+                DB::connection()->getPdo()->exec("
+                  INSERT INTO
+                    addons (`created_at`, `updated_at`, `product_id`, `prices_json`)
+                  VALUES (
+                    CURRENT_TIMESTAMP,
+                    CURRENT_TIMESTAMP,
+                    ".DB::connection()->getPdo()->quote((int)$product['id']).",
+                    ".DB::connection()->getPdo()->quote(json_encode($prices, JSON_UNESCAPED_UNICODE))."
+                    )
+                  ON DUPLICATE KEY UPDATE
+                   `updated_at` = CURRENT_TIMESTAMP,
+                   `product_id` = VALUES(`product_id`),
+                   `prices_json` = VALUES(`prices_json`)
+                  ");
             }
             DB::connection()->getPdo()->exec("
               UPDATE products
                 SET
-                    `prices_json` = CASE `id` ".implode(' ', $products_prices_json)." ELSE `prices_json` END,
                     `price_min` = CASE `id` ".implode(' ', $products_price_min)." ELSE `price_min` END,
                     `price_max` = CASE `id` ".implode(' ', $products_price_max)." ELSE `price_max` END
                 WHERE id IN (".implode(', ', $productIds).")

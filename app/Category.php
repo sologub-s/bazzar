@@ -9,6 +9,16 @@ class Category extends Model
 {
     protected $fillable = ['ava_id','name','parent_id','terms',];
 
+    public function categories()
+    {
+        return $this->hasMany(self::class, 'parent_id');
+    }
+
+    public function products()
+    {
+        return $this->hasMany('App\Product', 'category_id');
+    }
+
     /**
      * @param array<Category>|Collection<Category> $list
      * @param int $parent_id

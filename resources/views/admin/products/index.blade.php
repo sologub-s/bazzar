@@ -125,7 +125,7 @@
                                             }, $product->prices->toArray())) !!}</td>
                                             <td>
                                                 <a class="btn btn-outline-warning btn-block" href="{{ route('admin_products_edit', $product->id) }}" role="button">Edit</a><br />
-                                                <a class="btn btn-outline-primary btn-block" target="_blank" href="#" role="button">Open on site</a>
+                                                <a class="btn btn-outline-primary btn-block" target="_blank" href="{{ route('catalogue_theproduct', ['cats' => $product->createCats($categoriesList), 'product_slug' => $product->slug]) }}" role="button">Open on site</a>
                                             </td>
                                         </tr>
                                         <?php $odd = !$odd; ?>

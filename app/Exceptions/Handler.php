@@ -48,7 +48,7 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
-        if($request->route()->getPrefix() == '/admin') {
+        if(!is_null($request->route()) && $request->route()->getPrefix() == '/admin') {
             return $this->renderAdmin($request, $exception);
         }
         if ($exception instanceof \Spatie\Permission\Exceptions\UnauthorizedException) {

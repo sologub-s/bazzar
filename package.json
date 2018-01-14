@@ -10,11 +10,16 @@
         "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
     },
     "dependencies": {
+        "@fancyapps/fancybox": "^3.2.5",
+        "animate.css": "^3.5.2",
         "axios": "^0.16.2",
         "ckeditor": "^4.7.3",
         "cross-env": "^5.1.1",
+        "font-awesome": "^4.7.0",
         "imagemin-webpack-plugin": "^1.5.2",
+        "jquery": "^3.2.1",
         "laravel-mix": "^1.0",
-        "lodash": "^4.17.4"
+        "lodash": "^4.17.4",
+        "swiper": "^4.0.7"
     }
 }

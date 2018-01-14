@@ -24,6 +24,7 @@ class CreateCategoriesTable extends Migration
             $table->unsignedTinyInteger('active')->default(1);
             $table->unsignedTinyInteger('broken')->default(0);
             $table->longText('terms')->nullable();
+            $table->string('img')->nullable();
 
             $table->unique('ava_id');
             $table->index('parent_id');

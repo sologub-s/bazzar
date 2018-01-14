@@ -17,6 +17,7 @@ class PostsController extends Controller
     public function __construct()
     {
         //$this->middleware('auth');
+        parent::__construct();
     }
 
     /**
@@ -36,7 +37,7 @@ class PostsController extends Controller
         }
 
         foreach([
-                    'filter_active' => 'active',
+            'filter_active' => 'active',
                 ] as $filter => $field) {
             if ($request->has($filter)) {
                 $posts->where($field, $request->input($filter));
@@ -50,7 +51,7 @@ class PostsController extends Controller
         $posts->orderBy($request->input('orderby', 'id'), $request->input('ascdesc', 'asc'));
 
         return view('admin/posts/index', [
-            'posts' => $posts->paginate($request->has('items_limit') && in_array($request->input('items_limit'), ['10','25','50','100',]) ? $request->input('items_limit') : 10),
+            'posts' => $posts->paginate(10),
         ]);
     }
 

@@ -1,4 +1,4 @@
-<section class="block block-simplenews block-120 block-simplenews-120 odd" id="block-simplenews-120">
+<section class="block block-simplenews block-aside">
     <div class="block-inner clearfix">
         @if(!Auth::check())
         <h2 class="block-title">Вход</h2>
@@ -9,6 +9,7 @@
             <form class="simplenews-subscribe" action="{{ route('logout') }}" method="post" id="simplenews-block-form-120" accept-charset="UTF-8">
                 <input type="submit" id="edit-submit" name="op" value="Выход" class="form-submit" />
             </form>
+            <a class="btn btn-link" href="{{ route('users_favourites') }}">Избранное</a>
             <a class="btn btn-link" href="{{ route('users_profile') }}">Профиль</a>
 
         @else

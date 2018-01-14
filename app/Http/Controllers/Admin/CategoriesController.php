@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Category;
+use App\Product;
+use App\Addon;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -16,6 +18,7 @@ class CategoriesController extends Controller
     public function __construct()
     {
         //$this->middleware('auth');
+        parent::__construct();
     }
 
     /**
@@ -70,11 +73,14 @@ class CategoriesController extends Controller
     public function editHandler(\Illuminate\Http\Request $request, $id)
     {
         try {
-            \App\Product::where('id', $id)->firstOrFail()->fill([
+            Product::where('id', $id)->firstOrFail()->fill([
                 'name' => $request->post('name'),
                 'slug' => $request->post('slug'),
-                'description' => $request->post('description'),
                 'active' => $request->has('active') ? 1 : 0,
+            ])->save();
+            Addon::firstOrCreate(['product_id' => $id], [
+                'product_id' => $id,
+                'description' => $request->post('description'),
             ])->save();
         } catch (\Exception $e) {
             return redirect()->route('admin_products_edit', $id)->with('error', $e->getMessage());
@@ -86,7 +92,7 @@ class CategoriesController extends Controller
     {
         set_time_limit(300);
         try {
-            \App\Category::where('id', $id)->firstOrFail()->fill([
+            Category::where('id', $id)->firstOrFail()->fill([
                 'terms' => urldecode($request->get('terms')),
             ])->save();
             //\App\Product::where('category_id', $id)->searchable();

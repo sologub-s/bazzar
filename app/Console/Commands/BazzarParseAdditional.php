@@ -2,6 +2,8 @@
 
 namespace App\Console\Commands;
 
+use App\Addon;
+use App\Product;
 use App\Brand;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
@@ -54,10 +56,11 @@ class BazzarParseAdditional extends Command
         }
 
         $totalParsed = 0;
+        $totalIterations = 0;
 
         while(true)
         {
-            $products = \App\Product::where('parsed', 0)/*->where('in_stock', 1)*/->limit((int)abs($this->option('chunksize')))->get();
+            $products = Product::where('parsed', 0)/*->where('in_stock', 1)*/->limit((int)abs($this->option('chunksize')))->get();
             if (!sizeof($products)) {
                 $this->info('No products found with parsed == 0');
                 if ($this->option('worker')) {
@@ -137,11 +140,26 @@ class BazzarParseAdditional extends Command
 
                     try {
                         $product->fill([
-                            'properties_json' => json_encode($data, JSON_UNESCAPED_UNICODE),
                             'parsed' => 1,
-                            'description' => $description,
-                            'images_json' => json_encode($images, JSON_UNESCAPED_UNICODE),
                         ])->save();
+                        DB::connection()->getPdo()->exec("
+                          INSERT INTO
+                            addons (`created_at`, `updated_at`, `product_id`, `properties_json`, `description`, `images_json`)
+                          VALUES (
+                            CURRENT_TIMESTAMP,
+                            CURRENT_TIMESTAMP,
+                            ".DB::connection()->getPdo()->quote((int)$product['id']).",
+                            ".DB::connection()->getPdo()->quote(json_encode($data, JSON_UNESCAPED_UNICODE)).",
+                            ".DB::connection()->getPdo()->quote($description).",
+                            ".DB::connection()->getPdo()->quote(json_encode($images, JSON_UNESCAPED_UNICODE))."
+                            )
+                          ON DUPLICATE KEY UPDATE
+                           `updated_at` = CURRENT_TIMESTAMP,
+                           `product_id` = VALUES(`product_id`),
+                           `properties_json` = VALUES(`properties_json`),
+                           `description` = VALUES(`description`),
+                           `images_json` = VALUES(`images_json`)
+                          ");
                     } catch (\Exception $e) {
                         //$this->error('product # '.$product->id.' @ '.$url.' : save : '.$e->getMessage());
                     }
@@ -165,6 +183,11 @@ class BazzarParseAdditional extends Command
             }
             $bar->finish();
             $this->line('');
+            $totalIterations++;
+            if ($totalIterations >= (int)abs($this->option('chunksize')) || !$this->option('worker')) {
+                $this->call('bazzar:categoriesimages');
+                $totalIterations = 0;
+            }
             if (!$this->option('worker')) {
                 break;
             } else {

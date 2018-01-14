@@ -84,22 +84,22 @@
 
                         <div class="form-group">
                             <label for="control_description">Описание</label>
-                            <textarea class="form-control ckeditor" id="control_textarea" rows="3" name='description'>{{ $product->description }}</textarea>
+                            <textarea class="form-control ckeditor" id="control_textarea" rows="3" name='description'>{{ $product->addon()->first()->description }}</textarea>
                         </div>
 
                         </div>
                         <div class="col-lg-6">
-                                @if($product->images_json)
+                                @if($product->addon()->first()->images_json)
                                 <div class="text-center">
-                                    <?php $images = json_decode($product->images_json, true); ?>
+                                    <?php $images = json_decode($product->addon()->first()->images_json, true); ?>
                                     @foreach($images as $image)
                                             <img src="{{ $image['normal'] }}" class="img-fluid" alt="Responsive image">
                                     @endforeach
                                 </div>
                                 @endif
-                                @if($product->properties_json)
+                                @if($product->addon()->first()->properties_json)
                                     <?php
-                                        $properties = json_decode($product->properties_json, true);
+                                        $properties = json_decode($product->addon()->first()->properties_json, true);
                                     ?>
                                     <table class="table table-bordered table-hover dataTable" id="dataTable" width="100%" cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
                                         <tbody>

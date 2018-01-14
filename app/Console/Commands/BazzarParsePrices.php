@@ -2,7 +2,7 @@
 
 namespace App\Console\Commands;
 
-use App\Brand;
+use App\Product;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
 use App\Components\BazzarParser;
@@ -74,7 +74,7 @@ class BazzarParsePrices extends Command
         }
         unset($shops);
 
-        $products = \App\Product::all(['id','ava_id',]);
+        $products = Product::all(['id','ava_id',]);
         $productsMap = [];
         foreach($products as $product) {
             $productsMap[$product->ava_id] = $product->id;

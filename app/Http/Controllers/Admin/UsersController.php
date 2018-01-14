@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Product;
+use App\Addon;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 
@@ -20,6 +20,7 @@ class UsersController extends Controller
     public function __construct()
     {
         //$this->middleware('auth');
+        parent::__construct();
     }
 
     /**
@@ -125,11 +126,15 @@ class UsersController extends Controller
     public function editHandler(\Illuminate\Http\Request $request, $id)
     {
         try {
-            \App\Product::where('id', $id)->firstOrFail()->fill([
+            Product::where('id', $id)->firstOrFail()->fill([
                 'name' => $request->post('name'),
                 'slug' => $request->post('slug'),
                 'description' => $request->post('description'),
                 'active' => $request->has('active') ? 1 : 0,
+            ])->save();
+            Addon::firstOrCreate(['product_id' => $id], [
+                'product_id' => $id,
+                'description' => $request->post('description'),
             ])->save();
         } catch (\Exception $e) {
             return redirect()->route('admin_products_edit', $id)->with('error', $e->getMessage());

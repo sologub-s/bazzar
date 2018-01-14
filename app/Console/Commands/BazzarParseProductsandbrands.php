@@ -3,11 +3,11 @@
 namespace App\Console\Commands;
 
 use App\Brand;
+use App\Category;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
 use App\Components\BazzarParser;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\File;
 
 class BazzarParseProductsandbrands extends Command
 {
@@ -127,7 +127,7 @@ class BazzarParseProductsandbrands extends Command
 
                 $presentBrands[$productsItem['brand']] =
                     !isset($presentBrands[$productsItem['brand']]) ?
-                        \App\Brand::firstOrCreate(
+                        Brand::firstOrCreate(
                             ['slug' => slug($productsItem['brand'])],
                             ['name' => $productsItem['brand'], 'slug' => slug($productsItem['brand'])]
                         )->id :
@@ -135,7 +135,7 @@ class BazzarParseProductsandbrands extends Command
 
                 $presentCategories[$productsItem['parent_id']] =
                     !isset($presentCategories[$productsItem['parent_id']]) ?
-                        \App\Category::where('ava_id', $productsItem['parent_id'])->first()->id :
+                        Category::where('ava_id', $productsItem['parent_id'])->first()->id :
                         $presentCategories[$productsItem['parent_id']];
 
                 try {
@@ -144,7 +144,7 @@ class BazzarParseProductsandbrands extends Command
                             'CURRENT_TIMESTAMP',                                                                // updated_at
                             DB::connection()->getPdo()->quote($productsItem['@attributes']['id']),              // ava_id
                             DB::connection()->getPdo()->quote($productsItem['name']),                           // name
-                            DB::connection()->getPdo()->quote(slug($productsItem['name'])),  // slug
+                            DB::connection()->getPdo()->quote(slug($productsItem['name'])),                     // slug
                             DB::connection()->getPdo()->quote($productsItem['parent_id']),                      // parent_id
                             DB::connection()->getPdo()->quote($presentCategories[$productsItem['parent_id']]),  // category_id
                             DB::connection()->getPdo()->quote($presentBrands[$productsItem['brand']]),          // brand_id
@@ -172,6 +172,11 @@ class BazzarParseProductsandbrands extends Command
 
         $bar->finish();
         $this->line('');
+        $this->info('Done.');
+        $this->comment('Checking every Product if it has ava image in img field...');
+        DB::connection()->getPdo()->exec('
+          UPDATE `products` SET `has_ava_img` = 1 WHERE `img` NOT LIKE "%logo_non%"
+        ');
         $this->info('Done.');
 
         $this->call('bazzar:markbrokenproducts');

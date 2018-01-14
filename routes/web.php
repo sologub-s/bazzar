@@ -16,7 +16,7 @@ Auth::routes();
 Route::get('auth/{provider}', 'Auth\LoginController@redirectToProvider')->name('social_redirect');
 Route::get('auth/{provider}/callback', 'Auth\LoginController@handleProviderCallback')->name('social_callback');
 
-Route::get('/', 'IndexController@index')->name('index_index');
+Route::get('/', 'IndexController@index')->name('mainpage');
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['role:Admin']], function()
 {
@@ -61,8 +61,30 @@ Route::group(['prefix' => 'user',], function()
 {
     Route::get('profile', 'UsersController@profile')->name('users_profile');
     Route::post('profile', 'UsersController@profileHandler')->name('users_profile_handler');
+    Route::get('favourites', 'UsersController@favourites')->name('users_favourites');
+    Route::post('favourites/toggle', 'UsersController@favouritesToggle')->name('users_favourites_toggle');
 
     Route::get('password', 'UsersController@password')->name('users_password');
     Route::post('password', 'UsersController@passwordHandler')->name('users_password_handler');
     Route::post('password/setup', 'UsersController@passwordSetup')->name('users_password_setup');
+
+    Route::post('favourites/toggle', 'UsersController@favouritesToggle')->name('users_favourites_toggle');
+});
+
+Route::group(['prefix' => 'catalogue',], function()
+{
+    Route::get('/', 'CatalogueController@index')->name('catalogue');
+    Route::get('search/{search_request?}', 'CatalogueController@search')->name('catalogue_search')->where(['search_request' => '^((?!/).)*$']);
+    Route::get('{cats}', 'CatalogueController@products')->name('catalogue_products')->where(['cats' => '[0-9/]+']);
+    Route::get('{cats}/{product_slug}.html', 'CatalogueController@theproduct')->name('catalogue_theproduct')
+        ->where(['cats'=>'[0-9/]+', 'product_slug'=>'[a-z-_\d]+']);
+});
+
+Route::group(['prefix' => 'blog',], function()
+{
+    Route::get('/', 'BlogController@index')->name('blog');
+    Route::get('{post_slug}.html', 'BlogController@post')->name('blog_post')
+        ->where(['post_slug'=>'[a-z-_\d]+']);
+    Route::get('tag/{tag_slug}', 'BlogController@tag')->name('blog_tag')
+        ->where(['tag_slug'=>'[a-z-_\d]+']);
 });
