@@ -97,53 +97,55 @@
                 </div>
             </div>
         </div>
+        @if(sizeof($menu))
         <div id="zone-menu-wrapper" class="zone-wrapper zone-menu-wrapper clearfix">
             <div id="zone-menu" class="zone zone-menu clearfix container-16">
                 <div class="grid-16">
                     <div data-mediasize="800" class="responsive-menu">
                         <span class="toggler jsToggler">☰ Menu</span>
                         <ul class="">
-                            <li class="@if(request()->route()->getName() == 'mainpage') active @endif"><a href="{{ route('mainpage') }}" title="">Главная</a></li>
-                            <li class="@if(str_is('catalogue*', request()->route()->getName())) active @endif"><a href="{{ route('catalogue') }}" title="">Каталог</a>
-                                <span class="jsToggler"><i class="fa fa-caret-left" aria-hidden="true"></i></span>
-                                <ul>
-                                    @foreach($categoriesTree as $category)
-                                        <li><a href="{{ route('catalogue_products', $category['id']) }}">{{ $category['name'] }}</a></li>
-                                    @endforeach
-                                </ul>
-                            </li>
-                            <li class="@if(str_is('blog*', request()->route()->getName())) active @endif"><a href="{{ route('blog') }}" title="">Блог</a></li>
-                            <li><a href="/photos" title="">Photos</a></li>
-                            <li><a href="/video" title="">Videos</a></li>
-                            <li><a href="#">Features</a>
-                                <span class="jsToggler"><i class="fa fa-caret-left" aria-hidden="true"></i></span>
-                                <ul>
-                                    <li><a href="/welcome-quatro">About Page</a></li>
-                                    <li><a href="/users/admin" title="">Author Page</a></li>
-                                    <li><a href="/travel/under-tuscany-sun-golden-field">Text Article</a></li>
-                                    <li><a href="/photo/example-photo-article-juicebox">Photo Article</a></li>
-                                    <li><a href="/video/example-youtube-video-article">Video Article</a></li>
-                                    <li><a href="/responsive-layout">Responsive Layout</a></li>
-                                    <li><a href="/access-control">Access Control</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">Shortcodes</a>
-                                <span class="jsToggler"><i class="fa fa-caret-left" aria-hidden="true"></i></span>
-                                <ul>
-                                    <li><a href="/accordions">Accordions</a></li>
-                                    <li><a href="/columns" title="">Columns</a></li>
-                                    <li><a href="/icons">Icons</a></li>
-                                    <li><a href="/tables" title="">Tables</a></li>
-                                    <li><a href="/tabs">Tabs</a></li>
-                                    <li><a href="/typography">Typography</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="/contact" title="">Контакты</a></li>
+
+                            @foreach($menu as $item)
+                                @if($item->custom_type == 'main')
+                                    <li class="@if(request()->route()->getName() == 'mainpage') active @endif"><a href="{{ route('mainpage') }}" title="">Главная</a></li>
+                                @endif
+                                @if($item->custom_type == 'catalogue')
+                                    <li class="@if(str_is('catalogue*', request()->route()->getName())) active @endif"><a href="{{ route('catalogue') }}" title="">Каталог</a>
+                                        <span class="jsToggler"><i class="fa fa-caret-left" aria-hidden="true"></i></span>
+                                        <ul>
+                                            @foreach($categoriesTree as $category)
+                                                <li><a href="{{ route('catalogue_products', $category['id']) }}">{{ $category['name'] }}</a></li>
+                                            @endforeach
+                                        </ul>
+                                    </li>
+                                @endif
+                                @if($item->custom_type == 'blog')
+                                    <li class="@if(str_is('blog*', request()->route()->getName())) active @endif"><a href="{{ route('blog') }}" title="">Блог</a></li>
+                                @endif
+                                @if($item->custom_type == 'contacts')
+                                    <li><a href="/contacts" title="">Контакты</a></li>
+                                @endif
+                                @if(!$item->custom_type)
+                                    <li><a href="{{ $item->href }}" target="{{ $item->target }}">{{ $item->name }}</a>
+                                        @if(sizeof($item->menulinks))
+                                            <span class="jsToggler"><i class="fa fa-caret-left" aria-hidden="true"></i></span>
+                                            <ul>
+                                                @foreach($item->menulinks as $subitem)
+                                                    <li><a href="{{ $subitem->href }}" target="{{ $subitem->target }}">{{ $subitem->name }}</a></li>
+                                                @endforeach
+                                            </ul>
+                                        @endif
+                                    </li>
+                                @endif
+                            @endforeach
+
+
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
+        @endif
         <div id="zone-submenu-wrapper" class="zone-wrapper zone-submenu-wrapper clearfix">
             <div id="zone-submenu" class="zone zone-submenu clearfix container-16">
                 <div class="grid-16 region region-submenu" id="region-submenu">

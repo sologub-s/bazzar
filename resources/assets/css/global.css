@@ -184,6 +184,10 @@ div#site-name /* The name of the website */ {
   line-height:1.3333; 
 }
 
+#site-name a {
+  color: black;
+}
+
 #site-slogan /* The slogan (or tagline) of a website */ {
 }
 

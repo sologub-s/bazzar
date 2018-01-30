@@ -17,6 +17,7 @@ Route::get('auth/{provider}', 'Auth\LoginController@redirectToProvider')->name('
 Route::get('auth/{provider}/callback', 'Auth\LoginController@handleProviderCallback')->name('social_callback');
 
 Route::get('/', 'IndexController@index')->name('mainpage');
+Route::get('/err/{code}', 'IndexController@error')->name('error');
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['role:Admin']], function()
 {
@@ -58,6 +59,13 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['rol
 
     Route::get('settings', 'SettingsController@index')->name('admin_settings');
     Route::match(['get', 'post'], 'settings/edit/{id?}', 'SettingsController@edit')->name('admin_settings_edit');
+
+    Route::get('menulinks', 'MenulinksController@index')->name('admin_menulinks');
+    Route::post('menulinks/edit/handler/{id?}', 'MenulinksController@editHandler')->name('admin_menulinks_edit_handler');
+    Route::match(['get', 'post'], 'menulinks/delete/{id}', 'MenulinksController@delete')->name('admin_menulinks_delete');
+    Route::match(['get', 'post'], 'menulinks/edit/{id?}', 'MenulinksController@edit')->name('admin_menulinks_edit');
+    Route::post('menulinks/toggle/active/{id}', 'MenulinksController@toggleActive')->name('admin_menulinks_toggle_active');
+    Route::match(['get','post'], 'menulinks/move/{direction}/{id}', 'MenulinksController@move')->name('admin_menulinks_move');
 
 });
 

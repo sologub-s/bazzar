@@ -62,6 +62,24 @@
                     </li>
                 </ul>
             </li>
+            <li class="nav-item @if(in_array(Route::currentRouteName(), ['admin_menulinks_edit',])) active @endif" data-toggle="tooltip" data-placement="right" title="Menu links">
+                <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" data-parent="#exampleAccordion" aria-expanded="false" href="#menulinks-actions">
+                    <i class="fa fa-link"></i>
+                    <span class="nav-link-text">Menu links</span>
+                </a>
+                <ul class="sidenav-second-level collapse" id="menulinks-actions">
+                    <li>
+                        <a href="{{ route('admin_menulinks') }}">
+                            <span>List</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('admin_menulinks_edit') }}">
+                            <span>Create</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
         </ul>
         <ul class="navbar-nav sidenav-toggler">
             <li class="nav-item">

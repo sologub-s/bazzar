@@ -638,11 +638,11 @@ div.toggleFavourites {
 
 }
 
-.sidebar-search {
-  a {
-    width: 20px;
-    padding: 2px 5px;
-    display: inline;
+.sidebar-search div {
+  display: flex;
+  flex-direction: column;
+  input {
+    margin-bottom: 15px;
   }
 }
 
@@ -735,5 +735,11 @@ div.toggleFavourites {
         }
       }
     }
+  }
+}
+
+.site-name {
+  a {
+    color: black;
   }
 }

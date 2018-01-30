@@ -679,10 +679,18 @@ div.toggleFavourites:hover {
   }
 }
 
-.sidebar-search a {
-  width: 20px;
-  padding: 2px 5px;
-  display: inline;
+.sidebar-search div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.sidebar-search div input {
+  margin-bottom: 15px;
 }
 
 .view-list-posts .views-row {
@@ -766,4 +774,8 @@ div.toggleFavourites:hover {
   .view-list-posts .views-row .views-social .a2a_kit_size_32 {
     display: block;
   }
+}
+
+.site-name a {
+  color: black;
 }

@@ -30,7 +30,7 @@
                                         <div class="views-row">
                                             <div class="views-right">
                                                 <div class="views-title">
-                                                    <h2><a href="{{ route('blog_post', [$post->slug]) }}">{{ $post->name }}</a></h2>
+                                                    <h2>{{ $post->name }}</h2>
                                                 </div>
                                                 <span class="views-created">
                                                     <small>{{ $post->created_at }}</small>

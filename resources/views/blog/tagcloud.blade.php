@@ -20,7 +20,7 @@
                                         @endforeach
                                         @foreach($tags as $i => $tag)
                                             <?php
-                                                $size = 100 / ($maxTotal - $minTotal) * $tag->total + 100;
+                                                $size = 100 / ($maxTotal - $minTotal == 0 ? 1 : $maxTotal - $minTotal) * $tag->total + 100;
                                             ?>
                                             <a style="font-size: {{ $size }}%;" href="{{ route('blog_tag', $tag->slug) }}">#{{ $tag->name }}</a>
                                             @if ($i < sizeof($tags)-1)

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
@@ -41,6 +42,9 @@ class CatalogueController extends Controller
             }
         }
         $catId = $categoryIds[sizeof($categoryIds)-1];
+        if(!Category::where('id', $catId)->first()) {
+            throw new NotFoundHttpException;
+        }
         $categories = array_filter($this->categoriesList, function ($v) use ($catId) {
             return $v['parent_id'] == $catId;
         });
@@ -69,6 +73,9 @@ class CatalogueController extends Controller
                 ];
                 $category = $cat;
             }
+        }
+        if (!isset($category)) {
+            throw new NotFoundHttpException;
         }
         if (sizeof($category['categories'])) {
             return $this->categories($request, $cats);
@@ -187,12 +194,14 @@ class CatalogueController extends Controller
                 if ($cat['id'] != $id) {
                     continue;
                 }
+                if (sizeof($iteratedIds) && $cat['parent_id'] != $iteratedIds[sizeof($iteratedIds) - 1]) {
+                    throw new NotFoundHttpException;
+                }
                 $iteratedIds[] = $id;
                 $breadcrumbs[] = [
                     'url' => route('catalogue_products', implode('/', $iteratedIds)),
                     'name' => $cat['name'],
                 ];
-                $category = $cat;
             }
         }
 
@@ -220,6 +229,10 @@ class CatalogueController extends Controller
             ->where('active', 1)
             ->where('slug', $product_slug)
             ->first();
+
+        if (!$product) {
+            throw new NotFoundHttpException;
+        }
 
         $product->viewed++;
         $product->save();

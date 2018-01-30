@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use App\Post;
 use App\Tag;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class BlogController extends Controller
 {
@@ -42,7 +43,9 @@ class BlogController extends Controller
     {
 
         return view('blog/post', [
-            'post' => Post::with(['tags',])->where('slug', $post_slug)->where('active', 1)->first(),
+            'post' => Post::with(['tags',])->where('slug', $post_slug)->where('active', 1)->first() ?? (function () {
+                    throw new NotFoundHttpException;
+            })(),
         ]);
     }
 

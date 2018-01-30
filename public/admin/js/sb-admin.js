@@ -81,6 +81,25 @@
     })
   });
 
+    $('.jsToggleMenuLinkActiveButton').on('click', function () {
+        if($(this).hasClass('disabled')) {
+            return;
+        }
+        $(this).html($(this).data('loading-text'));
+        $.post(`/admin/menulinks/toggle/active/${$(this).data('id')}/`, (data) => {
+            $(this).html($(this).data('default-text'));
+            if(!data.success) {
+                $(this).parent().find('small').html('<br />'+data.errors.join('; ')).show();
+                return;
+            }
+            $(this).parent().find('small').hide();
+            $(this)
+                .toggleClass('active', data.menuLinkActive)
+                .toggleClass('btn-outline-success', !data.menuLinkActive)
+                .toggleClass('btn-success', data.menuLinkActive);
+        })
+    });
+
   $('.jsToggleProductActiveButton').on('click', function () {
     if($(this).hasClass('disabled')) {
       return;

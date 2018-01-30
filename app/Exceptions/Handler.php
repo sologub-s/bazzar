@@ -59,7 +59,9 @@ class Handler extends ExceptionHandler
             //
         }
         if($exception instanceof NotFoundHttpException) {
-            //
+            //$newRequest = $request->duplicate([], [], [], [], [], ['REQUEST_URI' => '/err/404']);
+            $newRequest = $request->duplicate([], [], [], [], [], array_merge($_SERVER, ['REQUEST_URI' => '/err/404']));
+            return app()->handle($newRequest);
         }
         return parent::render($request, $exception);
     }
