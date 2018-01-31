@@ -26,7 +26,9 @@ class MenulinksController extends Controller
      */
     public function index(\Illuminate\Http\Request $request)
     {
-        $menuLinks = MenuLink::with(['menulinks','parent'])->ordered()->get();
+        $menuLinks = MenuLink::with(['menulinks' => function($query) {
+            $query->ordered();
+        },'parent'])->where('parent_id', null)->ordered()->get();
 
         return view('admin/menulinks/index', [
             'menuLinks' => $menuLinks,

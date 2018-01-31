@@ -646,6 +646,28 @@ div.toggleFavourites {
   }
 }
 
+.block-login div {
+  display: flex;
+  flex-direction: column;
+  .form-item {
+    margin: 0;
+  }
+  .remember-me {
+    display: flex;
+    flex-direction: initial;
+    align-items: baseline;
+    input {
+      margin-right: 5px;
+    }
+  }
+  .or {
+    text-align: center;
+  }
+  input {
+    margin-bottom: 15px;
+  }
+}
+
 .view-list-posts {
   .views-row {
     display: block;
@@ -742,4 +764,16 @@ div.toggleFavourites {
   a {
     color: black;
   }
+}
+
+.logo-img {
+  max-width: 350px;
+  margin: 0 auto;
+  @media (max-width: 400px) {
+    max-width: 300px;
+  }
+}
+
+.block-right-banner {
+  text-align: center;
 }

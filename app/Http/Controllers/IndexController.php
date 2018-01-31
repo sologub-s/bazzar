@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Contentblock;
 use Illuminate\Http\Response;
 use Illuminate\Http\Request;
 use App\Components\WorkuaParser;
@@ -49,6 +50,28 @@ class IndexController extends Controller
         return view('index/index', [
             'favourites' => $favouritesMapped,
             'products' => $products->get(),
+        ]);
+    }
+
+    public function contacts(WorkuaParser $parser)
+    {
+        $favouritesMapped = [];
+        if (Auth::user()) {
+            $favourites = Auth::user()->products()
+                ->orderBy('product_user.created_at', 'desc')
+                ->where('broken', 0)
+                ->where('active', 1);
+            $favourites = $favourites->get();
+            $favouritesArray = $favourites->toArray();
+            $favouritesMapped = [];
+            while($favourite = array_shift($favouritesArray)) {
+                $favouritesMapped[$favourite['id']] = $favourite;
+            }
+        }
+
+        return view('index/contacts', [
+            'favourites' => $favouritesMapped,
+            'contacts' => Contentblock::get('contacts')['contacts'] ?? '',
         ]);
     }
 

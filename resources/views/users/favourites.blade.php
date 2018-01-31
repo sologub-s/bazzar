@@ -19,10 +19,12 @@
 
                                     <div class="view-content">
 
-                                        @if (sizeof($products) ?? [])
+                                        @if (sizeof($products ?? []))
                                             @foreach($products as $product)
                                                 @include('catalogue.listitem', ['product' => $product, 'categoriesList' => $categoriesList])
                                             @endforeach
+                                        @else
+                                            <p>В вашем списке избранного пока ничего нету. Попробуйте добавить что-то из популярных товаров:</p>
                                         @endif
 
                                     </div>
@@ -34,5 +36,8 @@
                 </div>
             </div>
         </div>
+        @if (!sizeof($products ?? []))
+            @include('shared.mostViewed')
+        @endif
     </div>
 @endsection

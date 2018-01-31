@@ -17,6 +17,7 @@ Route::get('auth/{provider}', 'Auth\LoginController@redirectToProvider')->name('
 Route::get('auth/{provider}/callback', 'Auth\LoginController@handleProviderCallback')->name('social_callback');
 
 Route::get('/', 'IndexController@index')->name('mainpage');
+Route::get('contacts.html', 'IndexController@contacts')->name('contacts');
 Route::get('/err/{code}', 'IndexController@error')->name('error');
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['role:Admin']], function()

@@ -25,32 +25,6 @@
 
     <script type="text/javascript" src="/js/script.js?v=1.2"></script>
 
-
-    {{--
-    <script type="text/javascript" src="https://bazzar.com.ua/sites/all/modules/jquery_update/replace/jquery/1.8/jquery.min.js?v=1.8.3"></script>
-    <script type="text/javascript" src="https://bazzar.com.ua/misc/jquery.once.js?v=1.2"></script>
-    <script type="text/javascript" src="https://bazzar.com.ua/misc/drupal.js?ozs3zp"></script>
-    <script type="text/javascript" src="https://bazzar.com.ua/sites/all/modules/jquery_update/replace/ui/ui/minified/jquery.ui.core.min.js?v=1.10.2"></script>
-    <script type="text/javascript" src="https://bazzar.com.ua/sites/all/modules/jquery_update/replace/ui/ui/minified/jquery.ui.widget.min.js?v=1.10.2"></script>
-    <script type="text/javascript" src="https://bazzar.com.ua/sites/all/modules/nice_menus/js/jquery.bgiframe.js?v=2.1"></script>
-    <script type="text/javascript" src="https://bazzar.com.ua/sites/all/modules/nice_menus/js/jquery.hoverIntent.js?v=0.5"></script>
-    <script type="text/javascript" src="https://bazzar.com.ua/sites/all/modules/nice_menus/js/superfish.js?v=1.4.8"></script>
-    <script type="text/javascript" src="https://bazzar.com.ua/sites/all/modules/nice_menus/js/nice_menus.js?v=1.0"></script>
-    <script type="text/javascript" src="https://bazzar.com.ua/sites/all/modules/jquery_update/replace/ui/ui/minified/jquery.ui.accordion.min.js?v=1.10.2"></script>
-    <script type="text/javascript" src="https://bazzar.com.ua/sites/all/modules/jquery_update/replace/ui/ui/minified/jquery.ui.tabs.min.js?v=1.10.2"></script>
-    <script type="text/javascript" src="https://bazzar.com.ua/sites/default/files/languages/ru_rfvRusY_ByZmBNfd8z1iVQ1tIIFfQxmVhFV4gKl1a7c.js?ozs3zp"></script>
-    <script type="text/javascript" src="https://bazzar.com.ua/sites/all/libraries/colorbox/jquery.colorbox-min.js?ozs3zp"></script>
-    <script type="text/javascript" src="https://bazzar.com.ua/sites/all/modules/colorbox/js/colorbox.js?ozs3zp"></script>
-    <script type="text/javascript" src="https://bazzar.com.ua/sites/all/modules/colorbox/styles/default/colorbox_style.js?ozs3zp"></script>
-    <script type="text/javascript" src="https://bazzar.com.ua/sites/all/modules/floating_block/floating_block.js?ozs3zp"></script>
-    <script type="text/javascript" src="https://bazzar.com.ua/sites/all/modules/jcarousel/js/jquery.jcarousel.min.js?ozs3zp"></script>
-    <script type="text/javascript" src="https://bazzar.com.ua/sites/all/modules/jcarousel/js/jcarousel.js?ozs3zp"></script>
-    <script type="text/javascript" src="https://bazzar.com.ua/sites/all/libraries/flexslider/jquery.flexslider-min.js?ozs3zp"></script>
-    <script type="text/javascript" src="https://bazzar.com.ua/sites/all/modules/responsive_menus/styles/responsive_menus_simple/js/responsive_menus_simple.js?ozs3zp"></script>
-    <script type="text/javascript" src="https://bazzar.com.ua/sites/all/themes/omega/omega/js/jquery.formalize.js?ozs3zp"></script>
-    <script type="text/javascript" src="https://bazzar.com.ua/sites/all/themes/omega/omega/js/omega-mediaqueries.js?ozs3zp"></script>
-    <script type="text/javascript" src="https://bazzar.com.ua/sites/all/themes/quatro/js/custom.js?ozs3zp"></script>
-    --}}
     <script type="text/javascript">
         <!--//--><![CDATA[//><!--
 
@@ -74,22 +48,21 @@
                     <div class="region-inner region-branding-inner">
                         <div class="branding-data clearfix">
                             <div class="logo-img">
-                                <a href="/" rel="home" title="Сравнение цен в Украине" class="active"><img src="https://bazzar.com.ua/sites/all/themes/quatro/logo.png" alt="Сравнение цен в Украине" id="logo" /></a>
+                                {!! $contentblocks['logo-img']['content'] ?? '' !!}
                             </div>
                             <hgroup class="site-name-slogan">
 
-                                <h1 class="site-name"><a href="/" title="Главная" class="active">Сравнение цен в Украине</a></h1>
-                                <h6 class="site-slogan">Найди то, что тебе нужно по самой оптимальной цене!!!</h6>
+                                <h1 class="site-name"><a href="/" title="Главная" class="active">{!! $contentblocks['site-name']['content'] ?? '' !!}</a></h1>
+                                <h6 class="site-slogan">{!! $contentblocks['site-slogan']['content'] ?? '' !!}</h6>
                             </hgroup>
                         </div>
                         <div class="block block-block block-13 block-block-13 odd block-without-title" id="block-block-13">
                             <div class="block-inner clearfix">
 
                                 <div class="content clearfix">
-                                    <!--<div style="text-align: right;"><p>	<img alt="" src="/drupal7/quatro/sites/default/files/images/ad_728x90.png" style="width: 728px; height: 90px;" /></div>
-<p>-->
                                     <div style="text-align: right;">
-                                        <img alt="" src="http://placehold.it/728x90/6C0000/9B2B2B&amp;text=AD+728x90" /></div>
+                                        {!! $contentblocks['header-728x90']['content'] ?? '' !!}
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -123,7 +96,7 @@
                                     <li class="@if(str_is('blog*', request()->route()->getName())) active @endif"><a href="{{ route('blog') }}" title="">Блог</a></li>
                                 @endif
                                 @if($item->custom_type == 'contacts')
-                                    <li><a href="/contacts" title="">Контакты</a></li>
+                                    <li><a href="{{ @route('contacts') }}" title="">Контакты</a></li>
                                 @endif
                                 @if(!$item->custom_type)
                                     <li><a href="{{ $item->href }}" target="{{ $item->target }}">{{ $item->name }}</a>
@@ -138,7 +111,6 @@
                                     </li>
                                 @endif
                             @endforeach
-
 
                         </ul>
                     </div>
@@ -178,90 +150,10 @@
                             @include('catalogue.aside-nav')
                         @endif
 
+                        @include('shared.right-banner')
                         @include('shared.top-products')
 
-                        <!--
-                        <section class="block block-simplenews block-120 block-simplenews-120 odd" id="block-simplenews-120">
-                            <div class="block-inner clearfix">
-                                <h2 class="block-title">Newsletter</h2>
 
-                                <div class="content clearfix">
-                                    <p>Stay informed on our latest news!</p>
-
-                                    <form class="simplenews-subscribe" action="/" method="post" id="simplenews-block-form-120" accept-charset="UTF-8">
-                                        <div>
-                                            <div class="form-item form-type-textfield form-item-mail">
-                                                <label for="edit-mail">E-mail <span class="form-required" title="Это поле обязательно для заполнения.">*</span></label>
-                                                <input type="text" id="edit-mail" name="mail" value="" size="20" maxlength="128" class="form-text required" />
-                                            </div>
-                                            <input type="submit" id="edit-submit" name="op" value="Subscribe" class="form-submit" />
-                                            <input type="hidden" name="form_build_id" value="form-xjizbEM5oX1IOF-biDOJPhQPia9msImEqPosj_ITvKo" />
-                                            <input type="hidden" name="form_id" value="simplenews_block_form_120" />
-                                        </div>
-                                    </form>
-
-                                </div>
-                            </div>
-                        </section>
-                        <section class="block block-views block-photos-block-1 block-views-photos-block-1 even" id="block-views-photos-block-1">
-                            <div class="block-inner clearfix">
-                                <h2 class="block-title">Photos</h2>
-
-                                <div class="content clearfix">
-                                    <div class="view view-photos view-id-photos view-display-id-block_1 block-latest-photos view-dom-id-c66932cec7da9224b1061acd8c2980b5">
-
-                                        <div class="view-content">
-                                            <div id="flexslider-1" class="flexslider">
-                                                <ul class="slides">
-                                                    <li>
-                                                        <div class="views-field views-field-field-images">
-                                                            <div class="field-content">
-                                                                <a href="/photo/example-photo-article-juicebox"><img typeof="foaf:Image" src="https://bazzar.com.ua/sites/default/files/styles/photo_featured/public/photos/Vhzrr0QLT5mSU0r4bKTp_DSC_0011_1000.jpg?itok=pMxg4VXb" width="320" height="212" alt="" /></a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="views-field views-field-title"> <span class="field-content"><a href="/photo/example-photo-article-juicebox">This is an example of a photo article with Juicebox</a></span> </div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="views-field views-field-field-images">
-                                                            <div class="field-content">
-                                                                <a href="/photo/aenean-varius-eros-dolor-aliquet-vel-ultrices-nisi-accumsan"><img typeof="foaf:Image" src="https://bazzar.com.ua/sites/default/files/styles/photo_featured/public/photos/unsplash_52bf2bb8d2dd0_1.resized.resized.JPG?itok=CntCSIc6" width="320" height="200" alt="" /></a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="views-field views-field-title"> <span class="field-content"><a href="/photo/aenean-varius-eros-dolor-aliquet-vel-ultrices-nisi-accumsan">Aenean varius eros in dolor aliquet, vel ultrices nisi accumsan.</a></span> </div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="views-field views-field-field-images">
-                                                            <div class="field-content">
-                                                                <a href="/photo/suspendisse-sed-vestibulum-neque-mauris"><img typeof="foaf:Image" src="https://bazzar.com.ua/sites/default/files/styles/photo_featured/public/photos/blue-eyes-237438_1280.jpg?itok=nNskGofV" width="320" height="207" alt="" /></a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="views-field views-field-title"> <span class="field-content"><a href="/photo/suspendisse-sed-vestibulum-neque-mauris">Suspendisse sed vestibulum neque mauris</a></span> </div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="views-field views-field-field-images">
-                                                            <div class="field-content">
-                                                                <a href="/photo/phasellus-malesuada-enim"><img typeof="foaf:Image" src="https://bazzar.com.ua/sites/default/files/styles/photo_featured/public/photos/baby.jpg?itok=8ZlbhdN_" width="320" height="218" alt="" /></a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="views-field views-field-title"> <span class="field-content"><a href="/photo/phasellus-malesuada-enim"> Phasellus a malesuada enim</a></span> </div>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-                        <div class="block block-block block-transparent block-14 block-block-14 odd block-without-title" id="block-block-14">
-                            <div class="block-inner clearfix">
-
-                                <div class="content clearfix">
-                                    <p><img src="http://placehold.it/300x250/666666/ffffff" /></p>
-                                </div>
-                            </div>
-                        </div>
-                        -->
                     </div>
                 </aside>
             </div>
@@ -277,6 +169,7 @@
                             <div class="block-inner clearfix">
 
                                 <div class="content clearfix">
+                                    <!--
                                     <ul class="menu">
                                         <li class="first leaf"><a href="/" title="" class="active">Home</a></li>
                                         <li class="leaf"><a href="/topic/business" title="">Business</a></li>
@@ -286,6 +179,8 @@
                                         <li class="leaf"><a href="/topic/technology" title="">Technology</a></li>
                                         <li class="last leaf"><a href="/sitemap" title="">Sitemap</a></li>
                                     </ul>
+                                    -->
+                                    {!! $contentblocks['bottom-text-1']['content'] ?? '' !!}
                                 </div>
                             </div>
                         </div>
@@ -293,7 +188,7 @@
                             <div class="block-inner clearfix">
 
                                 <div class="content clearfix">
-                                    <div>Powered by Drupal and Symphony Themes.</div>
+                                    <div>{!! $contentblocks['bottom-text-2']['content'] ?? '' !!}</div>
                                 </div>
                             </div>
                         </div>
@@ -302,7 +197,8 @@
 
                                 <div class="content clearfix">
                                     <div>
-                                        Join us on <i class="fa fa-facebook-square fa-lg" style="color:#3b5998"></i> <i class="fa fa-twitter-square fa-lg" style="color:#00aced"></i> <i class="fa fa-google-plus-square fa-lg" style="color:#dd4b39"></i> <i class="fa fa-youtube-square fa-lg" style="color:#bb0000"></i> <i class="fa fa-vimeo-square fa-lg" style="color:#aad450"></i> <i class="fa fa-pinterest-square fa-lg" style="color:#cb2027"></i></div>
+                                        {!! $contentblocks['bottom-text-3']['content'] ?? '' !!}
+                                    </div>
                                 </div>
                             </div>
                         </div>

@@ -59,6 +59,23 @@ class AppServiceProvider extends ServiceProvider
             );
 
             View::share('menu', MenuLink::with('menulinks')->where('parent_id', null)->where('active', 1)->ordered()->get());
+
+            View::share(
+                'contentblocks',
+                Contentblock::get([
+                        'logo-img',
+                        'site-name',
+                        'site-slogan',
+                        'header-728x90',
+                        'center-banner-1',
+                        'right-banner-1',
+                        'right-banner-2',
+                        'bottom-text-1',
+                        'bottom-text-2',
+                        'bottom-text-3',
+                    ])
+            );
+
         } catch (\Exception $e) {
             dump('Something happend in shared views: '.$e->getMessage());
         }

@@ -33,16 +33,40 @@
                 </a>
             </li>
             <li class="nav-item @if(in_array(Route::currentRouteName(), ['admin_posts','admin_posts_add', 'admin_posts_edit',])) active @endif" data-toggle="tooltip" data-placement="right" title="Posts">
-                <a class="nav-link" href="{{ route('admin_posts') }}">
-                    <i class="fa fa-fw fa-file-text-o"></i>
+                <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" data-parent="#exampleAccordion" aria-expanded="false" href="#posts-actions">
+                    <i class="fa fa-file-text-o"></i>
                     <span class="nav-link-text">Posts</span>
                 </a>
+                <ul class="sidenav-second-level collapse" id="posts-actions">
+                    <li>
+                        <a href="{{ route('admin_posts') }}">
+                            <span>List</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('admin_posts_add') }}">
+                            <span>Create</span>
+                        </a>
+                    </li>
+                </ul>
             </li>
-            <li class="nav-item @if(in_array(Route::currentRouteName(), ['admin_contentblocks','admin_contentblocks_add', 'admin_contentblocks_edit',])) active @endif" data-toggle="tooltip" data-placement="right" title="Contentblocks">
-                <a class="nav-link" href="{{ route('admin_contentblocks') }}">
+            <li class="nav-item @if(in_array(Route::currentRouteName(), ['admin_contentblocks','admin_contentblocks_add', 'admin_contentblocks_edit',])) active @endif" data-toggle="tooltip" data-placement="right" title="Content blocks">
+                <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" data-parent="#exampleAccordion" aria-expanded="false" href="#contentblocks-actions">
                     <i class="fa fa-fw fa-code"></i>
-                    <span class="nav-link-text">Contentblocks</span>
+                    <span class="nav-link-text">Content blocks</span>
                 </a>
+                <ul class="sidenav-second-level collapse" id="contentblocks-actions">
+                    <li>
+                        <a href="{{ route('admin_contentblocks') }}">
+                            <span>List</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('admin_contentblocks_add') }}">
+                            <span>Create</span>
+                        </a>
+                    </li>
+                </ul>
             </li>
             <li class="nav-item @if(in_array(Route::currentRouteName(), ['admin_setings_edit',])) active @endif" data-toggle="tooltip" data-placement="right" title="Settings">
                 <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" data-parent="#exampleAccordion" aria-expanded="false" href="#settings-actions">

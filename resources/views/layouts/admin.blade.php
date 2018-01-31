@@ -64,6 +64,7 @@
     <script src="/admin/js/typeahead.bundle.js"></script>
     <script src="/admin/vendor/underscore/underscore.js"></script>
     <script src="{{asset('/admin/ckeditor/ckeditor/ckeditor.js')}}"></script>
+
     <!-- Core plugin JavaScript-->
     <script src="/admin/vendor/jquery-easing/jquery.easing.min.js"></script>
     <!-- Custom scripts for all pages-->

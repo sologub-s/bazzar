@@ -11,6 +11,7 @@
 
                 {{-- @include('shared.buisiness') --}}
                 @include('shared.mostViewed')
+                @include('shared.center-banner')
                 @include('shared.recent')
             </div>
         </div>

@@ -3,10 +3,17 @@
  * For licensing, see LICENSE.md or http://ckeditor.com/license
  */
 
+
+CKEDITOR.dtd.$removeEmpty.i = 0;
+
 CKEDITOR.editorConfig = function( config ) {
 	// Define changes to default configuration here. For example:
 	// config.language = 'fr';
 	// config.uiColor = '#AADC6E';
+
+    config.allowedContent = true;
+
+    config.extraAllowedContent = 'p(*)[*]{*};div(*)[*]{*};li(*)[*]{*};ul(*)[*]{*}';
 
     config.filebrowserBrowseUrl = '/admin/ckeditor/kcfinder/browse.php?opener=ckeditor&type=files';
 
