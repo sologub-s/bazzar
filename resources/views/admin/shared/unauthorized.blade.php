@@ -22,7 +22,7 @@
         <div class="card-header">Unauthorized</div>
         <div class="card-body">
             <div class="text-center">
-                You are not authorized to access this page. Plese login on <a href="{{ route('mainpage') }}">website</a> with correct credentials.
+                You are not authorized to access this page. Please login on <a href="{{ route('mainpage') }}">website</a> with correct credentials.
             </div>
         </div>
     </div>
