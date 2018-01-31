@@ -68,7 +68,8 @@ class Handler extends ExceptionHandler
 
     protected function renderAdmin($request, Exception $exception) {
         if ($exception instanceof \Spatie\Permission\Exceptions\UnauthorizedException) {
-            return redirect()->route('admin_login')->with('error', $exception->getMessage())->withInput();
+            //return redirect()->route('admin_login')->with('error', $exception->getMessage())->withInput();
+            return response()->view('admin.shared.unauthorized', [], 403);
         }
         return parent::render($request, $exception);
     }
