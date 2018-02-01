@@ -43,7 +43,7 @@
     <div class="views-field views-field-body">
         @if($product->addon()->first()->description)
             <div class="field-content" style="text-overflow: ellipsis;">
-                <p>{{ strip_tags($product->addon()->first()->description) }}</p>
+                <p>{{ strip_tags($product->addon()->first()->description) ?? '' }}</p>
             </div>
         @endif
     </div>
