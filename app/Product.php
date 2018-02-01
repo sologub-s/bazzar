@@ -50,9 +50,12 @@ class Product extends Model
 
     public function mainImage() {
         if ($this->addon()->first()->images_json) {
-            $images = json_decode($this->addon()->first()->images_json, true);
-            if (sizeof($images)) {
-                return $images[0]['normal'];
+            $addon = $this->addon()->first();
+            if ($addon) {
+                $images = json_decode($this->addon()->first()->images_json, true);
+                if (sizeof($images)) {
+                    return $images[0]['normal'];
+                }
             }
         }
         return $this->img ?? null;
