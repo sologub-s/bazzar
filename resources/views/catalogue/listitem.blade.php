@@ -41,7 +41,7 @@
                                                         <span class="field-content"><i class="fa fa-comments-o"></i> <span class="fb-comments-count" data-href="{{ route('catalogue_theproduct', [$product->createCats($categoriesList), $product->slug]) }}"></span></span>
                                                     </span>
     <div class="views-field views-field-body">
-        @if($product->addon()->first()->description)
+        @if($product->addon()->first()->description ?? false)
             <div class="field-content" style="text-overflow: ellipsis;">
                 <p>{{ strip_tags($product->addon()->first()->description) ?? '' }}</p>
             </div>
