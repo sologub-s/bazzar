@@ -18,6 +18,7 @@ Route::get('auth/{provider}/callback', 'Auth\LoginController@handleProviderCallb
 
 Route::get('/', 'IndexController@index')->name('mainpage');
 Route::get('contacts.html', 'IndexController@contacts')->name('contacts');
+Route::get('shops.html', 'IndexController@shops')->name('shops');
 Route::get('/err/{code}', 'IndexController@error')->name('error');
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['role:Admin']], function()

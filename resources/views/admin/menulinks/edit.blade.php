@@ -43,7 +43,7 @@
                                 <label for="control_parent_id">Custom type</label>
                                 <select class="form-control" id="control_custom_type" name="custom_type">
                                     <option value="" {{ !($menuLink->custom_type ?? false) ? 'selected="selected"' : '' }}>none</option>
-                                    @foreach(['main', 'catalogue', 'blog', 'contacts',] as $item)
+                                    @foreach(['main', 'catalogue', 'blog', 'contacts','shops',] as $item)
                                         <option value="{{ $item }}" {{ ($menuLink->custom_type ?? '') == $item ? 'selected="selected"' : '' }}>{{ $item }}</option>
                                     @endforeach;
                                 </select>

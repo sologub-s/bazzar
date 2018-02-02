@@ -666,6 +666,11 @@ div.toggleFavourites {
   input {
     margin-bottom: 15px;
   }
+  a.fb {
+    img {
+      max-width: none;
+    }
+  }
 }
 
 .view-list-posts {

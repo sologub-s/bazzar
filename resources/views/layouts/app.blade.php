@@ -98,6 +98,9 @@
                                 @if($item->custom_type == 'contacts')
                                     <li><a href="{{ @route('contacts') }}" title="">Контакты</a></li>
                                 @endif
+                                @if($item->custom_type == 'shops')
+                                    <li><a href="{{ @route('shops') }}" title="">Магазины</a></li>
+                                @endif
                                 @if(!$item->custom_type)
                                     <li><a href="{{ $item->href }}" target="{{ $item->target }}">{{ $item->name }}</a>
                                         @if(sizeof($item->menulinks))

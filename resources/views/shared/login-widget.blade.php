@@ -37,7 +37,10 @@
                 <hr>
                 <div class="form-group">
                     <div class="col-md-6 col-md-offset-4">
-                        <a href="{{ route('social_redirect', 'facebook') }}" class="btn btn-facebook"><i class="fa fa-facebook"></i> Facebook</a>
+                        <!--<a href="{{ route('social_redirect', 'facebook') }}" class="btn btn-facebook"><i class="fa fa-facebook"></i> Facebook</a>-->
+                        <a class="fb" href="{{ route('social_redirect', 'facebook') }}">
+                            <img src="{{ url('/images/fb-login.png') }}" />
+                        </a>
                     </div>
                 </div>
             </div>

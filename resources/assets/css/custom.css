@@ -732,6 +732,10 @@ div.toggleFavourites:hover {
   margin-bottom: 15px;
 }
 
+.block-login div a.fb img {
+  max-width: none;
+}
+
 .view-list-posts .views-row {
   display: block;
   margin-bottom: 10px;
