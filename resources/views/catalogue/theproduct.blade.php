@@ -58,7 +58,7 @@
                                     </script>
                                     <!-- AddToAny END -->
                                 </span>
-                                <?php $prices = json_decode($product->addon()->first()->prices_json, true); ?>
+                                <?php $prices = json_decode($product->addon()->first()->prices_json ?? null, true); ?>
                                 @if(sizeof($prices))
                                     <table class="mt-4 prices">
                                         <thead><tr><th colspan="2">Цены</th></tr></thead>
