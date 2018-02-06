@@ -21,7 +21,7 @@
                                 @endif
                                 <!-- Swiper -->
                                 <div class="swiper-container gallery-top">
-                                    <?php $images = $product->addon()->first()->images_json ? json_decode($product->addon()->first()->images_json, true) : [['normal'=>$product->img]]; ?>
+                                    <?php $images = $product->addon()->first()->images_json ?? false ? json_decode($product->addon()->first()->images_json, true) : [['normal'=>$product->img ?? []]]; ?>
                                     <div class="swiper-wrapper">
                                         @foreach($images as $image)
                                             <div class="swiper-slide" style="background-image:url({{ $image['normal'] }})">
