@@ -72,7 +72,7 @@
                                         </tbody>
                                     </table>
                                 @endif
-                                <?php $properties = json_decode($product->addon()->first()->properties_json, true); ?>
+                                <?php $properties = json_decode($product->addon()->first()->properties_json ?? null, true); ?>
                                 @if(sizeof($properties))
                                     <a href="#" role="button" class="btn btn-primary show-characteristics jsShowCharacteristics mt-2">
                                         Показать характеристики <i class="fa fa-caret-down" aria-hidden="true"></i>
@@ -102,7 +102,7 @@
                                 @endif
                             </div>
                             <div class="description">
-                                {!! $product->addon()->first()->description !!}
+                                {!! $product->addon()->first()->description ?? '' !!}
                             </div>
                             <div class="fb-comments" data-href="{{ route('catalogue_theproduct', [$product->createCats($categoriesList), $product->slug]) }}" data-width="100%" data-numposts="20"></div>
                         </div>
