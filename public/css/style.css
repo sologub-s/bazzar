@@ -12198,6 +12198,30 @@ div.toggleFavourites:hover {
   color: #9966cc;
 }
 
+div.toggleCompare {
+  color: gold;
+  padding: 2px;
+  border: 1px solid #9966cc;
+  border-radius: 15%;
+  position: absolute;
+  left: 3px;
+  top: 3px;
+  background-color: rgba(153, 102, 204, 0.75);
+  font-size: 2rem;
+  pointer-events: auto;
+  cursor: pointer;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  z-index: 10;
+}
+
+div.toggleCompare:hover {
+  border: 1px solid gold;
+  background-color: rgba(255, 215, 0, 0.75);
+  color: #9966cc;
+}
+
 .item-list {
   clear: both;
 }
@@ -12683,4 +12707,13 @@ div.toggleFavourites:hover {
 
 .block-right-banner {
   text-align: center;
+}
+
+.compare.container {
+  width: 100%;
+  overflow-x: scroll;
+}
+
+.compare img {
+  max-width: 100px;
 }

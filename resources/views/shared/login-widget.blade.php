@@ -6,6 +6,7 @@
 
         @if(Auth::check())
             <p>Здравствуйте, {{ Auth::user()->name  }}!</p>
+            <a class="btn btn-link" href="{{ route('compare') }}">Сравнение (<span class="jsAmountInCompare">{{ @sizeof($inCompare ?? []) }}</span>)</a>
             <a class="btn btn-link" href="{{ route('users_favourites') }}">Избранное</a>
             <a class="btn btn-link" href="{{ route('users_profile') }}">Профиль</a>
             <form class="simplenews-subscribe" action="{{ route('logout') }}" method="post" accept-charset="UTF-8">

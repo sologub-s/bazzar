@@ -6,6 +6,7 @@ use App\MenuLink;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Http\Request;
 
 use App\Post;
 use App\Observers\PostObserver;
@@ -24,7 +25,7 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
+    public function boot(Request $request)
     {
         Schema::defaultStringLength(191);
         DB::connection()->getPdo()->exec("SET sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''))");
@@ -78,8 +79,12 @@ class AppServiceProvider extends ServiceProvider
                     ])
             );
 
+            //dd(session('compare', []));
+
+            //View::share('inCompare', $request->session()->get('compare', []));
+
         } catch (\Exception $e) {
-            dump('Something happend in shared views: '.$e->getMessage());
+            dump('Something happened in shared views: '.$e->getMessage());
         }
 
     }

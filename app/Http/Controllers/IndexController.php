@@ -92,15 +92,6 @@ class IndexController extends Controller
             }
         }
 
-        /*
-        $shops = Shop
-            ::with(['prices' => function ($query) {
-                dd($query->orderBy('ordering', 'desc')->limit(1)->toSql());
-                $query->orderBy('ordering', 'desc')->limit(1);
-            }])
-            ->get()
-        ;
-        */
         $shops = DB::connection()->getPdo()->query("
             SELECT
                 s.id, s.name, s.logo, p.href, p.ordering
@@ -120,6 +111,67 @@ class IndexController extends Controller
             'favourites' => $favouritesMapped,
             'shops' => $shops,
         ]);
+    }
+
+    public function compare()
+    {
+        $favouritesMapped = [];
+        if (Auth::user()) {
+            $favourites = Auth::user()->products()
+                ->orderBy('product_user.created_at', 'desc')
+                ->where('broken', 0)
+                ->where('active', 1);
+            $favourites = $favourites->get();
+            $favouritesArray = $favourites->toArray();
+            $favouritesMapped = [];
+            while($favourite = array_shift($favouritesArray)) {
+                $favouritesMapped[$favourite['id']] = $favourite;
+            }
+        }
+
+        $ids = array_slice(session('compare', []), 0, 50);
+
+        $compareProducts = empty($ids) ? [] : Product
+            ::orderBy('created_at', 'desc')
+            ->where('broken', 0)
+            ->where('active', 1)
+            ->where(function($query)  use ($ids) {
+                foreach($ids as $id) {
+                    $query->orWhere('id', $id);
+                }
+            })->get();
+
+        return view('index/compare', [
+            'favourites' => $favouritesMapped,
+            'compareProducts' => $compareProducts,
+        ]);
+    }
+
+    public function compareToggle(Request $request, Response $response)
+    {
+        $response->header('Content-Type', 'application/json; charset='.($response->getCharset() ?: 'UTF-8'), true);
+
+        if (!Product::find($request->input('product_id'))) {
+            return response()->json([
+                'currentStatus' => 'notfound',
+            ], 404);
+        }
+        $inCompare = $request->session()->get('compare', []);
+
+        if(isset($inCompare[$request->input('product_id')])) {
+            unset($inCompare[$request->input('product_id')]);
+            $request->session()->put('compare', $inCompare);
+            return response()->json([
+                'currentStatus' => 'removed',
+                'countInCompare' => sizeof($inCompare),
+            ], 200);
+        }
+        $inCompare[$request->input('product_id')] = $request->input('product_id');
+        $request->session()->put('compare', $inCompare);
+        return response()->json([
+            'currentStatus' => 'added',
+            'countInCompare' => sizeof($inCompare),
+        ], 200);
     }
 
     public function error($code, Response $response)

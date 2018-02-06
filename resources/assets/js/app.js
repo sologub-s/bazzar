@@ -116,6 +116,54 @@
 
         });
 
+        $('body').on('click', '.jsRemoveCompare', function (e) {
+            e.preventDefault();
+            let tr = $(this).closest('tr');
+            $.post('/compare/toggle', {
+                'product_id': $(this).data('product_id')
+            })
+                .done(function(data) {
+                    console.log(data['currentStatus'], $(this).closest('tr'));
+                    if(data['currentStatus'] === 'removed') {
+                        tr.slideUp();
+                    }
+                    $('.jsAmountInCompare').html(data['countInCompare']);
+                })
+                .fail(function(response) {
+                    if (response.status == 404) {
+                        alert('Product not found');
+                    }
+                })
+        });
+
+        $('body').on('click', '.jsToggleCompare', function (e) {
+            e.preventDefault();
+            let fa = $(this).find('i');
+            fa.removeClass('fa-bar-chart fa-line-chart').addClass('fa-spinner fa-spin');
+            $.post('/compare/toggle', {
+                'product_id': $(this).data('product_id')
+            })
+                .done(function(data) {
+                    fa.addClass('fa-' + (data['currentStatus'] === 'added' ? 'line' : 'bar') + '-chart');
+                    if (data['currentStatus'] === 'added') {
+                        fa.animateCss('rotateIn');
+                    } else {
+                        fa.animateCss('fadeIn');
+                    }
+                    $('.jsAmountInCompare').html(data['countInCompare']);
+                })
+                .fail(function(response) {
+                    if (response.status == 404) {
+                        fa.addClass('fa-bar-chart');
+                        alert('Product not found');
+                    }
+                })
+                .always(function() {
+                    fa.removeClass('fa-spinner fa-spin');
+                });
+
+        });
+
         $('body').on('click', '.jsSearchBlock', function (e) {
             e.preventDefault();
 

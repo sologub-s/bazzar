@@ -19,7 +19,9 @@ Route::get('auth/{provider}/callback', 'Auth\LoginController@handleProviderCallb
 Route::get('/', 'IndexController@index')->name('mainpage');
 Route::get('contacts.html', 'IndexController@contacts')->name('contacts');
 Route::get('shops.html', 'IndexController@shops')->name('shops');
-Route::get('/err/{code}', 'IndexController@error')->name('error');
+Route::get('/compare', 'IndexController@compare')->name('compare');
+Route::post('/compare/toggle', 'IndexController@compareToggle')->name('compare_toggle');
+Route::match(['get','post','put','patch','delete',], '/err/{code}', 'IndexController@error')->name('error');
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['role:Admin']], function()
 {
