@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use App\Product;
 use App\Category;
+use App\Post;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
 use App\Components\BazzarParser;
@@ -51,7 +52,6 @@ class BazzarCreateSitemap extends Command
         $this->comment('Creating sitemaps...');
 
         $chunkSize = (int) abs($this->option('chunksize'));
-        $p = 1;
         $urls = [];
         $sitemaps = [];
         $toRemove = [];
@@ -68,8 +68,11 @@ class BazzarCreateSitemap extends Command
             }
         }
 
-        $bar = null;
 
+        $this->comment('Adding Products...');
+
+        $bar = null;
+        $p = 1;
         while (sizeof($products = Product
             ::where('broken', 0)
             ->where('active', 1)
@@ -78,7 +81,6 @@ class BazzarCreateSitemap extends Command
         {
             if (!$bar)
             {
-                //$bar = $this->output->createProgressBar($products->lastPage());
                 $bar = $this->output->createProgressBar($products->total());
                 $bar->start();
             }
@@ -100,11 +102,37 @@ class BazzarCreateSitemap extends Command
         $bar->finish();
         $this->line('');
 
-        $this->comment('Removing old sitemaps files...');
+        $this->comment('Adding Posts...');
+        $bar = null;
+        $p = 1;
+        while (sizeof($posts = Post
+            ::where('active', 1)
+            ->paginate($chunkSize, ['*'], 'page', $p++)))
+        {
+            if (!$bar)
+            {
+                $bar = $this->output->createProgressBar($posts->total());
+                $bar->start();
+            }
+            foreach ($posts as $post)
+            {
+                $urls[] = [
+                    'loc' => route('blog_post', [$post->slug]),
+                ];
+
+                if (sizeof($urls) >= 1000) {
+                    $sitemaps[] = $this->flushUrlsToFile($urls);
+                    $urls = [];
+                }
+                $bar->advance();
+            }
+        }
 
         if (sizeof($urls)) {
             $sitemaps[] = $this->flushUrlsToFile($urls);
         }
+
+        $this->comment('Removing old sitemaps files...');
 
         $data ='<?xml version="1.0" encoding="UTF-8"?>'."\r\n".'<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'."\r\n\t".'<sitemap>'."\r\n\t\t".'<loc>'.implode('</loc></sitemap><sitemap><loc>', array_map(function($v){ return url($this->_sitemapsFolder.'/'.$v); }, $sitemaps)).'</loc>'."\r\n\t".'</sitemap>'."\r\n".'</sitemapindex>';
         file_put_contents(public_path().'/'.'sitemap.xml', $data);
