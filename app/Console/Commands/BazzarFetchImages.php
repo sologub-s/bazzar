@@ -19,14 +19,16 @@ class BazzarFetchImages extends Command
      *
      * @var string
      */
-    protected $signature = 'bazzar:parse:additional {--w|worker} {--cs|chunksize=100}';
+    protected $signature = 'bazzar:fetch:images {--w|worker}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Parsing the properties, descriptions and images from ava';
+    protected $description = 'Fetching images from ava';
+
+    protected $_imagesFolder = 'storage/products';
 
     /**
      * Create a new command instance.
@@ -47,22 +49,28 @@ class BazzarFetchImages extends Command
     {
         set_time_limit(0);
 
-        if ($this->option('worker')) {
-            $this->info('Worker mode is ON');
-            $this->info('Parsing all items with parsed == 0, '.(int)abs($this->option('chunksize')).' per time...');
-        } else {
-            $this->info('Worker mode is OFF');
-            $this->info('Parsing '.(int)abs($this->option('chunksize')).' items and then stop...');
+        if (!file_exists(public_path().'/'.$this->_imagesFolder)) {
+            mkdir(public_path().'/'.$this->_imagesFolder, 0755, true);
         }
 
-        $totalParsed = 0;
-        $totalIterations = 0;
+        if ($this->option('worker')) {
+            $this->info('Worker mode is ON');
+        } else {
+            $this->info('Worker mode is OFF');
+        }
+
+        $totalFetched = 0;
 
         while(true)
         {
-            $products = Product::where('parsed', 0)/*->where('in_stock', 1)*/->limit((int)abs($this->option('chunksize')))->get();
-            if (!sizeof($products)) {
-                $this->info('No products found with parsed == 0');
+            $product = Product
+                ::with(['addon'])
+                ->where('parsed', 1)
+                ->where('in_stock', 1)
+                ->where('img_fetched', 0)
+                ->first();
+            if (!$product) {
+                $this->info('No products found with parsed == 1 AND in_stock == 1 AND img_fetched == 0');
                 if ($this->option('worker')) {
                     $this->comment('Sleeping for a 10 seconds before try again...');
                     sleep(10);
@@ -70,131 +78,75 @@ class BazzarFetchImages extends Command
                 }
                 break;
             }
-            $this->comment('Parsing chunk of '.sizeof($products).' items...');
-            $bar = $this->output->createProgressBar(sizeof($products));
-            $bar->start();
-            foreach($products as $k => $product) {
-                sleep(rand(3, 7));
-                try {
-                    $url = 'http://ava.ua/product/'.$product->ava_id.'/'.$product->slug.'/';
-                    $content = file_get_contents_curl($url);
-                    $html = new Document($content);
-                    unset($content);
+            $this->line('');
+            $this->comment('Fetching for Product with id = '.$product->id.' ...');
+            try {
 
-                    $data = [];
-                    try {
-                        $trs = [];
-                        if(!empty((array)$html->find('tbody#properties'))) {
-                            $trs = (array) $html->find('tbody#properties')[0]->children();
-                        }
-                        $dataIndex = -1;
-                        while(sizeof($trs) > 0) {
-                            $item = array_shift($trs);
-                            if (isset($item->style)) {
-                                continue;
-                            }
-                            if (!isset($item->class)) {
-                                $dataIndex++;
-                                $data[$dataIndex] = [];
-                                $data[$dataIndex]['group'] = str_replace(["\n","\r"], '', trim($item->find('h3')->plaintext));
-                                $data[$dataIndex]['properties'] = [];
-                                continue;
-                            }
-                            $data[$dataIndex]['group'] = isset($data[$dataIndex]['group']) ? $data[$dataIndex]['group'] : 'Основные характеристики';
-                            $data[$dataIndex]['properties'] = isset($data[$dataIndex]['properties']) ? $data[$dataIndex]['properties'] : [];
-                            array_push($data[$dataIndex]['properties'], ['name' => str_replace(["\n","\r"], '', trim($item->find('th')->plaintext)), 'value' => str_replace(["\n","\r"], '', trim($item->find('td')->plaintext))]);
-                        }
-                    } catch (\Exception $e) {
-                        $this->error('product # '.$product->id.' @ '.$url.' : properties : '.$e->getMessage());
+                if (false !== stristr($product->img, 'ava.ua') || false !== stristr($product->img, 'ava.com.ua'))
+                {
+                    if (!file_exists(public_path().'/'.$this->_imagesFolder.'/'.$product->slug)) {
+                        mkdir(public_path().'/'.$this->_imagesFolder.'/'.$product->slug, 0755, true);
                     }
-
-                    $description = '';
-                    try {
-                        $descriptionNode = $html->find('table.characteristics');
-                        if(!empty((array)$descriptionNode)) {
-                            $description = $descriptionNode[0]->find('td')[0]->innertext;
-                        }
-                    } catch (\Exception $e) {
-                        $this->error('product # '.$product->id.' @ '.$url.' : description : '.$e->getMessage());
-                    }
-
-                    unset($html);
-
-                    sleep(1);
-                    $images = [];
-                    $imagesUrl = 'http://ava.ua/zoom/'.$product->ava_id.'/?image=0';
-                    $imagesContent = file_get_contents_curl($imagesUrl);
-                    $imagesHtml = new Document($imagesContent);
-                    unset($imagesContent);
-                    if(!empty((array)$imagesHtml->find('a.img_pas'))) {
-                        foreach((array)$imagesHtml->find('a.img_pas') as $item) {
-                            $matches = [];
-                            preg_match("/'(.*)'/i", $item->getAttribute('style'), $matches);
-                            $images[] = [
-                                'normal' => $item->getAttribute('data-img'),
-                                'small' => isset($matches[1]) ? $matches[1] : null,
-                            ];
-                        }
-                    }
-                    unset($imagesHtml);
-
-                    try {
-                        $product->fill([
-                            'parsed' => 1,
-                        ])->save();
-                        DB::connection()->getPdo()->exec("
-                          INSERT INTO
-                            addons (`created_at`, `updated_at`, `product_id`, `properties_json`, `description`, `images_json`)
-                          VALUES (
-                            CURRENT_TIMESTAMP,
-                            CURRENT_TIMESTAMP,
-                            ".DB::connection()->getPdo()->quote((int)$product['id']).",
-                            ".DB::connection()->getPdo()->quote(json_encode($data, JSON_UNESCAPED_UNICODE)).",
-                            ".DB::connection()->getPdo()->quote($description).",
-                            ".DB::connection()->getPdo()->quote(json_encode($images, JSON_UNESCAPED_UNICODE))."
-                            )
-                          ON DUPLICATE KEY UPDATE
-                           `updated_at` = CURRENT_TIMESTAMP,
-                           `product_id` = VALUES(`product_id`),
-                           `properties_json` = VALUES(`properties_json`),
-                           `description` = VALUES(`description`),
-                           `images_json` = VALUES(`images_json`)
-                          ");
-                    } catch (\Exception $e) {
-                        //$this->error('product # '.$product->id.' @ '.$url.' : save : '.$e->getMessage());
-                    }
-
-                } catch (\Exception $e) {
-                    if (false !== stristr($e->getMessage(), '404 Not Found')) {
-                        $product->delete();
-                    } elseif (false !== stristr($e->getMessage(), 'Lock wait timeout exceeded; try restarting transaction')) {
-                        // do nothing
-                    } else {
-                        $errorMessage = 'product # '.$product->id.' @ '.$url.' : unknown : '.$e->getMessage();
-                        $this->error($errorMessage);
-                        mail('zeitgeist1988@gmail.com', 'ParseAdditional error', $errorMessage);
-                    }
-
+                    $ext = explode('.', $product->img);
+                    $ext = $ext[sizeof($ext) - 1];
+                    $relativePath = $this->_imagesFolder.'/'.$product->slug.'/'.$product->slug.'_thumb'.'.'.$ext;
+                    $filePath = public_path().'/'.$relativePath;
+                    $this->info($product->img . ' => ' . $filePath . ' @ ' . url($relativePath));
+                    file_put_contents($filePath, file_get_contents_curl($product->img));
+                    $product->img_org = $product->img;
+                    $product->img = url($relativePath);
+                    sleep(rand(2, 4));
                 }
 
-                $bar->advance();
-                $totalParsed++;
-                unset($products[$k]);
+                if($images_json = json_decode($product->addon->images_json ?? null, true))
+                {
+                    $images_json_new = [];
+                    foreach ($images_json as $k => $json_image)
+                    {
+                        $newArrayItem = [];
+                        foreach (['normal', 'small'] as $size)
+                        {
+                            if (!($json_image[$size] ?? false))
+                            {
+                                continue;
+                            }
+                            $ext = explode('.', $json_image[$size]);
+                            $ext = $ext[sizeof($ext) - 1];
+                            $relativePath = $this->_imagesFolder.'/'.$product->slug.'/'.$product->slug.'_'.($k+1).'_'.$size.'.'.$ext;
+                            $filePath = public_path().'/'.$relativePath;
+                            $this->info($json_image[$size] . ' => ' . $filePath . ' @ ' . url($relativePath));
+                            file_put_contents($filePath, file_get_contents_curl($json_image[$size]));
+                            $newArrayItem[$size] = url($relativePath);
+                            sleep(rand(2, 4));
+                        }
+                        $images_json_new[] = $newArrayItem;
+                    }
+                    $product->addon->images_json_org = $product->addon->images_json;
+                    $product->addon->images_json = json_encode($images_json_new);
+                    $product->addon->save();
+                }
+
+                $product->img_fetched = 1;
+                $product->save();
+
+            } catch (\Exception $e) {
+                if (false !== stristr($e->getMessage(), '404 Not Found')) {
+                    $product->delete();
+                } elseif (false !== stristr($e->getMessage(), 'Lock wait timeout exceeded; try restarting transaction')) {
+                    // do nothing
+                } else {
+                    $errorMessage = 'product # '.$product->id.' : unknown : '.$e->getMessage();
+                    $this->error($errorMessage);
+                    mail('zeitgeist1988@gmail.com', 'FetchImages error', $errorMessage);
+                }
+
             }
-            $bar->finish();
-            $this->line('');
-            $this->call('bazzar:categoriesimages');
-            /*
-            if ($totalIterations >= (int)abs($this->option('chunksize')) || !$this->option('worker')) {
-                $this->call('bazzar:categoriesimages');
-                $totalIterations = 0;
-            }
-            */
+            $totalFetched++;
             if (!$this->option('worker')) {
                 break;
             } else {
                 $this->line('');
-                $this->info('Total parsed since starting: ' . $totalParsed);
+                $this->info('Total fetched since starting: ' . $totalFetched);
             }
         }
         $this->info('Done.');
