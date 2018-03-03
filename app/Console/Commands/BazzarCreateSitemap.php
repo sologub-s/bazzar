@@ -128,6 +128,9 @@ class BazzarCreateSitemap extends Command
             }
         }
 
+        $bar->finish();
+        $this->line('');
+        
         if (sizeof($urls)) {
             $sitemaps[] = $this->flushUrlsToFile($urls);
         }
