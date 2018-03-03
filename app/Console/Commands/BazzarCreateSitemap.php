@@ -18,7 +18,7 @@ class BazzarCreateSitemap extends Command
      *
      * @var string
      */
-    protected $signature = 'bazzar:create:sitemap';
+    protected $signature = 'bazzar:create:sitemap {--cs|chunksize=10}';
 
     /**
      * The console command description.
@@ -50,8 +50,8 @@ class BazzarCreateSitemap extends Command
 
         $this->comment('Creating sitemaps...');
 
+        $chunkSize = (int) abs($this->option('chunksize'));
         $p = 1;
-
         $urls = [];
         $sitemaps = [];
         $toRemove = [];
@@ -74,7 +74,7 @@ class BazzarCreateSitemap extends Command
             ::where('broken', 0)
             ->where('active', 1)
             ->where('parsed', 1)
-            ->paginate(20, ['*'], 'page', $p++)))
+            ->paginate($chunkSize, ['*'], 'page', $p++)))
         {
             if (!$bar)
             {
