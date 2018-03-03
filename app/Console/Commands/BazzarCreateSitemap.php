@@ -19,7 +19,7 @@ class BazzarCreateSitemap extends Command
      *
      * @var string
      */
-    protected $signature = 'bazzar:create:sitemap {--cs|chunksize=10}';
+    protected $signature = 'bazzar:create:sitemap {--cs|chunksize=5000}';
 
     /**
      * The console command description.
@@ -130,7 +130,7 @@ class BazzarCreateSitemap extends Command
 
         $bar->finish();
         $this->line('');
-        
+
         if (sizeof($urls)) {
             $sitemaps[] = $this->flushUrlsToFile($urls);
         }

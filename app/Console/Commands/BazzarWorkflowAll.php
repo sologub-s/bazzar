@@ -50,6 +50,7 @@ class BazzarWorkflowAll extends Command
         $this->call('bazzar:parse:prices');
         $this->call('bazzar:clean');
         $this->call('bazzar:index:products');
+        $this->call('bazzar:create:sitemap');
         //$this->call('php artisan bazzar:parse:properties');
         //$this->call('php artisan bazzar:parse:images');
 
