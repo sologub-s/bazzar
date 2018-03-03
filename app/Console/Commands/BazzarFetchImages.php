@@ -91,10 +91,11 @@ class BazzarFetchImages extends Command
                     $ext = $ext[sizeof($ext) - 1];
                     $relativePath = $this->_imagesFolder.'/'.$product->slug.'/'.$product->slug.'_thumb'.'.'.$ext;
                     $filePath = public_path().'/'.$relativePath;
-                    $this->info($product->img . ' => ' . $filePath . ' @ ' . url($relativePath));
+                    $url = str_replace(['http://','https://'], '//', url($relativePath));
+                    $this->info($product->img . ' => ' . $filePath . ' @ ' . $url);
                     file_put_contents($filePath, file_get_contents_curl($product->img));
                     $product->img_org = $product->img;
-                    $product->img = url($relativePath);
+                    $product->img = $url;
                     sleep(rand(2, 4));
                 }
 
@@ -114,9 +115,10 @@ class BazzarFetchImages extends Command
                             $ext = $ext[sizeof($ext) - 1];
                             $relativePath = $this->_imagesFolder.'/'.$product->slug.'/'.$product->slug.'_'.($k+1).'_'.$size.'.'.$ext;
                             $filePath = public_path().'/'.$relativePath;
-                            $this->info($json_image[$size] . ' => ' . $filePath . ' @ ' . url($relativePath));
+                            $url = str_replace(['http://','https://'], '//', url($relativePath));
+                            $this->info($json_image[$size] . ' => ' . $filePath . ' @ ' . $url);
                             file_put_contents($filePath, file_get_contents_curl($json_image[$size]));
-                            $newArrayItem[$size] = url($relativePath);
+                            $newArrayItem[$size] = $url;
                             sleep(rand(2, 4));
                         }
                         $images_json_new[] = $newArrayItem;
