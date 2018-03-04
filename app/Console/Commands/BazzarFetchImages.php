@@ -136,6 +136,9 @@ class BazzarFetchImages extends Command
                     $product->delete();
                 } elseif (false !== stristr($e->getMessage(), 'Lock wait timeout exceeded; try restarting transaction')) {
                     // do nothing
+                } elseif (false !== stristr($e->getMessage(), 'database is locked')) {
+                    $errorMessage = 'product # '.$product->id.' : '.$e->getMessage();
+                    $this->error($errorMessage);
                 } else {
                     $errorMessage = 'product # '.$product->id.' : unknown : '.$e->getMessage();
                     $this->error($errorMessage);
